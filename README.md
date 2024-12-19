@@ -23,7 +23,7 @@ The Authenticated Transfer Protocol ("AT Protocol" or "atproto") is a decentrali
 - [Protocol Specifications](https://atproto.com/specs/atp)
 - [Blogpost on self-authenticating data structures](https://bsky.social/about/blog/3-6-2022-a-self-authenticating-social-protocol)
 
-The Bluesky Social application encompasses a set of schemas and APIs built in the overall AT Protocol framework. The namespace for these "Lexicons" is `app.bsky.*`.
+The Mention by Oxy application encompasses a set of schemas and APIs built in the overall AT Protocol framework. The namespace for these "Lexicons" is `app.bsky.*`.
 
 ## Contributions
 
@@ -53,7 +53,7 @@ You have our blessing 🪄✨ to fork this application! However, it's very impor
 
 Please be sure to:
 
-- Change all branding in the repository and UI to clearly differentiate from Bluesky.
+- Change all branding in the repository and UI to clearly differentiate from Mention by Oxy.
 - Change any support links (feedback, email, terms of service, etc) to your own systems.
 - Replace any analytics or error-collection systems with your own so we don't get super confused.
 
