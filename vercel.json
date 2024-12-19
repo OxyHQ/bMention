@@ -3,17 +3,20 @@
     "builds": [
         {
             "src": "cmd/bskyweb/main.go",
-            "use": "@vercel/go"
-        },
-        {
-            "src": "public/*",
-            "use": "@vercel/static"
+            "use": "@vercel/go",
+            "config": {
+                "functions": {
+                    "main.go": {
+                        "handler": "Handler"
+                    }
+                }
+            }
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/public/$1"
+            "dest": "main.go"
         }
     ]
 }
