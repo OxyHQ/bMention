@@ -1,6 +1,6 @@
 # Mention App
 
-Welcome friends! This is the codebase for the Bluesky Social app.
+Welcome friends! This is the codebase for the Mention app.
 
 Get the app itself:
 
