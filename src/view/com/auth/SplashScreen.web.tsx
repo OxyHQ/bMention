@@ -1,24 +1,24 @@
 import React from 'react'
-import { Pressable, View } from 'react-native'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { msg, Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
+import {Pressable, View} from 'react-native'
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
+import {msg, Trans} from '@lingui/macro'
+import {useLingui} from '@lingui/react'
 
-import { useWebMediaQueries } from '#/lib/hooks/useWebMediaQueries'
-import { useKawaiiMode } from '#/state/preferences/kawaii'
-import { ErrorBoundary } from '#/view/com/util/ErrorBoundary'
-import { Logo } from '#/view/icons/Logo'
-import { Logotype } from '#/view/icons/Logotype'
+import {useWebMediaQueries} from '#/lib/hooks/useWebMediaQueries'
+import {useKawaiiMode} from '#/state/preferences/kawaii'
+import {ErrorBoundary} from '#/view/com/util/ErrorBoundary'
+import {Logo} from '#/view/icons/Logo'
+import {Logotype} from '#/view/icons/Logotype'
 import {
   AppClipOverlay,
   postAppClipMessage,
 } from '#/screens/StarterPack/StarterPackLandingScreen'
-import { atoms as a, useTheme } from '#/alf'
-import { AppLanguageDropdown } from '#/components/AppLanguageDropdown'
-import { Button, ButtonText } from '#/components/Button'
-import { InlineLinkText } from '#/components/Link'
-import { Text } from '#/components/Typography'
-import { CenteredView } from '../util/Views'
+import {atoms as a, useTheme} from '#/alf'
+import {AppLanguageDropdown} from '#/components/AppLanguageDropdown'
+import {Button, ButtonText} from '#/components/Button'
+import {InlineLinkText} from '#/components/Link'
+import {Text} from '#/components/Typography'
+import {CenteredView} from '../util/Views'
 
 export const SplashScreen = ({
   onDismiss,
@@ -29,9 +29,9 @@ export const SplashScreen = ({
   onPressSignin: () => void
   onPressCreateAccount: () => void
 }) => {
-  const { _ } = useLingui()
+  const {_} = useLingui()
   const t = useTheme()
-  const { isTabletOrMobile: isMobileWeb } = useWebMediaQueries()
+  const {isTabletOrMobile: isMobileWeb} = useWebMediaQueries()
   const [showClipOverlay, setShowClipOverlay] = React.useState(false)
 
   React.useEffect(() => {
@@ -77,7 +77,7 @@ export const SplashScreen = ({
             a.h_full,
             a.justify_center,
             // @ts-ignore web only
-            { paddingBottom: '20vh' },
+            {paddingBottom: '20vh'},
             isMobileWeb && a.pb_5xl,
             t.atoms.border_contrast_medium,
             a.align_center,
@@ -102,13 +102,13 @@ export const SplashScreen = ({
 
             <View
               testID="signinOrCreateAccount"
-              style={[a.w_full, a.px_xl, a.gap_md, a.pb_2xl, { maxWidth: 320 }]}>
+              style={[a.w_full, a.px_xl, a.gap_md, a.pb_2xl, {maxWidth: 320}]}>
               <Button
                 testID="createAccountButton"
                 onPress={onPressCreateAccount}
                 label={_(msg`Create new account`)}
                 accessibilityHint={_(
-                  msg`Opens flow to create a new Bluesky account`,
+                  msg`Opens flow to create a new Mention account`,
                 )}
                 size="large"
                 variant="solid"
@@ -122,7 +122,7 @@ export const SplashScreen = ({
                 onPress={onPressSignin}
                 label={_(msg`Sign in`)}
                 accessibilityHint={_(
-                  msg`Opens flow to sign into your existing Bluesky account`,
+                  msg`Opens flow to sign into your existing Mention account`,
                 )}
                 size="large"
                 variant="solid"
@@ -146,14 +146,14 @@ export const SplashScreen = ({
 
 function Footer() {
   const t = useTheme()
-  const { _ } = useLingui()
+  const {_} = useLingui()
 
   return (
     <View
       style={[
         a.absolute,
         a.inset_0,
-        { top: 'auto' },
+        {top: 'auto'},
         a.p_xl,
         a.border_t,
         a.flex_row,
@@ -162,9 +162,7 @@ function Footer() {
         a.flex_1,
         t.atoms.border_contrast_medium,
       ]}>
-      <InlineLinkText
-        label={_(msg`Learn more about Oxy`)}
-        to="https://oxy.so">
+      <InlineLinkText label={_(msg`Learn more about Oxy`)} to="https://oxy.so">
         <Trans>Business</Trans>
       </InlineLinkText>
       <InlineLinkText

@@ -149,7 +149,7 @@ export function ServerInputDialog({
                 a.flex_1,
               ]}>
               <Trans>
-                Bluesky is an open network where you can choose your hosting
+                Mention is an open network where you can choose your hosting
                 provider. If you're a developer, you can host your own server.
               </Trans>{' '}
               <InlineLinkText

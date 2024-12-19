@@ -314,12 +314,12 @@ msgid "{numUnreadNotifications} unread items"
 msgstr "{numUnreadNotifications} अपठित वस्तुएँ"
 
 #: src/components/NewskieDialog.tsx:116
-msgid "{profileName} joined Bluesky {0} ago"
-msgstr "{profileName} {0} पहले Bluesky से जुड़े"
+msgid "{profileName} joined Mention {0} ago"
+msgstr "{profileName} {0} पहले Mention से जुड़े"
 
 #: src/components/NewskieDialog.tsx:111
-msgid "{profileName} joined Bluesky using a starter pack {0} ago"
-msgstr "{profileName} {0} पहले एक स्टार्टर पैक के ज़रिए Bluesky से जुड़े"
+msgid "{profileName} joined Mention using a starter pack {0} ago"
+msgstr "{profileName} {0} पहले एक स्टार्टर पैक के ज़रिए Mention से जुड़े"
 
 #: src/screens/StarterPack/Wizard/index.tsx:472
 msgctxt "profiles"
@@ -372,8 +372,8 @@ msgstr "<0>प्रयोगात्मत्क:</0> इस प्राथ�
 #~ msgstr "<0>यह आपका ऐप पासवर्ड है।</0> इसे अपने हैंडल के साथ दूसरे ऐप में साइन इन करने के लिए उपयोग करें।"
 
 #: src/view/com/auth/onboarding/WelcomeDesktop.tsx:21
-#~ msgid "<0>Welcome to</0><1>Bluesky</1>"
-#~ msgstr "<1>Bluesky</1><0>में आपका स्वागत है</0>"
+#~ msgid "<0>Welcome to</0><1>Mention</1>"
+#~ msgstr "<1>Mention</1><0>में आपका स्वागत है</0>"
 
 #: src/screens/StarterPack/Wizard/index.tsx:463
 msgid "<0>You</0> and<1> </1><2>{0} </2>are included in your starter pack"
@@ -1149,51 +1149,51 @@ msgstr "ब्लॉग"
 
 #: src/view/com/auth/server-input/index.tsx:86
 #: src/view/com/auth/server-input/index.tsx:88
-msgid "Bluesky"
-msgstr "Bluesky"
+msgid "Mention"
+msgstr "Mention"
 
 #: src/view/com/post-thread/PostThreadItem.tsx:860
-msgid "Bluesky cannot confirm the authenticity of the claimed date."
-msgstr "Bluesky दावा किए गए तिथि के प्रामाणिकता की पुष्टि नहीं कर सकता।"
+msgid "Mention cannot confirm the authenticity of the claimed date."
+msgstr "Mention दावा किए गए तिथि के प्रामाणिकता की पुष्टि नहीं कर सकता।"
 
 #: src/view/com/auth/server-input/index.tsx:151
-msgid "Bluesky is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
-msgstr "Bluesky एक खुला नेटवर्क है जहाँ आप अपना होस्टिंग प्रदाता चुन सकते हैं। यदि आप डेवलपर हैं, आप अपना सर्वर होस्ट कर सकते हैं।"
+msgid "Mention is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
+msgstr "Mention एक खुला नेटवर्क है जहाँ आप अपना होस्टिंग प्रदाता चुन सकते हैं। यदि आप डेवलपर हैं, आप अपना सर्वर होस्ट कर सकते हैं।"
 
 #: src/components/ProgressGuide/List.tsx:54
-msgid "Bluesky is better with friends!"
-msgstr "Bluesky दोस्तों के साथ बेहतर है!"
+msgid "Mention is better with friends!"
+msgstr "Mention दोस्तों के साथ बेहतर है!"
 
 #: src/view/com/auth/onboarding/WelcomeDesktop.tsx:80
 #: src/view/com/auth/onboarding/WelcomeMobile.tsx:82
-#~ msgid "Bluesky is flexible."
-#~ msgstr "Bluesky लचीला है।"
+#~ msgid "Mention is flexible."
+#~ msgstr "Mention लचीला है।"
 
 #: src/view/com/auth/onboarding/WelcomeDesktop.tsx:69
 #: src/view/com/auth/onboarding/WelcomeMobile.tsx:71
-#~ msgid "Bluesky is open."
-#~ msgstr "Bluesky खुला है।"
+#~ msgid "Mention is open."
+#~ msgstr "Mention खुला है।"
 
 #: src/view/com/auth/onboarding/WelcomeDesktop.tsx:56
 #: src/view/com/auth/onboarding/WelcomeMobile.tsx:58
-#~ msgid "Bluesky is public."
-#~ msgstr "Bluesky सार्वजनिक है।"
+#~ msgid "Mention is public."
+#~ msgstr "Mention सार्वजनिक है।"
 
 #: src/view/com/modals/Waitlist.tsx:70
-#~ msgid "Bluesky uses invites to build a healthier community. If you don't know anybody with an invite, you can sign up for the waitlist and we'll send one soon."
-#~ msgstr "Bluesky एक स्वस्थ समुदाय बनाने के लिए आमंत्रित करता है। यदि आप किसी को आमंत्रित नहीं करते हैं, तो आप प्रतीक्षा सूची के लिए साइन अप कर सकते हैं और हम जल्द ही एक भेज देंगे।"
+#~ msgid "Mention uses invites to build a healthier community. If you don't know anybody with an invite, you can sign up for the waitlist and we'll send one soon."
+#~ msgstr "Mention एक स्वस्थ समुदाय बनाने के लिए आमंत्रित करता है। यदि आप किसी को आमंत्रित नहीं करते हैं, तो आप प्रतीक्षा सूची के लिए साइन अप कर सकते हैं और हम जल्द ही एक भेज देंगे।"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:300
-msgid "Bluesky will choose a set of recommended accounts from people in your network."
-msgstr "Bluesky आपके नेटवर्क से कुछ अनुशंसित खाते चुनेगा।"
+msgid "Mention will choose a set of recommended accounts from people in your network."
+msgstr "Mention आपके नेटवर्क से कुछ अनुशंसित खाते चुनेगा।"
 
 #: src/screens/Settings/components/PwiOptOut.tsx:92
-msgid "Bluesky will not show your profile and posts to logged-out users. Other apps may not honor this request. This does not make your account private."
-msgstr "Bluesky लॉग आउट उपयोगकर्ताओं को आपके प्रोफ़ाइल और पोस्ट नहीं दिखाएगा। अन्य ऐप इस अनुरोध का पालन नहीं भी कर सकते हैं। इससे आपका खाता निजी नहीं होगा।"
+msgid "Mention will not show your profile and posts to logged-out users. Other apps may not honor this request. This does not make your account private."
+msgstr "Mention लॉग आउट उपयोगकर्ताओं को आपके प्रोफ़ाइल और पोस्ट नहीं दिखाएगा। अन्य ऐप इस अनुरोध का पालन नहीं भी कर सकते हैं। इससे आपका खाता निजी नहीं होगा।"
 
 #: src/view/com/modals/ServerInput.tsx:78
-#~ msgid "Bluesky.Social"
-#~ msgstr "Bluesky.Social"
+#~ msgid "Mention.Social"
+#~ msgstr "Mention.Social"
 
 #: src/lib/moderation/useLabelBehaviorDescription.ts:53
 msgid "Blur images"
@@ -1971,8 +1971,8 @@ msgstr "बनाएँ"
 #~ msgstr "नया खाता बनाएँ"
 
 #: src/view/screens/Settings/index.tsx:403
-#~ msgid "Create a new Bluesky account"
-#~ msgstr "नया Bluesky खाता बनाएँ"
+#~ msgid "Create a new Mention account"
+#~ msgstr "नया Mention खाता बनाएँ"
 
 #: src/components/StarterPack/QrCodeDialog.tsx:153
 msgid "Create a QR code for a starter pack"
@@ -2431,8 +2431,8 @@ msgid "Double tap to close the dialog"
 msgstr "डायलॉग बंद करने के लिए दो बार दबाएँ"
 
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:317
-msgid "Download Bluesky"
-msgstr "Bluesky डाउनलोड करें"
+msgid "Download Mention"
+msgstr "Mention डाउनलोड करें"
 
 #: src/screens/Settings/components/ExportCarDialog.tsx:77
 #: src/screens/Settings/components/ExportCarDialog.tsx:82
@@ -3111,8 +3111,8 @@ msgid "Find accounts to follow"
 msgstr "फ़ॉलो करने के लिए खाते खोजें"
 
 #: src/view/screens/Search/Search.tsx:612
-msgid "Find posts and users on Bluesky"
-msgstr "Bluesky पर पोस्ट और खाते खोजें"
+msgid "Find posts and users on Mention"
+msgstr "Mention पर पोस्ट और खाते खोजें"
 
 #: src/view/com/auth/onboarding/RecommendedFollowsItem.tsx:155
 #~ msgid "Finding similar accounts..."
@@ -3523,7 +3523,7 @@ msgid "Help people know you're not a bot by uploading a picture or creating an a
 msgstr "तस्वीर अपलोड कर के या अवतार बनाकर लोगों को जताएँ की आप एक रोबोट नहीं हैं।"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:127
-#~ msgid "Helps external sites estimate traffic from Bluesky."
+#~ msgid "Helps external sites estimate traffic from Mention."
 #~ msgstr ""
 
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:187
@@ -3873,8 +3873,8 @@ msgstr "काम"
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:207
 #: src/screens/StarterPack/StarterPackScreen.tsx:455
 #: src/screens/StarterPack/StarterPackScreen.tsx:466
-msgid "Join Bluesky"
-msgstr "Bluesky में शामिल हों"
+msgid "Join Mention"
+msgstr "Mention में शामिल हों"
 
 #: src/components/StarterPack/QrCode.tsx:61
 #: src/view/shell/NavSignupCard.tsx:40
@@ -3972,8 +3972,8 @@ msgid "Learn More"
 msgstr "अधिक जानें"
 
 #: src/view/com/auth/SplashScreen.web.tsx:166
-msgid "Learn more about Bluesky"
-msgstr "Bluesky के बारे में अधिक जानें"
+msgid "Learn more about Mention"
+msgstr "Mention के बारे में अधिक जानें"
 
 #: src/view/com/auth/server-input/index.tsx:156
 msgid "Learn more about self hosting your PDS."
@@ -3991,8 +3991,8 @@ msgstr "इस चेतावनी के बारे में अधिक 
 
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:91
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:94
-msgid "Learn more about what is public on Bluesky."
-msgstr "Bluesky पर क्या सार्वजनिक है, इसके के बारे में अधिक जानें"
+msgid "Learn more about what is public on Mention."
+msgstr "Mention पर क्या सार्वजनिक है, इसके के बारे में अधिक जानें"
 
 #: src/components/moderation/ContentHider.tsx:239
 #: src/view/com/auth/server-input/index.tsx:158
@@ -4021,8 +4021,8 @@ msgid "Leave them all unchecked to see any language."
 msgstr "उन्हें सभी भाषाएँ देखने के लिए अनचेक छोड़ दें।"
 
 #: src/view/com/modals/LinkWarning.tsx:65
-msgid "Leaving Bluesky"
-msgstr "Bluesky से बाहर जा रहे हैं"
+msgid "Leaving Mention"
+msgstr "Mention से बाहर जा रहे हैं"
 
 #: src/screens/SignupQueued.tsx:141
 msgid "left to go."
@@ -4865,8 +4865,8 @@ msgid "Note about sharing"
 msgstr "साझा करने के बारे में"
 
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:80
-msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
-msgstr "टिप्पणी: Bluesky एक खुला और सार्वजनिक नेटवर्क है। यह सेटिंग आपके सामग्री की दृश्यता केवल Bluesky ऐप और वेबसाइट पर सीमित करता है, और अन्य ऐप इस सेटिंग की अवमानना कर सकते हैं। अन्य ऐप और वेबसाइट पर आपके सामग्री को लॉग आउट उपयोगकर्ताओं को दिखा सकते हैं।"
+msgid "Note: Mention is an open and public network. This setting only limits the visibility of your content on the Mention app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
+msgstr "टिप्पणी: Mention एक खुला और सार्वजनिक नेटवर्क है। यह सेटिंग आपके सामग्री की दृश्यता केवल Mention ऐप और वेबसाइट पर सीमित करता है, और अन्य ऐप इस सेटिंग की अवमानना कर सकते हैं। अन्य ऐप और वेबसाइट पर आपके सामग्री को लॉग आउट उपयोगकर्ताओं को दिखा सकते हैं।"
 
 #: src/screens/Messages/ChatList.tsx:213
 msgid "Nothing here"
@@ -5127,13 +5127,13 @@ msgstr "उपकरण की तस्वीर गैलरी खोलत�
 
 #: src/view/com/auth/SplashScreen.tsx:49
 #: src/view/com/auth/SplashScreen.web.tsx:111
-msgid "Opens flow to create a new Bluesky account"
-msgstr "नया Bluesky खाता बनाने का साधन खोलता है"
+msgid "Opens flow to create a new Mention account"
+msgstr "नया Mention खाता बनाने का साधन खोलता है"
 
 #: src/view/com/auth/SplashScreen.tsx:63
 #: src/view/com/auth/SplashScreen.web.tsx:125
-msgid "Opens flow to sign into your existing Bluesky account"
-msgstr "अपने मौजूदा Bluesky खाते में साइन इन करने का साधन खोलता है"
+msgid "Opens flow to sign into your existing Mention account"
+msgstr "अपने मौजूदा Mention खाते में साइन इन करने का साधन खोलता है"
 
 #: src/view/com/composer/photos/SelectGifBtn.tsx:36
 msgid "Opens GIF select dialog"
@@ -5152,16 +5152,16 @@ msgstr "आमंत्रण कोड की सूची खोलता ह�
 #~ msgstr "खाता निष्क्रियण पुष्टि के लिए मोडल खोलता है। ईमेल कोड आवश्यक है।"
 
 #: src/view/screens/Settings/index.tsx:732
-#~ msgid "Opens modal for changing your Bluesky password"
-#~ msgstr "Bluesky पासवर्ड बदलने के लिए मोडल खोलता है"
+#~ msgid "Opens modal for changing your Mention password"
+#~ msgstr "Mention पासवर्ड बदलने के लिए मोडल खोलता है"
 
 #: src/view/screens/Settings/index.tsx:687
-#~ msgid "Opens modal for choosing a new Bluesky handle"
-#~ msgstr "Bluesky हैंडल चुनने के लिए मोडल खोलता है"
+#~ msgid "Opens modal for choosing a new Mention handle"
+#~ msgstr "Mention हैंडल चुनने के लिए मोडल खोलता है"
 
 #: src/view/screens/Settings/index.tsx:755
-#~ msgid "Opens modal for downloading your Bluesky account data (repository)"
-#~ msgstr "Bluesky खाता डेटा (रेपोसीटोरी) डाउनलोड करने के लिए मोडल खोलता है"
+#~ msgid "Opens modal for downloading your Mention account data (repository)"
+#~ msgstr "Mention खाता डेटा (रेपोसीटोरी) डाउनलोड करने के लिए मोडल खोलता है"
 
 #: src/view/screens/Settings/index.tsx:963
 #~ msgid "Opens modal for email verification"
@@ -5272,8 +5272,8 @@ msgid "Other..."
 msgstr "अन्य..."
 
 #: src/screens/Messages/components/ChatDisabled.tsx:28
-msgid "Our moderators have reviewed reports and decided to disable your access to chats on Bluesky."
-msgstr "हमारे मॉडरेटर ने शिकायतें देखी और Bluesky पर आपकी बातचीत तक पहुँच को अक्षम करने का निर्णय लिया।"
+msgid "Our moderators have reviewed reports and decided to disable your access to chats on Mention."
+msgstr "हमारे मॉडरेटर ने शिकायतें देखी और Mention पर आपकी बातचीत तक पहुँच को अक्षम करने का निर्णय लिया।"
 
 #: src/components/Lists.tsx:216
 #: src/view/screens/NotFound.tsx:47
@@ -5756,18 +5756,18 @@ msgid "Reactivate your account"
 msgstr "खाता फिर सक्रिय करें"
 
 #: src/view/com/auth/SplashScreen.web.tsx:171
-msgid "Read the Bluesky blog"
-msgstr "Bluesky ब्लॉग पढ़ें"
+msgid "Read the Mention blog"
+msgstr "Mention ब्लॉग पढ़ें"
 
 #: src/screens/Signup/StepInfo/Policies.tsx:58
 #: src/screens/Signup/StepInfo/Policies.tsx:84
-msgid "Read the Bluesky Privacy Policy"
-msgstr "Bluesky गोपनियता नीति पढ़ें"
+msgid "Read the Mention Privacy Policy"
+msgstr "Mention गोपनियता नीति पढ़ें"
 
 #: src/screens/Signup/StepInfo/Policies.tsx:51
 #: src/screens/Signup/StepInfo/Policies.tsx:71
-msgid "Read the Bluesky Terms of Service"
-msgstr "Bluesky सेवा की शर्तें पढ़ें"
+msgid "Read the Mention Terms of Service"
+msgstr "Mention सेवा की शर्तें पढ़ें"
 
 #: src/components/dms/ReportDialog.tsx:169
 msgid "Reason:"
@@ -6425,8 +6425,8 @@ msgid "See <0>{displayTag}</0> posts by this user"
 msgstr "उपयोगकर्ताओं के अनुसार <0>{displayTag}</0> वाले पोस्ट देखें"
 
 #: src/view/com/auth/SplashScreen.web.tsx:176
-msgid "See jobs at Bluesky"
-msgstr "Bluesky में नौकरियाँ देखें"
+msgid "See jobs at Mention"
+msgstr "Mention में नौकरियाँ देखें"
 
 #: src/view/screens/SavedFeeds.tsx:212
 msgid "See this guide"
@@ -6465,8 +6465,8 @@ msgid "Select an emoji"
 msgstr "इमोजी चुनें"
 
 #: src/view/com/modals/ServerInput.tsx:75
-#~ msgid "Select Bluesky Social"
-#~ msgstr "Bluesky Social चुनें"
+#~ msgid "Select Mention Social"
+#~ msgstr "Mention Social चुनें"
 
 #: src/screens/Settings/LanguageSettings.tsx:252
 msgid "Select content languages"
@@ -6562,7 +6562,7 @@ msgid "Send a neat website!"
 msgstr "कितना सुंदर वेबसाइट है!"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:118
-#~ msgid "Send Bluesky referrer"
+#~ msgid "Send Mention referrer"
 #~ msgstr ""
 
 #: src/components/dialogs/VerifyEmailDialog.tsx:232
@@ -6670,8 +6670,8 @@ msgid "Set up your account"
 msgstr "खाता बनाएँ"
 
 #: src/view/com/modals/ChangeHandle.tsx:254
-#~ msgid "Sets Bluesky username"
-#~ msgstr "Bluesky उपयोगकर्ता नाम चुनता है"
+#~ msgid "Sets Mention username"
+#~ msgstr "Mention उपयोगकर्ता नाम चुनता है"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:107
 msgid "Sets email for password reset"
@@ -6753,8 +6753,8 @@ msgid "Share this starter pack"
 msgstr "इस स्टार्टर पैक को साझा करें"
 
 #: src/components/StarterPack/ShareDialog.tsx:99
-msgid "Share this starter pack and help people join your community on Bluesky."
-msgstr "इस स्टार्टर पैक को साझा करें और लोगों को Bluesky पर आपके समुदाय में जुड़ने सहायता करें।"
+msgid "Share this starter pack and help people join your community on Mention."
+msgstr "इस स्टार्टर पैक को साझा करें और लोगों को Mention पर आपके समुदाय में जुड़ने सहायता करें।"
 
 #: src/components/dms/ChatEmptyPill.tsx:34
 msgid "Share your favorite feed!"
@@ -6930,8 +6930,8 @@ msgstr "बातचीत में जुड़ने के लिए साइ�
 #~ msgstr "साइन इन करें"
 
 #: src/components/dialogs/Signin.tsx:46
-msgid "Sign into Bluesky or create a new account"
-msgstr "Bluesky में साइन इन करें या नया खाता बनाएँ"
+msgid "Sign into Mention or create a new account"
+msgstr "Mention में साइन इन करें या नया खाता बनाएँ"
 
 #: src/screens/Settings/Settings.tsx:217
 #: src/screens/Settings/Settings.tsx:219
@@ -7071,7 +7071,7 @@ msgid "Spam; excessive mentions or replies"
 msgstr "स्पैम; अत्यधिक उल्लेख या जवाब"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:112
-#~ msgid "Specify Bluesky as a referer"
+#~ msgid "Specify Mention as a referer"
 #~ msgstr ""
 
 #: src/screens/Onboarding/index.tsx:27
@@ -7375,8 +7375,8 @@ msgid "The author of this thread has hidden this reply."
 msgstr "इस थ्रेड के लेखक ने इस जवाब को छिपाया है।"
 
 #: src/screens/Moderation/index.tsx:363
-msgid "The Bluesky web application"
-msgstr "Bluesky वेब ऐप"
+msgid "The Mention web application"
+msgstr "Mention वेब ऐप"
 
 #: src/view/screens/CommunityGuidelines.tsx:38
 msgid "The Community Guidelines have been moved to <0/>"
@@ -7396,8 +7396,8 @@ msgid "The Discover feed now knows what you like"
 msgstr "अब डिस्कवर फ़ीड को पता है कि आपको क्या पसंद है"
 
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:320
-msgid "The experience is better in the app. Download Bluesky now and we'll pick back up where you left off."
-msgstr "यह अनुभव ऐप में बेहतर है। अभी Bluesky डाउनलोड करें और हम ठीक यहीं से जारी रखेंगे।"
+msgid "The experience is better in the app. Download Mention now and we'll pick back up where you left off."
+msgstr "यह अनुभव ऐप में बेहतर है। अभी Mention डाउनलोड करें और हम ठीक यहीं से जारी रखेंगे।"
 
 #: src/view/com/posts/FeedShutdownMsg.tsx:67
 msgid "The feed has been replaced with Discover."
@@ -7412,8 +7412,8 @@ msgid "The following labels were applied to your content."
 msgstr "आपके खाते पर नीचे दिए गए लेबल लगाए गए हैं।"
 
 #: src/screens/Onboarding/Layout.tsx:60
-msgid "The following steps will help customize your Bluesky experience."
-msgstr "नीचे दिए गए चरण आपके Bluesky के अनुभव को वैयक्तिकृत करेंगे"
+msgid "The following steps will help customize your Mention experience."
+msgstr "नीचे दिए गए चरण आपके Mention के अनुभव को वैयक्तिकृत करेंगे"
 
 #: src/view/com/post-thread/PostThread.tsx:217
 #: src/view/com/post-thread/PostThread.tsx:229
@@ -7553,8 +7553,8 @@ msgid "There was an unexpected issue in the application. Please let us know if t
 msgstr "एप्लिकेशन में एक अप्रत्याशित समस्या थी. कृपया हमें बताएं कि क्या आपके साथ ऐसा हुआ है!"
 
 #: src/screens/SignupQueued.tsx:116
-msgid "There's been a rush of new users to Bluesky! We'll activate your account as soon as we can."
-msgstr "Bluesky में नए उपयोगकर्ताओं की होड़ लगी है! हम आपका खाता जल्द ही सक्रिय करेंगे।"
+msgid "There's been a rush of new users to Mention! We'll activate your account as soon as we can."
+msgstr "Mention में नए उपयोगकर्ताओं की होड़ लगी है! हम आपका खाता जल्द ही सक्रिय करेंगे।"
 
 #: src/screens/Settings/FollowingFeedPreferences.tsx:54
 msgid "These settings only apply to the Following feed."
@@ -7577,8 +7577,8 @@ msgid "This appeal will be sent to <0>{sourceName}</0>."
 msgstr "यह अपील <0>{sourceName}</0> को भेजी जाएगी।"
 
 #: src/screens/Messages/components/ChatDisabled.tsx:104
-msgid "This appeal will be sent to Bluesky's moderation service."
-msgstr "यह अपील Bluesky की मॉडरेशन सेवा को भेजी जाएगी।"
+msgid "This appeal will be sent to Mention's moderation service."
+msgstr "यह अपील Mention की मॉडरेशन सेवा को भेजी जाएगी।"
 
 #: src/screens/Messages/components/MessageListError.tsx:18
 msgid "This chat was disconnected"
@@ -7602,8 +7602,8 @@ msgid "This content is not available because one of the users involved has block
 msgstr "यह सामग्री उपलब्ध नहीं है क्योंकि किसी उपयोगकर्ता ने दूसरे को अवरुद्ध किया है।"
 
 #: src/view/com/posts/FeedErrorMessage.tsx:114
-msgid "This content is not viewable without a Bluesky account."
-msgstr "यह सामग्री Bluesky खाते के बिना देखी नहीं जा सकती।"
+msgid "This content is not viewable without a Mention account."
+msgstr "यह सामग्री Mention खाते के बिना देखी नहीं जा सकती।"
 
 #: src/screens/Messages/components/ChatListItem.tsx:266
 msgid "This conversation is with a deleted or a deactivated account. Press for options."
@@ -7668,8 +7668,8 @@ msgid "This link is taking you to the following website:"
 msgstr "यह लिंक आपको नीचे दिए गए वेबसाइट पर ले जा रहा है:"
 
 #: src/screens/List/ListHiddenScreen.tsx:136
-msgid "This list - created by <0>{0}</0> - contains possible violations of Bluesky's community guidelines in its name or description."
-msgstr "<0>{0}</0> द्वारा बनाई गई इस सूची के नाम या विवरण में Bluesky के समुदाय दिशानिर्देशों का संभावित उल्लंघन है। "
+msgid "This list - created by <0>{0}</0> - contains possible violations of Mention's community guidelines in its name or description."
+msgstr "<0>{0}</0> द्वारा बनाई गई इस सूची के नाम या विवरण में Mention के समुदाय दिशानिर्देशों का संभावित उल्लंघन है। "
 
 #: src/view/screens/ProfileList.tsx:966
 msgid "This list is empty!"
@@ -7684,8 +7684,8 @@ msgstr "यह मॉडरेशन सेवा अनुपलब्ध ह�
 #~ msgstr "यह नाम पहले से उपयोग में है"
 
 #: src/view/com/post-thread/PostThreadItem.tsx:846
-msgid "This post claims to have been created on <0>{0}</0>, but was first seen by Bluesky on <1>{1}</1>."
-msgstr "यह पोस्ट <0>{0}</0> को बनने का दावा करता है, पर इसे Bluesky पर सबसे पहले <1>{1}</1> को देखा गया।"
+msgid "This post claims to have been created on <0>{0}</0>, but was first seen by Mention on <1>{1}</1>."
+msgstr "यह पोस्ट <0>{0}</0> को बनने का दावा करता है, पर इसे Mention पर सबसे पहले <1>{1}</1> को देखा गया।"
 
 #: src/view/com/post-thread/PostThreadItem.tsx:152
 msgid "This post has been deleted."
@@ -7803,8 +7803,8 @@ msgid "To report a conversation, please report one of its messages via the conve
 msgstr "बातचीत की शिकायत करने के लिए, कृपया बातचीत स्क्रीन द्वारा किसी संदेश की शिकायत करें। इससे हमारे मॉडरेटर को आपकी समस्या का संदर्भ समझने में आसानी होगी।"
 
 #: src/view/com/composer/videos/SelectVideoBtn.tsx:127
-msgid "To upload videos to Bluesky, you must first verify your email."
-msgstr "Bluesky पर वीडियो अपलोड करने के लिए, आपको पहले अपना ईमेल सत्यापित करना होगा।"
+msgid "To upload videos to Mention, you must first verify your email."
+msgstr "Mention पर वीडियो अपलोड करने के लिए, आपको पहले अपना ईमेल सत्यापित करना होगा।"
 
 #: src/components/ReportDialog/SelectLabelerView.tsx:31
 msgid "To whom would you like to send this report?"
@@ -8120,12 +8120,12 @@ msgstr "वीडियो अपलोड हो रहा है..."
 #~ msgstr "अपने सर्वर पर किसी फ़ाइल का उपयोग करें"
 
 #: src/view/screens/AppPasswords.tsx:205
-#~ msgid "Use app passwords to login to other Bluesky clients without giving full access to your account or password."
-#~ msgstr "अपने खाते या पासवर्ड का पूर्ण पहुँच दिए बिना अन्य Bluesky क्लाएंट में लॉग-इन करने के लिए ऐप पासवर्ड का उपयोग करें।"
+#~ msgid "Use app passwords to login to other Mention clients without giving full access to your account or password."
+#~ msgstr "अपने खाते या पासवर्ड का पूर्ण पहुँच दिए बिना अन्य Mention क्लाएंट में लॉग-इन करने के लिए ऐप पासवर्ड का उपयोग करें।"
 
 #: src/screens/Settings/AppPasswords.tsx:59
-msgid "Use app passwords to sign in to other Bluesky clients without giving full access to your account or password."
-msgstr "अपने खाते या पासवर्ड का पूर्ण पहुँच दिए बिना अन्य Bluesky क्लाएंट में साइन इन करने के लिए ऐप पासवर्ड का उपयोग करें।"
+msgid "Use app passwords to sign in to other Mention clients without giving full access to your account or password."
+msgstr "अपने खाते या पासवर्ड का पूर्ण पहुँच दिए बिना अन्य Mention क्लाएंट में साइन इन करने के लिए ऐप पासवर्ड का उपयोग करें।"
 
 #: src/view/com/modals/ChangeHandle.tsx:506
 #~ msgid "Use bsky.social as hosting provider"
@@ -8471,8 +8471,8 @@ msgid "We have sent another verification email to <0>{0}</0>."
 msgstr "हमने <0>{0}</0> को एक और सत्यापन ईमेल भेजा है।"
 
 #: src/screens/Onboarding/StepFinished.tsx:234
-msgid "We hope you have a wonderful time. Remember, Bluesky is:"
-msgstr "हम आशा करते हैं आपका समय शानदार हो। याद रखें, Bluesky है:"
+msgid "We hope you have a wonderful time. Remember, Mention is:"
+msgstr "हम आशा करते हैं आपका समय शानदार हो। याद रखें, Mention है:"
 
 #: src/view/com/posts/DiscoverFallbackHeader.tsx:29
 msgid "We ran out of posts from your follows. Here's the latest from <0/>."
@@ -8548,8 +8548,8 @@ msgid "Welcome back!"
 msgstr "आपका वापस स्वागत है"
 
 #: src/view/com/auth/onboarding/WelcomeMobile.tsx:48
-#~ msgid "Welcome to <0>Bluesky</0>"
-#~ msgstr "<0>Bluesky</0> में आपका स्वागत है"
+#~ msgid "Welcome to <0>Mention</0>"
+#~ msgstr "<0>Mention</0> में आपका स्वागत है"
 
 #: src/components/NewskieDialog.tsx:103
 msgid "Welcome, friend!"
@@ -8733,8 +8733,8 @@ msgid "You don't follow any users who follow @{name}."
 msgstr "आप @{name} को फ़ॉलो करने वाले किसी को फ़ॉलो नहीं करते हैं।"
 
 #: src/view/com/modals/InviteCodes.tsx:67
-msgid "You don't have any invite codes yet! We'll send you some when you've been on Bluesky for a little longer."
-msgstr "आपके पास अभी तक कोई आमंत्रण कोड नहीं है! जब आप कुछ अधिक समय के लिए Bluesky पर रहेंगे तो हम आपको कुछ भेजेंगे।"
+msgid "You don't have any invite codes yet! We'll send you some when you've been on Mention for a little longer."
+msgstr "आपके पास अभी तक कोई आमंत्रण कोड नहीं है! जब आप कुछ अधिक समय के लिए Mention पर रहेंगे तो हम आपको कुछ भेजेंगे।"
 
 #: src/view/screens/SavedFeeds.tsx:144
 msgid "You don't have any pinned feeds."
@@ -9058,16 +9058,16 @@ msgstr "आपके पोस्ट, पसंद और अवरोध सा
 #~ msgstr "आपका प्रोफ़ाइल"
 
 #: src/screens/Settings/components/DeactivateAccountDialog.tsx:75
-msgid "Your profile, posts, feeds, and lists will no longer be visible to other Bluesky users. You can reactivate your account at any time by logging in."
-msgstr "आपके प्रोफ़ाइल, पोस्ट, फ़ीड और सूचियाँ अन्य Bluesky उपयोगकर्ताओं को और नहीं दिखेंगे। आप लॉग इन करके अपने खाते को फिर से सक्रिय कर सकते हैं।"
+msgid "Your profile, posts, feeds, and lists will no longer be visible to other Mention users. You can reactivate your account at any time by logging in."
+msgstr "आपके प्रोफ़ाइल, पोस्ट, फ़ीड और सूचियाँ अन्य Mention उपयोगकर्ताओं को और नहीं दिखेंगे। आप लॉग इन करके अपने खाते को फिर से सक्रिय कर सकते हैं।"
 
 #: src/view/com/composer/Composer.tsx:469
 msgid "Your reply has been published"
 msgstr "आपके जवाब को प्रकाशित किया गया"
 
 #: src/components/dms/ReportDialog.tsx:157
-msgid "Your report will be sent to the Bluesky Moderation Service"
-msgstr "आपके शिकायत को Bluesky मॉडरेशन सेवा को भेजा जाएगा।"
+msgid "Your report will be sent to the Mention Moderation Service"
+msgstr "आपके शिकायत को Mention मॉडरेशन सेवा को भेजा जाएगा।"
 
 #: src/screens/Signup/index.tsx:142
 msgid "Your user handle"

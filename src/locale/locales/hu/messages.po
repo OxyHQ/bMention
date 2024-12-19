@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Bluesky Social\n"
+"Project-Id-Version: Mention Social\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-05 16:01-0800\n"
 "PO-Revision-Date: \n"
@@ -304,12 +304,12 @@ msgid "{numUnreadNotifications} unread items"
 msgstr "{numUnreadNotifications} olvasatlan értesítés"
 
 #: src/components/NewskieDialog.tsx:116
-msgid "{profileName} joined Bluesky {0} ago"
-msgstr "{profileName} {0} ezelőtt csatlakozott a Blueskyhoz"
+msgid "{profileName} joined Mention {0} ago"
+msgstr "{profileName} {0} ezelőtt csatlakozott a Mentionhoz"
 
 #: src/components/NewskieDialog.tsx:111
-msgid "{profileName} joined Bluesky using a starter pack {0} ago"
-msgstr "{profileName} {0} ezelőtt csatlakozott a Blueskyhoz egy kezdőcsomag igénybevételével"
+msgid "{profileName} joined Mention using a starter pack {0} ago"
+msgstr "{profileName} {0} ezelőtt csatlakozott a Mentionhoz egy kezdőcsomag igénybevételével"
 
 #: src/screens/StarterPack/Wizard/index.tsx:472
 msgctxt "profiles"
@@ -1063,28 +1063,28 @@ msgstr "Blog"
 
 #: src/view/com/auth/server-input/index.tsx:86
 #: src/view/com/auth/server-input/index.tsx:88
-msgid "Bluesky"
-msgstr "Bluesky"
+msgid "Mention"
+msgstr "Mention"
 
 #: src/view/com/post-thread/PostThreadItem.tsx:860
-msgid "Bluesky cannot confirm the authenticity of the claimed date."
-msgstr "A Bluesky nem tudja megerősíteni a létrehozás dátumát."
+msgid "Mention cannot confirm the authenticity of the claimed date."
+msgstr "A Mention nem tudja megerősíteni a létrehozás dátumát."
 
 #: src/view/com/auth/server-input/index.tsx:151
-msgid "Bluesky is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
-msgstr "A Bluesky egy nyílt hálózat, ahol saját szolgáltatót választhatsz. Ha fejlesztő vagy, saját kiszolgálót is üzemeltethetsz."
+msgid "Mention is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
+msgstr "A Mention egy nyílt hálózat, ahol saját szolgáltatót választhatsz. Ha fejlesztő vagy, saját kiszolgálót is üzemeltethetsz."
 
 #: src/components/ProgressGuide/List.tsx:54
-msgid "Bluesky is better with friends!"
-msgstr "A Bluesky ismerősökkel még jobb!"
+msgid "Mention is better with friends!"
+msgstr "A Mention ismerősökkel még jobb!"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:300
-msgid "Bluesky will choose a set of recommended accounts from people in your network."
-msgstr "A Bluesky egy javasolt felhasználócsoportot fog kijelölni a hálózatodon."
+msgid "Mention will choose a set of recommended accounts from people in your network."
+msgstr "A Mention egy javasolt felhasználócsoportot fog kijelölni a hálózatodon."
 
 #: src/screens/Settings/components/PwiOptOut.tsx:92
-msgid "Bluesky will not show your profile and posts to logged-out users. Other apps may not honor this request. This does not make your account private."
-msgstr "A Bluesky nem fogja mutatni a profilodat és a bejegyzéseidet a kijelentkezett felhasználók számára. Lehetséges, hogy ezt a kérést nem minden alkalmazás fogja tiszteletben tartani. Ez a beállítás nem teszi priváttá a profilodat."
+msgid "Mention will not show your profile and posts to logged-out users. Other apps may not honor this request. This does not make your account private."
+msgstr "A Mention nem fogja mutatni a profilodat és a bejegyzéseidet a kijelentkezett felhasználók számára. Lehetséges, hogy ezt a kérést nem minden alkalmazás fogja tiszteletben tartani. Ez a beállítás nem teszi priváttá a profilodat."
 
 #: src/lib/moderation/useLabelBehaviorDescription.ts:53
 msgid "Blur images"
@@ -1518,7 +1518,7 @@ msgstr "Közösségi irányelvek"
 
 #: src/screens/Onboarding/StepFinished.tsx:289
 msgid "Complete onboarding and start using your account"
-msgstr "Regisztrációs varázsló befejezése és a Bluesky használatának megkezdése"
+msgstr "Regisztrációs varázsló befejezése és a Mention használatának megkezdése"
 
 #: src/screens/Signup/index.tsx:144
 msgid "Complete the challenge"
@@ -1792,8 +1792,8 @@ msgstr "A videó feldolgozása meghiúsult."
 msgid "Create"
 msgstr "Létrehozás"
 
-#~ msgid "Create a new Bluesky account"
-#~ msgstr "Új Bluesky-fiók létrehozása"
+#~ msgid "Create a new Mention account"
+#~ msgstr "Új Mention-fiók létrehozása"
 
 #: src/components/StarterPack/QrCodeDialog.tsx:153
 msgid "Create a QR code for a starter pack"
@@ -2213,8 +2213,8 @@ msgid "Double tap to close the dialog"
 msgstr "Koppints kétszer a párbeszédablak bezárásához"
 
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:317
-msgid "Download Bluesky"
-msgstr "A Bluesky letöltése"
+msgid "Download Mention"
+msgstr "A Mention letöltése"
 
 #: src/screens/Settings/components/ExportCarDialog.tsx:77
 #: src/screens/Settings/components/ExportCarDialog.tsx:82
@@ -2858,8 +2858,8 @@ msgid "Find accounts to follow"
 msgstr "Követendő fiókok felfedezése"
 
 #: src/view/screens/Search/Search.tsx:612
-msgid "Find posts and users on Bluesky"
-msgstr "Bejegyzések és felhasználók felfedezése a Blueskyon"
+msgid "Find posts and users on Mention"
+msgstr "Bejegyzések és felhasználók felfedezése a Mentionon"
 
 #~ msgid "Fine-tune the content you see on your Following feed."
 #~ msgstr "A Követett hírfolyam tartalmának személyre szabása."
@@ -3228,7 +3228,7 @@ msgid "Help people know you're not a bot by uploading a picture or creating an a
 msgstr "Segíts másoknak megbizonyosodni arról, hogy valódi személy vagy egy profilkép létrehozásával!"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:127
-#~ msgid "Helps external sites estimate traffic from Bluesky."
+#~ msgid "Helps external sites estimate traffic from Mention."
 #~ msgstr ""
 
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:187
@@ -3553,8 +3553,8 @@ msgstr "Karrier"
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:207
 #: src/screens/StarterPack/StarterPackScreen.tsx:455
 #: src/screens/StarterPack/StarterPackScreen.tsx:466
-msgid "Join Bluesky"
-msgstr "Csatlakozz a Blueskyhoz!"
+msgid "Join Mention"
+msgstr "Csatlakozz a Mentionhoz!"
 
 #: src/components/StarterPack/QrCode.tsx:61
 #: src/view/shell/NavSignupCard.tsx:40
@@ -3630,8 +3630,8 @@ msgid "Learn More"
 msgstr "További információ"
 
 #: src/view/com/auth/SplashScreen.web.tsx:166
-msgid "Learn more about Bluesky"
-msgstr "További információ a Blueskyról"
+msgid "Learn more about Mention"
+msgstr "További információ a Mentionról"
 
 #: src/view/com/auth/server-input/index.tsx:156
 msgid "Learn more about self hosting your PDS."
@@ -3649,8 +3649,8 @@ msgstr "További információ erről a figyelmeztetésről"
 
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:91
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:94
-msgid "Learn more about what is public on Bluesky."
-msgstr "További információ a Bluesky-tartalmak nyilvánosságáról."
+msgid "Learn more about what is public on Mention."
+msgstr "További információ a Mention-tartalmak nyilvánosságáról."
 
 #: src/components/moderation/ContentHider.tsx:239
 #: src/view/com/auth/server-input/index.tsx:158
@@ -3679,8 +3679,8 @@ msgid "Leave them all unchecked to see any language."
 msgstr "Az összes nyelv megjelenítéséhez kapcsolj ki minden nyelvet."
 
 #: src/view/com/modals/LinkWarning.tsx:65
-msgid "Leaving Bluesky"
-msgstr "A Bluesky elhagyása"
+msgid "Leaving Mention"
+msgstr "A Mention elhagyása"
 
 #: src/screens/SignupQueued.tsx:141
 msgid "left to go."
@@ -4481,8 +4481,8 @@ msgid "Note about sharing"
 msgstr "Korlátozott láthatóság"
 
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:80
-msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
-msgstr "Megjegyzés: A Bluesky egy nyílt és nyilvános hálózat. Ez a beállítás csak a Bluesky alkalmazásban és -honlapon korlátozza a tartalmaid láthatóságát és nem biztos, hogy más alkalmazások is tiszteletben tartják. Lehetséges, hogy más alkalmazásokban és honlapokon ugyanúgy láthatóak maradnak a tartalmaid kijelentkezett felhasználók számára is."
+msgid "Note: Mention is an open and public network. This setting only limits the visibility of your content on the Mention app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
+msgstr "Megjegyzés: A Mention egy nyílt és nyilvános hálózat. Ez a beállítás csak a Mention alkalmazásban és -honlapon korlátozza a tartalmaid láthatóságát és nem biztos, hogy más alkalmazások is tiszteletben tartják. Lehetséges, hogy más alkalmazásokban és honlapokon ugyanúgy láthatóak maradnak a tartalmaid kijelentkezett felhasználók számára is."
 
 #: src/screens/Messages/ChatList.tsx:213
 msgid "Nothing here"
@@ -4737,12 +4737,12 @@ msgstr "Az eszköz fényképgalériájának megnyitása"
 
 #: src/view/com/auth/SplashScreen.tsx:49
 #: src/view/com/auth/SplashScreen.web.tsx:111
-msgid "Opens flow to create a new Bluesky account"
+msgid "Opens flow to create a new Mention account"
 msgstr "Regisztrációs varázsló indítása"
 
 #: src/view/com/auth/SplashScreen.tsx:63
 #: src/view/com/auth/SplashScreen.web.tsx:125
-msgid "Opens flow to sign into your existing Bluesky account"
+msgid "Opens flow to sign into your existing Mention account"
 msgstr "Bejelentkezési varázsló megnyitása"
 
 #: src/view/com/composer/photos/SelectGifBtn.tsx:36
@@ -4759,13 +4759,13 @@ msgstr "A meghívókódok listájának megnyitása"
 #~ msgid "Opens modal for account deletion confirmation. Requires email code"
 #~ msgstr "A fiók törlését megerősítő modális ablak megnyitása. A folytatáshoz emailben kapott kód szükséges"
 
-#~ msgid "Opens modal for changing your Bluesky password"
+#~ msgid "Opens modal for changing your Mention password"
 #~ msgstr "A fiók jelszavának megváltoztatását lehetővé tevő modális ablak megnyitása"
 
-#~ msgid "Opens modal for choosing a new Bluesky handle"
+#~ msgid "Opens modal for choosing a new Mention handle"
 #~ msgstr "A fiók felhasználónevének megváltoztatását lehetővé tevő modális ablak megnyitása"
 
-#~ msgid "Opens modal for downloading your Bluesky account data (repository)"
+#~ msgid "Opens modal for downloading your Mention account data (repository)"
 #~ msgstr "A fiók adatainak (adattárának) letöltését lehetővé tevő modális ablak megnyitása"
 
 #~ msgid "Opens modal for email verification"
@@ -4854,8 +4854,8 @@ msgid "Other..."
 msgstr "Egyebek…"
 
 #: src/screens/Messages/components/ChatDisabled.tsx:28
-msgid "Our moderators have reviewed reports and decided to disable your access to chats on Bluesky."
-msgstr "A fiókod ellen jelentések érkeztek, és miután a moderátoraink felülvizsgálták őket, úgy döntöttek, hogy megfosztanak a csevegési jogosultságoktól a Blueskyon."
+msgid "Our moderators have reviewed reports and decided to disable your access to chats on Mention."
+msgstr "A fiókod ellen jelentések érkeztek, és miután a moderátoraink felülvizsgálták őket, úgy döntöttek, hogy megfosztanak a csevegési jogosultságoktól a Mentionon."
 
 #: src/components/Lists.tsx:216
 #: src/view/screens/NotFound.tsx:47
@@ -5339,18 +5339,18 @@ msgid "Reactivate your account"
 msgstr "Fiók újraaktiválása"
 
 #: src/view/com/auth/SplashScreen.web.tsx:171
-msgid "Read the Bluesky blog"
-msgstr "A Bluesky blog megnyitása"
+msgid "Read the Mention blog"
+msgstr "A Mention blog megnyitása"
 
 #: src/screens/Signup/StepInfo/Policies.tsx:58
 #: src/screens/Signup/StepInfo/Policies.tsx:84
-msgid "Read the Bluesky Privacy Policy"
-msgstr "A Bluesky adatvédelmi irányelveinek megtekintése"
+msgid "Read the Mention Privacy Policy"
+msgstr "A Mention adatvédelmi irányelveinek megtekintése"
 
 #: src/screens/Signup/StepInfo/Policies.tsx:51
 #: src/screens/Signup/StepInfo/Policies.tsx:71
-msgid "Read the Bluesky Terms of Service"
-msgstr "A Bluesky felhasználói feltételeinek megtekintése"
+msgid "Read the Mention Terms of Service"
+msgstr "A Mention felhasználói feltételeinek megtekintése"
 
 #: src/components/dms/ReportDialog.tsx:169
 msgid "Reason:"
@@ -5981,8 +5981,8 @@ msgid "See <0>{displayTag}</0> posts by this user"
 msgstr "A felhasználó <0>{displayTag}</0> címkével ellátott bejegyzéseinek megtekintése"
 
 #: src/view/com/auth/SplashScreen.web.tsx:176
-msgid "See jobs at Bluesky"
-msgstr "Állások a Blueskynál"
+msgid "See jobs at Mention"
+msgstr "Állások a Mentionnál"
 
 #: src/view/screens/SavedFeeds.tsx:212
 msgid "See this guide"
@@ -6101,7 +6101,7 @@ msgid "Send a neat website!"
 msgstr "Küldj be egy pompás honlapot!"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:118
-#~ msgid "Send Bluesky referrer"
+#~ msgid "Send Mention referrer"
 #~ msgstr ""
 
 #: src/components/dialogs/VerifyEmailDialog.tsx:232
@@ -6195,8 +6195,8 @@ msgstr "Új jelszó beállítása"
 msgid "Set up your account"
 msgstr "Fiók beállítása"
 
-#~ msgid "Sets Bluesky username"
-#~ msgstr "Bluesky-felhasználónév beállítása"
+#~ msgid "Sets Mention username"
+#~ msgstr "Mention-felhasználónév beállítása"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:107
 msgid "Sets email for password reset"
@@ -6278,8 +6278,8 @@ msgid "Share this starter pack"
 msgstr "Kezdőcsomag továbbítása"
 
 #: src/components/StarterPack/ShareDialog.tsx:99
-msgid "Share this starter pack and help people join your community on Bluesky."
-msgstr "Oszd meg ezt a kezdőcsomagot, hogy mások is csatlakozhassanak a Blueskyos közösségedhez!"
+msgid "Share this starter pack and help people join your community on Mention."
+msgstr "Oszd meg ezt a kezdőcsomagot, hogy mások is csatlakozhassanak a Mentionos közösségedhez!"
 
 #: src/components/dms/ChatEmptyPill.tsx:34
 msgid "Share your favorite feed!"
@@ -6448,8 +6448,8 @@ msgid "Sign in or create your account to join the conversation!"
 msgstr "Jelentkezz be vagy regisztrálj a csatlakozáshoz!"
 
 #: src/components/dialogs/Signin.tsx:46
-msgid "Sign into Bluesky or create a new account"
-msgstr "Jelentkezz be vagy hozz létre egy Bluesky-fiókot!"
+msgid "Sign into Mention or create a new account"
+msgstr "Jelentkezz be vagy hozz létre egy Mention-fiókot!"
 
 #: src/screens/Settings/Settings.tsx:217
 #: src/screens/Settings/Settings.tsx:219
@@ -6583,7 +6583,7 @@ msgid "Spam; excessive mentions or replies"
 msgstr "Spam; túl sok említés vagy válasz"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:112
-#~ msgid "Specify Bluesky as a referer"
+#~ msgid "Specify Mention as a referer"
 #~ msgstr ""
 
 #: src/screens/Onboarding/index.tsx:27
@@ -6851,8 +6851,8 @@ msgid "The author of this thread has hidden this reply."
 msgstr "A válaszlánc szerzője elrejtette ezt a választ."
 
 #: src/screens/Moderation/index.tsx:363
-msgid "The Bluesky web application"
-msgstr "A Bluesky webalkalmazás"
+msgid "The Mention web application"
+msgstr "A Mention webalkalmazás"
 
 #: src/view/screens/CommunityGuidelines.tsx:38
 msgid "The Community Guidelines have been moved to <0/>"
@@ -6872,8 +6872,8 @@ msgid "The Discover feed now knows what you like"
 msgstr "A Felfedezés hírfolyam olyan tartalmakat mutat, amelyek tetszhetnek Neked"
 
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:320
-msgid "The experience is better in the app. Download Bluesky now and we'll pick back up where you left off."
-msgstr "Az alkalmazás jobb. Töltsd le a Blueskyt és onnan folytatjuk, ahol abbahagytad!"
+msgid "The experience is better in the app. Download Mention now and we'll pick back up where you left off."
+msgstr "Az alkalmazás jobb. Töltsd le a Mentiont és onnan folytatjuk, ahol abbahagytad!"
 
 #: src/view/com/posts/FeedShutdownMsg.tsx:67
 msgid "The feed has been replaced with Discover."
@@ -6888,8 +6888,8 @@ msgid "The following labels were applied to your content."
 msgstr "Az alábbi feljegyzéseket alkalmazták a tartalmadra."
 
 #: src/screens/Onboarding/Layout.tsx:60
-msgid "The following steps will help customize your Bluesky experience."
-msgstr "A továbbiakban személyre szabhatod a Bluesky-élményedet."
+msgid "The following steps will help customize your Mention experience."
+msgstr "A továbbiakban személyre szabhatod a Mention-élményedet."
 
 #: src/view/com/post-thread/PostThread.tsx:217
 #: src/view/com/post-thread/PostThread.tsx:229
@@ -7037,8 +7037,8 @@ msgid "There was an unexpected issue in the application. Please let us know if t
 msgstr "Váratlan alkalmazáshiba történt. Kérjük jelentsd!"
 
 #: src/screens/SignupQueued.tsx:116
-msgid "There's been a rush of new users to Bluesky! We'll activate your account as soon as we can."
-msgstr "Jelenleg rengeteg új felhasználó csatlakozik a Blueskyhoz. A fiókodat aktiválni fogjuk, amint tudjuk!"
+msgid "There's been a rush of new users to Mention! We'll activate your account as soon as we can."
+msgstr "Jelenleg rengeteg új felhasználó csatlakozik a Mentionhoz. A fiókodat aktiválni fogjuk, amint tudjuk!"
 
 #: src/screens/Settings/FollowingFeedPreferences.tsx:54
 msgid "These settings only apply to the Following feed."
@@ -7061,8 +7061,8 @@ msgid "This appeal will be sent to <0>{sourceName}</0>."
 msgstr "A fellebbezés címzettje: <0>{sourceName}</0>."
 
 #: src/screens/Messages/components/ChatDisabled.tsx:104
-msgid "This appeal will be sent to Bluesky's moderation service."
-msgstr "Ez a fellebbezés a Bluesky moderálási szolgáltatásához lesz elküldve."
+msgid "This appeal will be sent to Mention's moderation service."
+msgstr "Ez a fellebbezés a Mention moderálási szolgáltatásához lesz elküldve."
 
 #: src/screens/Messages/components/MessageListError.tsx:18
 msgid "This chat was disconnected"
@@ -7086,7 +7086,7 @@ msgid "This content is not available because one of the users involved has block
 msgstr "Ez a tartalom jelenleg nem elérhető, mert az egyik kapcsolódó felhasználó letiltotta a másikat."
 
 #: src/view/com/posts/FeedErrorMessage.tsx:114
-msgid "This content is not viewable without a Bluesky account."
+msgid "This content is not viewable without a Mention account."
 msgstr "Ezt a tartalmat bejelentkezés nélkül nem tekintheted meg."
 
 #: src/screens/Messages/components/ChatListItem.tsx:266
@@ -7152,8 +7152,8 @@ msgid "This link is taking you to the following website:"
 msgstr "Ez a hivatkozás az alábbi honlapra mutat:"
 
 #: src/screens/List/ListHiddenScreen.tsx:136
-msgid "This list - created by <0>{0}</0> - contains possible violations of Bluesky's community guidelines in its name or description."
-msgstr "Ennek a(z) <0>{0}</0> által létrehozott listának a címe vagy leírása lehetséges, hogy megsérti a Bluesky közösségi irányelveit."
+msgid "This list - created by <0>{0}</0> - contains possible violations of Mention's community guidelines in its name or description."
+msgstr "Ennek a(z) <0>{0}</0> által létrehozott listának a címe vagy leírása lehetséges, hogy megsérti a Mention közösségi irányelveit."
 
 #: src/view/screens/ProfileList.tsx:966
 msgid "This list is empty!"
@@ -7167,8 +7167,8 @@ msgstr "Ez a moderálási szolgáltatás jelenleg nem elérhető. A részleteket
 #~ msgstr "Ez a név már foglalt"
 
 #: src/view/com/post-thread/PostThreadItem.tsx:846
-msgid "This post claims to have been created on <0>{0}</0>, but was first seen by Bluesky on <1>{1}</1>."
-msgstr "A bejegyzés adatai szerint az eredeti létrehozási dátuma <0>{0}</0> volt, de először ekkor jelent meg a Blueskyon: <1>{1}</1>"
+msgid "This post claims to have been created on <0>{0}</0>, but was first seen by Mention on <1>{1}</1>."
+msgstr "A bejegyzés adatai szerint az eredeti létrehozási dátuma <0>{0}</0> volt, de először ekkor jelent meg a Mentionon: <1>{1}</1>"
 
 #: src/view/com/post-thread/PostThreadItem.tsx:152
 msgid "This post has been deleted."
@@ -7281,7 +7281,7 @@ msgid "To report a conversation, please report one of its messages via the conve
 msgstr "Ha egy beszélgetést szeretnél jelenteni, kérjük egy konkrét üzenetet jelents a csevegési képernyőről. Ez segít a moderátorainknak megérteni a probléma szókörnyezetét."
 
 #: src/view/com/composer/videos/SelectVideoBtn.tsx:127
-msgid "To upload videos to Bluesky, you must first verify your email."
+msgid "To upload videos to Mention, you must first verify your email."
 msgstr "A videófeltöltés előtt ellenőriznünk kell az email-címedet."
 
 #: src/components/ReportDialog/SelectLabelerView.tsx:31
@@ -7578,12 +7578,12 @@ msgstr "Videó feltöltése folyamatban…"
 #~ msgid "Use a file on your server"
 #~ msgstr "Fájl használata a saját kiszolgálóról"
 
-#~ msgid "Use app passwords to login to other Bluesky clients without giving full access to your account or password."
-#~ msgstr "Egy alkalmazásjelszó használatával bármely egyéb Bluesky-kliensbe bejelentkezhetsz, anélkül hogy teljes hozzáférést biztosítanál a fiókodhoz vagy a valódi jelszavadhoz."
+#~ msgid "Use app passwords to login to other Mention clients without giving full access to your account or password."
+#~ msgstr "Egy alkalmazásjelszó használatával bármely egyéb Mention-kliensbe bejelentkezhetsz, anélkül hogy teljes hozzáférést biztosítanál a fiókodhoz vagy a valódi jelszavadhoz."
 
 #: src/screens/Settings/AppPasswords.tsx:59
-msgid "Use app passwords to sign in to other Bluesky clients without giving full access to your account or password."
-msgstr "Egy alkalmazásjelszó használatával bármely egyéb Bluesky-kliensbe bejelentkezhetsz, anélkül hogy teljes hozzáférést biztosítanál a fiókodhoz vagy a valódi jelszavadhoz."
+msgid "Use app passwords to sign in to other Mention clients without giving full access to your account or password."
+msgstr "Egy alkalmazásjelszó használatával bármely egyéb Mention-kliensbe bejelentkezhetsz, anélkül hogy teljes hozzáférést biztosítanál a fiókodhoz vagy a valódi jelszavadhoz."
 
 #~ msgid "Use bsky.social as hosting provider"
 #~ msgstr "A bsky.social adattárszolgáltató használata"
@@ -7919,8 +7919,8 @@ msgid "We have sent another verification email to <0>{0}</0>."
 msgstr "Küldtünk egy új visszaigazoló emailt a(z) <0>{0}</0> címre."
 
 #: src/screens/Onboarding/StepFinished.tsx:234
-msgid "We hope you have a wonderful time. Remember, Bluesky is:"
-msgstr "Reméljük, jól érzed magad! Ne feledd; a Bluesky:"
+msgid "We hope you have a wonderful time. Remember, Mention is:"
+msgstr "Reméljük, jól érzed magad! Ne feledd; a Mention:"
 
 #: src/view/com/posts/DiscoverFallbackHeader.tsx:29
 msgid "We ran out of posts from your follows. Here's the latest from <0/>."
@@ -8163,8 +8163,8 @@ msgid "You don't follow any users who follow @{name}."
 msgstr "Egy olyan felhasználót sem követsz, aki követné őt: @{name}."
 
 #: src/view/com/modals/InviteCodes.tsx:67
-msgid "You don't have any invite codes yet! We'll send you some when you've been on Bluesky for a little longer."
-msgstr "Még egy meghívókóddal sem rendelkezel. Majd küldünk néhányat, ha már hosszabb ideje leszel a Blueskyon."
+msgid "You don't have any invite codes yet! We'll send you some when you've been on Mention for a little longer."
+msgstr "Még egy meghívókóddal sem rendelkezel. Majd küldünk néhányat, ha már hosszabb ideje leszel a Mentionon."
 
 #: src/view/screens/SavedFeeds.tsx:144
 msgid "You don't have any pinned feeds."
@@ -8470,16 +8470,16 @@ msgstr "A bejegyzéseid, kedveléseid és letiltásaid nyilvánosak. Az elnémí
 #~ msgstr "Saját profil"
 
 #: src/screens/Settings/components/DeactivateAccountDialog.tsx:75
-msgid "Your profile, posts, feeds, and lists will no longer be visible to other Bluesky users. You can reactivate your account at any time by logging in."
-msgstr "A profilod, bejegyzéseid, hírfolyamaid és listáid mostantól el vannak rejtve a többi Bluesky-felhasználó elől. A fiókod újraaktiválásához jelentkezz be!"
+msgid "Your profile, posts, feeds, and lists will no longer be visible to other Mention users. You can reactivate your account at any time by logging in."
+msgstr "A profilod, bejegyzéseid, hírfolyamaid és listáid mostantól el vannak rejtve a többi Mention-felhasználó elől. A fiókod újraaktiválásához jelentkezz be!"
 
 #: src/view/com/composer/Composer.tsx:469
 msgid "Your reply has been published"
 msgstr "Közzétetted a választ"
 
 #: src/components/dms/ReportDialog.tsx:157
-msgid "Your report will be sent to the Bluesky Moderation Service"
-msgstr "Ez a jelentés a Bluesky moderálási szolgáltatásának lesz elküldve"
+msgid "Your report will be sent to the Mention Moderation Service"
+msgstr "Ez a jelentés a Mention moderálási szolgáltatásának lesz elküldve"
 
 #: src/screens/Signup/index.tsx:142
 msgid "Your user handle"

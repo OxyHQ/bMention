@@ -619,7 +619,7 @@ const FlatNavigator = () => {
 
 const LINKING = {
   // TODO figure out what we are going to use
-  prefixes: ['bsky://', 'bluesky://', 'https://bsky.app'],
+  prefixes: ['mtn://', 'mention://', 'https://mention.earth'],
 
   getPathFromState(state: State) {
     // find the current node in the navigation tree

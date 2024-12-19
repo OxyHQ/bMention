@@ -301,12 +301,12 @@ msgid "{numUnreadNotifications} unread items"
 msgstr "{numUnreadNotifications} nieprzeczytanych"
 
 #: src/components/NewskieDialog.tsx:116
-msgid "{profileName} joined Bluesky {0} ago"
-msgstr "{profileName} dołączył(-a) do Bluesky {0} temu"
+msgid "{profileName} joined Mention {0} ago"
+msgstr "{profileName} dołączył(-a) do Mention {0} temu"
 
 #: src/components/NewskieDialog.tsx:111
-msgid "{profileName} joined Bluesky using a starter pack {0} ago"
-msgstr "{profileName} dołączył(-a) do Bluesky przy użyciu pakietu startowego {0} temu"
+msgid "{profileName} joined Mention using a starter pack {0} ago"
+msgstr "{profileName} dołączył(-a) do Mention przy użyciu pakietu startowego {0} temu"
 
 #: src/screens/StarterPack/Wizard/index.tsx:472
 msgctxt "profiles"
@@ -1030,28 +1030,28 @@ msgstr "Blog"
 
 #: src/view/com/auth/server-input/index.tsx:86
 #: src/view/com/auth/server-input/index.tsx:88
-msgid "Bluesky"
-msgstr "Bluesky"
+msgid "Mention"
+msgstr "Mention"
 
 #: src/view/com/post-thread/PostThreadItem.tsx:860
-msgid "Bluesky cannot confirm the authenticity of the claimed date."
+msgid "Mention cannot confirm the authenticity of the claimed date."
 msgstr "Nie możemy potwierdzić autentyczności daty utworzenia tego wpisu."
 
 #: src/view/com/auth/server-input/index.tsx:151
-msgid "Bluesky is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
-msgstr "Bluesky to otwarta sieć gdzie możesz wybrać swojego dostawcę. Deweloperzy mogą hostować własne serwery."
+msgid "Mention is an open network where you can choose your hosting provider. If you're a developer, you can host your own server."
+msgstr "Mention to otwarta sieć gdzie możesz wybrać swojego dostawcę. Deweloperzy mogą hostować własne serwery."
 
 #: src/components/ProgressGuide/List.tsx:54
-msgid "Bluesky is better with friends!"
-msgstr "Bluesky jest lepsze z przyjaciółmi!"
+msgid "Mention is better with friends!"
+msgstr "Mention jest lepsze z przyjaciółmi!"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:300
-msgid "Bluesky will choose a set of recommended accounts from people in your network."
-msgstr "Bluesky wybierze kilka rekomendowanych osób z Twojej sieci."
+msgid "Mention will choose a set of recommended accounts from people in your network."
+msgstr "Mention wybierze kilka rekomendowanych osób z Twojej sieci."
 
 #: src/screens/Settings/components/PwiOptOut.tsx:92
-msgid "Bluesky will not show your profile and posts to logged-out users. Other apps may not honor this request. This does not make your account private."
-msgstr "Bluesky nie pokaże Twojego profilu niezalogowanym użytkownikom. Inne aplikacje mogą nie uwzględnić tej prośby. To nie czyni Twojego konta prywatnym."
+msgid "Mention will not show your profile and posts to logged-out users. Other apps may not honor this request. This does not make your account private."
+msgstr "Mention nie pokaże Twojego profilu niezalogowanym użytkownikom. Inne aplikacje mogą nie uwzględnić tej prośby. To nie czyni Twojego konta prywatnym."
 
 #: src/lib/moderation/useLabelBehaviorDescription.ts:53
 msgid "Blur images"
@@ -2116,8 +2116,8 @@ msgid "Double tap to close the dialog"
 msgstr "Stuknij dwa razy aby zamknąć"
 
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:317
-msgid "Download Bluesky"
-msgstr "Pobierz Bluesky"
+msgid "Download Mention"
+msgstr "Pobierz Mention"
 
 #: src/screens/Settings/components/ExportCarDialog.tsx:77
 #: src/screens/Settings/components/ExportCarDialog.tsx:82
@@ -2737,8 +2737,8 @@ msgid "Find accounts to follow"
 msgstr "Znajdź osoby do obserwowania"
 
 #: src/view/screens/Search/Search.tsx:612
-msgid "Find posts and users on Bluesky"
-msgstr "Znajdź wpisy i osoby na Bluesky"
+msgid "Find posts and users on Mention"
+msgstr "Znajdź wpisy i osoby na Mention"
 
 #: src/screens/StarterPack/Wizard/index.tsx:197
 msgid "Finish"
@@ -3092,7 +3092,7 @@ msgid "Help people know you're not a bot by uploading a picture or creating an a
 msgstr "Daj ludziom znać, że nie jesteś botem, ustawiając lub tworząc zdjęcie profilowe."
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:127
-#~ msgid "Helps external sites estimate traffic from Bluesky."
+#~ msgid "Helps external sites estimate traffic from Mention."
 #~ msgstr ""
 
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:187
@@ -3402,7 +3402,7 @@ msgstr "Praca"
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:207
 #: src/screens/StarterPack/StarterPackScreen.tsx:455
 #: src/screens/StarterPack/StarterPackScreen.tsx:466
-msgid "Join Bluesky"
+msgid "Join Mention"
 msgstr "Dołącz do Bkuesky"
 
 #: src/components/StarterPack/QrCode.tsx:61
@@ -3476,8 +3476,8 @@ msgid "Learn More"
 msgstr "Dowiedz się więcej"
 
 #: src/view/com/auth/SplashScreen.web.tsx:166
-msgid "Learn more about Bluesky"
-msgstr "Dowiedz się więcej o Bluesky"
+msgid "Learn more about Mention"
+msgstr "Dowiedz się więcej o Mention"
 
 #: src/view/com/auth/server-input/index.tsx:156
 msgid "Learn more about self hosting your PDS."
@@ -3495,8 +3495,8 @@ msgstr "Dowiedz się więcej o tym ostrzeżeniu."
 
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:91
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:94
-msgid "Learn more about what is public on Bluesky."
-msgstr "Dowiedz się co jest publiczne na Bluesky."
+msgid "Learn more about what is public on Mention."
+msgstr "Dowiedz się co jest publiczne na Mention."
 
 #: src/components/moderation/ContentHider.tsx:239
 #: src/view/com/auth/server-input/index.tsx:158
@@ -3525,8 +3525,8 @@ msgid "Leave them all unchecked to see any language."
 msgstr "Zostaw wszystkie nieodhaczone, aby zobaczyć wszystkie języki."
 
 #: src/view/com/modals/LinkWarning.tsx:65
-msgid "Leaving Bluesky"
-msgstr "Opuszczasz Bluesky"
+msgid "Leaving Mention"
+msgstr "Opuszczasz Mention"
 
 #: src/screens/SignupQueued.tsx:141
 msgid "left to go."
@@ -4300,8 +4300,8 @@ msgid "Note about sharing"
 msgstr "Uwaga o udostępnianiu"
 
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:80
-msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
-msgstr "Proszę mieć na uwadze, że Bluesky to otwarta, publiczna sieć. To ustawienie kontroluje tylko widoczność na oficjalnej aplikacji Bluesky. Inne aplikacje mogą nie uwzględnić Twojej decyzji - Twoja treść może być dalej pokazywana niezalogowanym osobom na zewnętrznych aplikacjach."
+msgid "Note: Mention is an open and public network. This setting only limits the visibility of your content on the Mention app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
+msgstr "Proszę mieć na uwadze, że Mention to otwarta, publiczna sieć. To ustawienie kontroluje tylko widoczność na oficjalnej aplikacji Mention. Inne aplikacje mogą nie uwzględnić Twojej decyzji - Twoja treść może być dalej pokazywana niezalogowanym osobom na zewnętrznych aplikacjach."
 
 #: src/screens/Messages/ChatList.tsx:213
 msgid "Nothing here"
@@ -4538,12 +4538,12 @@ msgstr "Otwiera galerię urządzenia"
 
 #: src/view/com/auth/SplashScreen.tsx:49
 #: src/view/com/auth/SplashScreen.web.tsx:111
-msgid "Opens flow to create a new Bluesky account"
+msgid "Opens flow to create a new Mention account"
 msgstr "Otwiera proces tworzenia nowego konta"
 
 #: src/view/com/auth/SplashScreen.tsx:63
 #: src/view/com/auth/SplashScreen.web.tsx:125
-msgid "Opens flow to sign into your existing Bluesky account"
+msgid "Opens flow to sign into your existing Mention account"
 msgstr "Otwiera proces logowania się"
 
 #: src/view/com/composer/photos/SelectGifBtn.tsx:36
@@ -4610,8 +4610,8 @@ msgid "Other..."
 msgstr "Inne..."
 
 #: src/screens/Messages/components/ChatDisabled.tsx:28
-msgid "Our moderators have reviewed reports and decided to disable your access to chats on Bluesky."
-msgstr "W wyniku zgłoszeń, nasi moderatorzy zdecyowali zablokować Twój dostęp do rozmów na Bluesky."
+msgid "Our moderators have reviewed reports and decided to disable your access to chats on Mention."
+msgstr "W wyniku zgłoszeń, nasi moderatorzy zdecyowali zablokować Twój dostęp do rozmów na Mention."
 
 #: src/components/Lists.tsx:216
 #: src/view/screens/NotFound.tsx:47
@@ -5074,18 +5074,18 @@ msgid "Reactivate your account"
 msgstr "Reaktywuj konto"
 
 #: src/view/com/auth/SplashScreen.web.tsx:171
-msgid "Read the Bluesky blog"
-msgstr "Czytaj blog Bluesky"
+msgid "Read the Mention blog"
+msgstr "Czytaj blog Mention"
 
 #: src/screens/Signup/StepInfo/Policies.tsx:58
 #: src/screens/Signup/StepInfo/Policies.tsx:84
-msgid "Read the Bluesky Privacy Policy"
-msgstr "Przeczytaj politykę prywatności Bluesky"
+msgid "Read the Mention Privacy Policy"
+msgstr "Przeczytaj politykę prywatności Mention"
 
 #: src/screens/Signup/StepInfo/Policies.tsx:51
 #: src/screens/Signup/StepInfo/Policies.tsx:71
-msgid "Read the Bluesky Terms of Service"
-msgstr "Przeczytaj regulamin korzystania z serwisu Bluesky"
+msgid "Read the Mention Terms of Service"
+msgstr "Przeczytaj regulamin korzystania z serwisu Mention"
 
 #: src/components/dms/ReportDialog.tsx:169
 msgid "Reason:"
@@ -5686,8 +5686,8 @@ msgid "See <0>{displayTag}</0> posts by this user"
 msgstr "Zobacz wpisy <0>{displayTag}</0> od autora"
 
 #: src/view/com/auth/SplashScreen.web.tsx:176
-msgid "See jobs at Bluesky"
-msgstr "Pracuj dla Bluesky"
+msgid "See jobs at Mention"
+msgstr "Pracuj dla Mention"
 
 #: src/view/screens/SavedFeeds.tsx:212
 msgid "See this guide"
@@ -5806,7 +5806,7 @@ msgid "Send a neat website!"
 msgstr "Wyślij fajną stronkę!"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:118
-#~ msgid "Send Bluesky referrer"
+#~ msgid "Send Mention referrer"
 #~ msgstr ""
 
 #: src/components/dialogs/VerifyEmailDialog.tsx:232
@@ -5965,8 +5965,8 @@ msgid "Share this starter pack"
 msgstr "Udostępnij pakiet startowy"
 
 #: src/components/StarterPack/ShareDialog.tsx:99
-msgid "Share this starter pack and help people join your community on Bluesky."
-msgstr "Udostępnij ten pakiet startowy i pomóż innym dołączyć do Twojej społeczności na Bluesky."
+msgid "Share this starter pack and help people join your community on Mention."
+msgstr "Udostępnij ten pakiet startowy i pomóż innym dołączyć do Twojej społeczności na Mention."
 
 #: src/components/dms/ChatEmptyPill.tsx:34
 msgid "Share your favorite feed!"
@@ -6120,8 +6120,8 @@ msgid "Sign in or create your account to join the conversation!"
 msgstr "Zarejestruj lub zaloguj się i dołącz do rozmowy!"
 
 #: src/components/dialogs/Signin.tsx:46
-msgid "Sign into Bluesky or create a new account"
-msgstr "Zaloguj się do Bluesky lub utwórz konto"
+msgid "Sign into Mention or create a new account"
+msgstr "Zaloguj się do Mention lub utwórz konto"
 
 #: src/screens/Settings/Settings.tsx:217
 #: src/screens/Settings/Settings.tsx:219
@@ -6240,7 +6240,7 @@ msgid "Spam; excessive mentions or replies"
 msgstr "Spam, nadmierne odpowiedzi lub wzmianki"
 
 #: src/screens/Settings/ContentAndMediaSettings.tsx:112
-#~ msgid "Specify Bluesky as a referer"
+#~ msgid "Specify Mention as a referer"
 #~ msgstr ""
 
 #: src/screens/Onboarding/index.tsx:27
@@ -6500,8 +6500,8 @@ msgid "The author of this thread has hidden this reply."
 msgstr "Autor wątku ukrył tę odpowiedź"
 
 #: src/screens/Moderation/index.tsx:363
-msgid "The Bluesky web application"
-msgstr "Aplikacja web Bluesky"
+msgid "The Mention web application"
+msgstr "Aplikacja web Mention"
 
 #: src/view/screens/CommunityGuidelines.tsx:38
 msgid "The Community Guidelines have been moved to <0/>"
@@ -6521,8 +6521,8 @@ msgid "The Discover feed now knows what you like"
 msgstr "Kanał Discover teraz wie, co lubisz"
 
 #: src/screens/StarterPack/StarterPackLandingScreen.tsx:320
-msgid "The experience is better in the app. Download Bluesky now and we'll pick back up where you left off."
-msgstr "Aplikacja daje lepsze wrażenia. Pobierz Bluesky i wrócimy tam, gdzie skończyliśmy."
+msgid "The experience is better in the app. Download Mention now and we'll pick back up where you left off."
+msgstr "Aplikacja daje lepsze wrażenia. Pobierz Mention i wrócimy tam, gdzie skończyliśmy."
 
 #: src/view/com/posts/FeedShutdownMsg.tsx:67
 msgid "The feed has been replaced with Discover."
@@ -6537,8 +6537,8 @@ msgid "The following labels were applied to your content."
 msgstr "Na Twojej treści zostały umieszczone następujące etykiety."
 
 #: src/screens/Onboarding/Layout.tsx:60
-msgid "The following steps will help customize your Bluesky experience."
-msgstr "Następujące kroki pomogą nam dostosować Bluesky dla Ciebie."
+msgid "The following steps will help customize your Mention experience."
+msgstr "Następujące kroki pomogą nam dostosować Mention dla Ciebie."
 
 #: src/view/com/post-thread/PostThread.tsx:217
 #: src/view/com/post-thread/PostThread.tsx:229
@@ -6674,7 +6674,7 @@ msgid "There was an unexpected issue in the application. Please let us know if t
 msgstr "Wystąpił niespodziewany błąd w aplikacji. Proszę dać nam znać o tym!"
 
 #: src/screens/SignupQueued.tsx:116
-msgid "There's been a rush of new users to Bluesky! We'll activate your account as soon as we can."
+msgid "There's been a rush of new users to Mention! We'll activate your account as soon as we can."
 msgstr "Obecnie mamy bardzo dużo rejestracji nowych użytkowników! Spróbujemy aktywować twoje konto tak szybko, jak to możliwe."
 
 #: src/screens/Settings/FollowingFeedPreferences.tsx:54
@@ -6698,8 +6698,8 @@ msgid "This appeal will be sent to <0>{sourceName}</0>."
 msgstr "Apelacja będzie wysłana do <0>{sourceName}</0>."
 
 #: src/screens/Messages/components/ChatDisabled.tsx:104
-msgid "This appeal will be sent to Bluesky's moderation service."
-msgstr "Apelacja będzie wysłana do usługi moderacji Bluesky."
+msgid "This appeal will be sent to Mention's moderation service."
+msgstr "Apelacja będzie wysłana do usługi moderacji Mention."
 
 #: src/screens/Messages/components/MessageListError.tsx:18
 msgid "This chat was disconnected"
@@ -6723,8 +6723,8 @@ msgid "This content is not available because one of the users involved has block
 msgstr "Ta treść jest niedostępna ponieważ jedna z osób zablokowała drugą."
 
 #: src/view/com/posts/FeedErrorMessage.tsx:114
-msgid "This content is not viewable without a Bluesky account."
-msgstr "Ta treść nie jest dostępna bez konta Bluesky."
+msgid "This content is not viewable without a Mention account."
+msgstr "Ta treść nie jest dostępna bez konta Mention."
 
 #: src/screens/Messages/components/ChatListItem.tsx:266
 msgid "This conversation is with a deleted or a deactivated account. Press for options."
@@ -6789,8 +6789,8 @@ msgid "This link is taking you to the following website:"
 msgstr "Ten link prowadzi do następującej strony:"
 
 #: src/screens/List/ListHiddenScreen.tsx:136
-msgid "This list - created by <0>{0}</0> - contains possible violations of Bluesky's community guidelines in its name or description."
-msgstr "Nazwa lub opis tej listy autorstwa <0>{0}</0> zawiera potencjalne naruszenia regulaminu społeczności Bluesky."
+msgid "This list - created by <0>{0}</0> - contains possible violations of Mention's community guidelines in its name or description."
+msgstr "Nazwa lub opis tej listy autorstwa <0>{0}</0> zawiera potencjalne naruszenia regulaminu społeczności Mention."
 
 #: src/view/screens/ProfileList.tsx:966
 msgid "This list is empty!"
@@ -6801,8 +6801,8 @@ msgid "This moderation service is unavailable. See below for more details. If th
 msgstr "Usługa moderacji niedostępna. Zobacz więcej informacji poniżej. Jeśli ten błąd nie ustąpi, skontaktuj się z nami."
 
 #: src/view/com/post-thread/PostThreadItem.tsx:846
-msgid "This post claims to have been created on <0>{0}</0>, but was first seen by Bluesky on <1>{1}</1>."
-msgstr "Autor twierdzi, że ten wpis został utworzony <0>{0}</0>, ale po raz pierwszy został indeksowany przez Bluesky <1>{1}</1>."
+msgid "This post claims to have been created on <0>{0}</0>, but was first seen by Mention on <1>{1}</1>."
+msgstr "Autor twierdzi, że ten wpis został utworzony <0>{0}</0>, ale po raz pierwszy został indeksowany przez Mention <1>{1}</1>."
 
 #: src/view/com/post-thread/PostThreadItem.tsx:152
 msgid "This post has been deleted."
@@ -6912,7 +6912,7 @@ msgid "To report a conversation, please report one of its messages via the conve
 msgstr "Aby zgłosić rozmowę, proszę zgłosić jedną z wiadomości przez ekran rozmowy. To pomaga naszym moderatorom zrozumieć kontekst tego zgłoszenia."
 
 #: src/view/com/composer/videos/SelectVideoBtn.tsx:127
-msgid "To upload videos to Bluesky, you must first verify your email."
+msgid "To upload videos to Mention, you must first verify your email."
 msgstr "Aby wysyłać wideo, musisz najpierw zweryfikować adres email."
 
 #: src/components/ReportDialog/SelectLabelerView.tsx:31
@@ -7201,8 +7201,8 @@ msgid "Uploading video..."
 msgstr "Przesyłanie wideo..."
 
 #: src/screens/Settings/AppPasswords.tsx:59
-msgid "Use app passwords to sign in to other Bluesky clients without giving full access to your account or password."
-msgstr "Hasła aplikacji pozwalają na zalogowanie do Bluesky przez zewnętrzne aplikacje bez udostępnienia Twojego hasła lub konta."
+msgid "Use app passwords to sign in to other Mention clients without giving full access to your account or password."
+msgstr "Hasła aplikacji pozwalają na zalogowanie do Mention przez zewnętrzne aplikacje bez udostępnienia Twojego hasła lub konta."
 
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:527
 msgid "Use default provider"
@@ -7520,8 +7520,8 @@ msgid "We have sent another verification email to <0>{0}</0>."
 msgstr "Kolejny email weryfikacyjny został wysłany do <0>{0}</0>."
 
 #: src/screens/Onboarding/StepFinished.tsx:234
-msgid "We hope you have a wonderful time. Remember, Bluesky is:"
-msgstr "Mamy nadzieje, że znajdziesz cudowne wrażenia na Bluesky. Pamiętaj, że Bluesky jest:"
+msgid "We hope you have a wonderful time. Remember, Mention is:"
+msgstr "Mamy nadzieje, że znajdziesz cudowne wrażenia na Mention. Pamiętaj, że Mention jest:"
 
 #: src/view/com/posts/DiscoverFallbackHeader.tsx:29
 msgid "We ran out of posts from your follows. Here's the latest from <0/>."
@@ -7549,7 +7549,7 @@ msgstr "Damy Ci znać, gdy Twoje konto będzie gotowe."
 
 #: src/screens/Onboarding/StepInterests/index.tsx:134
 msgid "We'll use this to help customize your experience."
-msgstr "Użyjemy Twoich wyborów, aby dostosować Bluesky dla Ciebie."
+msgstr "Użyjemy Twoich wyborów, aby dostosować Mention dla Ciebie."
 
 #: src/components/dms/dialogs/SearchablePeopleList.tsx:87
 msgid "We're having network issues, try again"
@@ -7758,8 +7758,8 @@ msgid "You don't follow any users who follow @{name}."
 msgstr "Nie obserwujesz nikogo kto obserwuje @{name}."
 
 #: src/view/com/modals/InviteCodes.tsx:67
-msgid "You don't have any invite codes yet! We'll send you some when you've been on Bluesky for a little longer."
-msgstr "Nie masz jeszcze żadnych kodów zaproszenia. Wyślemy Ci kody, gdy będziesz nieco dłużej na Bluesky."
+msgid "You don't have any invite codes yet! We'll send you some when you've been on Mention for a little longer."
+msgstr "Nie masz jeszcze żadnych kodów zaproszenia. Wyślemy Ci kody, gdy będziesz nieco dłużej na Mention."
 
 #: src/view/screens/SavedFeeds.tsx:144
 msgid "You don't have any pinned feeds."
@@ -8059,7 +8059,7 @@ msgid "Your posts, likes, and blocks are public. Mutes are private."
 msgstr "Twoje polubienia, wpisy i lista zablokowanych osób są publiczne. Wyciszenia są prywatne."
 
 #: src/screens/Settings/components/DeactivateAccountDialog.tsx:75
-msgid "Your profile, posts, feeds, and lists will no longer be visible to other Bluesky users. You can reactivate your account at any time by logging in."
+msgid "Your profile, posts, feeds, and lists will no longer be visible to other Mention users. You can reactivate your account at any time by logging in."
 msgstr "Twój profil, wpisy, kanały i listy nie będą już widoczne dla innych. Możesz w dowolnym momencie ponownie aktywować to konto poprzez zalogowanie się."
 
 #: src/view/com/composer/Composer.tsx:469
@@ -8067,8 +8067,8 @@ msgid "Your reply has been published"
 msgstr "Opublikowano odpowiedź"
 
 #: src/components/dms/ReportDialog.tsx:157
-msgid "Your report will be sent to the Bluesky Moderation Service"
-msgstr "Zgłoszenie będzie wysłane do usługi moderacji Bluesky"
+msgid "Your report will be sent to the Mention Moderation Service"
+msgstr "Zgłoszenie będzie wysłane do usługi moderacji Mention"
 
 #: src/screens/Signup/index.tsx:142
 msgid "Your user handle"
