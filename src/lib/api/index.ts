@@ -203,10 +203,13 @@ async function resolveRT(agent: BskyAgent, richtext: RichText) {
 
 async function resolveReply(agent: BskyAgent, replyTo: string) {
   const replyToUrip = new AtUri(replyTo)
-  const parentPost = await agent.getPost({
-    repo: replyToUrip.host,
-    rkey: replyToUrip.rkey,
-  })
+  const response = await fetch(
+    `https://mention.earth/api/posts/${replyToUrip.host}/${replyToUrip.rkey}`,
+  )
+  if (!response.ok) {
+    throw new Error('Failed to fetch parent post')
+  }
+  const parentPost = await response.json()
   if (parentPost) {
     const parentRef = {
       uri: parentPost.uri,

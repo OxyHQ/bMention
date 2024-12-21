@@ -2,7 +2,7 @@ import React from 'react'
 import {ActivityIndicator, StyleSheet} from 'react-native'
 import {useFocusEffect} from '@react-navigation/native'
 
-import {PROD_DEFAULT_FEED} from '#/lib/constants'
+// Removed the import for PROD_DEFAULT_FEED
 import {useNonReactiveCallback} from '#/lib/hooks/useNonReactiveCallback'
 import {useOTAUpdates} from '#/lib/hooks/useOTAUpdates'
 import {useSetTitle} from '#/lib/hooks/useSetTitle'
@@ -264,7 +264,7 @@ function HomeScreenReady({
         testID="customFeedPage"
         isPageFocused
         isPageAdjacent={false}
-        feed={`feedgen|${PROD_DEFAULT_FEED('whats-hot')}`}
+        feed="feedgen|https://example.com/whats-hot"
         renderEmptyState={renderCustomFeedEmptyState}
       />
     </Pager>
