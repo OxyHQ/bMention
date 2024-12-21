@@ -1,11 +1,6 @@
 import React, {memo, useMemo} from 'react'
 import {View} from 'react-native'
-import {
-  AppBskyActorDefs,
-  moderateProfile,
-  ModerationOpts,
-  RichText as RichTextAPI,
-} from '@atproto/api'
+import {FAKE_PROFILE_DATA} from 'src/screens/Profile/fakeData.ts'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -41,9 +36,9 @@ import {ProfileHeaderMetrics} from './Metrics'
 import {ProfileHeaderShell} from './Shell'
 
 interface Props {
-  profile: AppBskyActorDefs.ProfileViewDetailed
-  descriptionRT: RichTextAPI | null
-  moderationOpts: ModerationOpts
+  profile: FAKE_PROFILE_DATA.ProfileViewDetailed
+  descriptionRT: FAKE_PROFILE_DATA.RichText | null
+  moderationOpts: FAKE_PROFILE_DATA.ModerationOpts
   hideBackButton?: boolean
   isPlaceholderProfile?: boolean
 }
@@ -55,7 +50,7 @@ let ProfileHeaderStandard = ({
   hideBackButton = false,
   isPlaceholderProfile,
 }: Props): React.ReactNode => {
-  const profile: Shadow<AppBskyActorDefs.ProfileViewDetailed> =
+  const profile: Shadow<FAKE_PROFILE_DATA.ProfileViewDetailed> =
     useProfileShadow(profileUnshadowed)
   const {currentAccount, hasSession} = useSession()
   const {_} = useLingui()
