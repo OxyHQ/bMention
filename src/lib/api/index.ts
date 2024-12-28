@@ -7,12 +7,8 @@ import {
   AppBskyFeedPost,
   AtUri,
   BlobRef,
-  BskyAgent,
-  ComAtprotoLabelDefs,
-  ComAtprotoRepoApplyWrites,
-  ComAtprotoRepoStrongRef,
   RichText,
-} from '@atproto/api'
+} from 'src/fakeData'
 import {TID} from '@atproto/common-web'
 import * as dcbor from '@ipld/dag-cbor'
 import {t} from '@lingui/macro'
@@ -51,7 +47,7 @@ interface PostOpts {
 }
 
 export async function post(
-  agent: BskyAgent,
+  agent: any,
   queryClient: QueryClient,
   opts: PostOpts,
 ) {
@@ -74,7 +70,7 @@ export async function post(
   }
 
   const did = agent.assertDid
-  const writes: ComAtprotoRepoApplyWrites.Create[] = []
+  const writes: any[] = []
   const uris: string[] = []
 
   let now = new Date()
@@ -91,7 +87,7 @@ export async function post(
       draft,
       opts.onStateChange,
     )
-    let labels: ComAtprotoLabelDefs.SelfLabels | undefined
+    let labels: any | undefined
     if (draft.labels.length) {
       labels = {
         $type: 'com.atproto.label.defs#selfLabels',
@@ -192,7 +188,7 @@ export async function post(
   return {uris}
 }
 
-async function resolveRT(agent: BskyAgent, richtext: RichText) {
+async function resolveRT(agent: any, richtext: RichText) {
   let rt = new RichText({text: richtext.text.trimEnd()}, {cleanNewlines: true})
   await rt.detectFacets(agent)
 
@@ -201,7 +197,7 @@ async function resolveRT(agent: BskyAgent, richtext: RichText) {
   return rt
 }
 
-async function resolveReply(agent: BskyAgent, replyTo: string) {
+async function resolveReply(agent: any, replyTo: string) {
   const replyToUrip = new AtUri(replyTo)
   const response = await fetch(
     `https://mention.earth/api/posts/${replyToUrip.host}/${replyToUrip.rkey}`,
@@ -223,7 +219,7 @@ async function resolveReply(agent: BskyAgent, replyTo: string) {
 }
 
 async function resolveEmbed(
-  agent: BskyAgent,
+  agent: any,
   queryClient: QueryClient,
   draft: PostDraft,
   onStateChange: ((state: string) => void) | undefined,
@@ -281,7 +277,7 @@ async function resolveEmbed(
 }
 
 async function resolveMedia(
-  agent: BskyAgent,
+  agent: any,
   queryClient: QueryClient,
   embedDraft: EmbedDraft,
   onStateChange: ((state: string) => void) | undefined,
@@ -394,10 +390,10 @@ async function resolveMedia(
 }
 
 async function resolveRecord(
-  agent: BskyAgent,
+  agent: any,
   queryClient: QueryClient,
   uri: string,
-): Promise<ComAtprotoRepoStrongRef.Main> {
+): Promise<any> {
   const resolvedLink = await fetchResolveLinkQuery(queryClient, agent, uri)
   if (resolvedLink.type !== 'record') {
     throw Error(t`Expected uri to resolve to a record`)

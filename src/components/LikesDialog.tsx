@@ -1,6 +1,6 @@
 import {useCallback, useMemo} from 'react'
 import {ActivityIndicator, FlatList, View} from 'react-native'
-import {AppBskyFeedGetLikes as GetLikes} from '@atproto/api'
+import {AppBskyFeedGetLikes as GetLikes} from 'src/fakeData'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

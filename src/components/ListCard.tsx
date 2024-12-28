@@ -6,7 +6,7 @@ import {
   AtUri,
   moderateUserList,
   ModerationUI,
-} from '@atproto/api'
+} from 'src/fakeData'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'

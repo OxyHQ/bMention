@@ -1,6 +1,6 @@
 import React from 'react'
 import {View} from 'react-native'
-import {AppBskyLabelerDefs} from '@atproto/api'
+import {AppBskyLabelerDefs} from 'src/fakeData'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

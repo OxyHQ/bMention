@@ -5,7 +5,7 @@ import {
   moderateProfile,
   ModerationOpts,
   RichText as RichTextApi,
-} from '@atproto/api'
+} from 'src/fakeData'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

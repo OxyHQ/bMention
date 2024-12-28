@@ -1,5 +1,5 @@
 import {copyAsync} from 'expo-file-system'
-import {BskyAgent, ComAtprotoRepoUploadBlob} from '@atproto/api'
+import {BskyAgent, ComAtprotoRepoUploadBlob} from 'src/fakeData'
 
 import {safeDeleteAsync} from '#/lib/media/manip'
 
