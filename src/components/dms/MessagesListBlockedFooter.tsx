@@ -1,6 +1,6 @@
 import React from 'react'
 import {View} from 'react-native'
-import {AppBskyActorDefs, ModerationCause} from '@atproto/api'
+import {AppBskyActorDefs, ModerationCause} from 'src/fakeData'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

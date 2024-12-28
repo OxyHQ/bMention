@@ -6,7 +6,7 @@ import {
   AppBskyEmbedImages,
   AppBskyEmbedRecordWithMedia,
   AppBskyEmbedVideo,
-} from '@atproto/api'
+} from 'src/fakeData'
 import {Trans} from '@lingui/macro'
 
 import {parseTenorGif} from '#/lib/strings/embed-player'

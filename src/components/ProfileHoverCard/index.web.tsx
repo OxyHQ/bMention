@@ -1,6 +1,6 @@
 import React from 'react'
 import {View} from 'react-native'
-import {AppBskyActorDefs, moderateProfile, ModerationOpts} from '@atproto/api'
+import {AppBskyActorDefs, moderateProfile, ModerationOpts} from 'src/fakeData'
 import {flip, offset, shift, size, useFloating} from '@floating-ui/react-dom'
 import {msg, plural} from '@lingui/macro'
 import {useLingui} from '@lingui/react'

@@ -8,7 +8,7 @@ import {ReportOption} from '#/lib/moderation/useReportOptions'
 import {useMyLabelersQuery} from '#/state/queries/preferences'
 export {useDialogControl as useReportDialogControl} from '#/components/Dialog'
 
-import {AppBskyLabelerDefs} from '@atproto/api'
+import {AppBskyLabelerDefs} from 'src/fakeData'
 
 import {atoms as a} from '#/alf'
 import * as Dialog from '#/components/Dialog'
