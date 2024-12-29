@@ -1,28 +1,28 @@
 import React from 'react'
-import {LayoutAnimation, Pressable, View} from 'react-native'
+import { LayoutAnimation, Pressable, View } from 'react-native'
 import * as Clipboard from 'expo-clipboard'
-import {ChatBskyConvoDefs, RichText} from 'src/fakeData'
-import {msg} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { ChatBskyConvoDefs, RichText } from '#/fakeData'
+import { msg } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {useOpenLink} from '#/lib/hooks/useOpenLink'
-import {richTextToString} from '#/lib/strings/rich-text-helpers'
-import {getTranslatorLink} from '#/locale/helpers'
-import {isWeb} from '#/platform/detection'
-import {useConvoActive} from '#/state/messages/convo'
-import {useLanguagePrefs} from '#/state/preferences'
-import {useSession} from '#/state/session'
+import { useOpenLink } from '#/lib/hooks/useOpenLink'
+import { richTextToString } from '#/lib/strings/rich-text-helpers'
+import { getTranslatorLink } from '#/locale/helpers'
+import { isWeb } from '#/platform/detection'
+import { useConvoActive } from '#/state/messages/convo'
+import { useLanguagePrefs } from '#/state/preferences'
+import { useSession } from '#/state/session'
 import * as Toast from '#/view/com/util/Toast'
-import {atoms as a, useTheme} from '#/alf'
-import {ReportDialog} from '#/components/dms/ReportDialog'
-import {BubbleQuestion_Stroke2_Corner0_Rounded as Translate} from '#/components/icons/Bubble'
-import {DotGrid_Stroke2_Corner0_Rounded as DotsHorizontal} from '#/components/icons/DotGrid'
-import {Trash_Stroke2_Corner0_Rounded as Trash} from '#/components/icons/Trash'
-import {Warning_Stroke2_Corner0_Rounded as Warning} from '#/components/icons/Warning'
+import { atoms as a, useTheme } from '#/alf'
+import { ReportDialog } from '#/components/dms/ReportDialog'
+import { BubbleQuestion_Stroke2_Corner0_Rounded as Translate } from '#/components/icons/Bubble'
+import { DotGrid_Stroke2_Corner0_Rounded as DotsHorizontal } from '#/components/icons/DotGrid'
+import { Trash_Stroke2_Corner0_Rounded as Trash } from '#/components/icons/Trash'
+import { Warning_Stroke2_Corner0_Rounded as Warning } from '#/components/icons/Warning'
 import * as Menu from '#/components/Menu'
 import * as Prompt from '#/components/Prompt'
-import {usePromptControl} from '#/components/Prompt'
-import {Clipboard_Stroke2_Corner2_Rounded as ClipboardIcon} from '../icons/Clipboard'
+import { usePromptControl } from '#/components/Prompt'
+import { Clipboard_Stroke2_Corner2_Rounded as ClipboardIcon } from '../icons/Clipboard'
 
 export let MessageMenu = ({
   message,
@@ -33,9 +33,9 @@ export let MessageMenu = ({
   message: ChatBskyConvoDefs.MessageView
   control: Menu.MenuControlProps
 }): React.ReactNode => {
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const t = useTheme()
-  const {currentAccount} = useSession()
+  const { currentAccount } = useSession()
   const convo = useConvoActive()
   const deleteControl = usePromptControl()
   const reportControl = usePromptControl()
@@ -77,9 +77,9 @@ export let MessageMenu = ({
     <>
       <Menu.Root control={control}>
         {isWeb && (
-          <View style={{opacity: triggerOpacity}}>
+          <View style={{ opacity: triggerOpacity }}>
             <Menu.Trigger label={_(msg`Chat settings`)}>
-              {({props, state}) => (
+              {({ props, state }) => (
                 <Pressable
                   {...props}
                   style={[
@@ -138,7 +138,7 @@ export let MessageMenu = ({
       </Menu.Root>
 
       <ReportDialog
-        params={{type: 'convoMessage', convoId: convo.convo.id, message}}
+        params={{ type: 'convoMessage', convoId: convo.convo.id, message }}
         control={reportControl}
       />
 

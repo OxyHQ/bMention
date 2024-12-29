@@ -1,5 +1,5 @@
 import React from 'react'
-import {RichText} from 'src/fakeData'
+import {RichText} from '#/fakeData'
 
 import {useAgent} from '#/state/session'
 

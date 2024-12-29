@@ -5,22 +5,22 @@ import {
   View,
   ViewStyle,
 } from 'react-native'
-import {ModerationUI} from '@atproto/api'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
-import {useNavigation} from '@react-navigation/native'
+import { ModerationUI } from '@atproto/api'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { useNavigation } from '@react-navigation/native'
 
-import {useWebMediaQueries} from '#/lib/hooks/useWebMediaQueries'
-import {useModerationCauseDescription} from '#/lib/moderation/useModerationCauseDescription'
-import {NavigationProp} from '#/lib/routes/types'
-import {CenteredView} from '#/view/com/util/Views'
-import {atoms as a, useTheme, web} from '#/alf'
-import {Button, ButtonText} from '#/components/Button'
+import { useWebMediaQueries } from '#/lib/hooks/useWebMediaQueries'
+import { useModerationCauseDescription } from '#/lib/moderation/useModerationCauseDescription'
+import { NavigationProp } from '#/lib/routes/types'
+import { CenteredView } from '#/view/com/util/Views'
+import { atoms as a, useTheme, web } from '#/alf'
+import { Button, ButtonText } from '#/components/Button'
 import {
   ModerationDetailsDialog,
   useModerationDetailsDialogControl,
 } from '#/components/moderation/ModerationDetailsDialog'
-import {Text} from '#/components/Typography'
+import { Text } from '#/components/Typography'
 
 export function ScreenHider({
   testID,
@@ -37,12 +37,12 @@ export function ScreenHider({
   containerStyle?: StyleProp<ViewStyle>
 }>) {
   const t = useTheme()
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const [override, setOverride] = React.useState(false)
   const navigation = useNavigation<NavigationProp>()
-  const {isMobile} = useWebMediaQueries()
+  const { isMobile } = useWebMediaQueries()
   const control = useModerationDetailsDialogControl()
-  const blur = modui.blurs[0]
+  const blur = modui.blurs && modui.blurs.length > 0 ? modui.blurs[0] : undefined
   const desc = useModerationCauseDescription(blur)
 
   if (!blur || override) {

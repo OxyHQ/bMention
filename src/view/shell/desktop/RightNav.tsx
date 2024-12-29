@@ -1,26 +1,26 @@
-import {View} from 'react-native'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { View } from 'react-native'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {FEEDBACK_FORM_URL, HELP_DESK_URL} from '#/lib/constants'
-import {useWebMediaQueries} from '#/lib/hooks/useWebMediaQueries'
-import {useKawaiiMode} from '#/state/preferences/kawaii'
-import {useSession} from '#/state/session'
-import {DesktopFeeds} from '#/view/shell/desktop/Feeds'
-import {DesktopSearch} from '#/view/shell/desktop/Search'
-import {atoms as a, useGutters, useTheme, web} from '#/alf'
-import {InlineLinkText} from '#/components/Link'
-import {ProgressGuideList} from '#/components/ProgressGuide/List'
-import {Text} from '#/components/Typography'
+import { FEEDBACK_FORM_URL, HELP_DESK_URL } from '#/lib/constants'
+import { useWebMediaQueries } from '#/lib/hooks/useWebMediaQueries'
+import { useKawaiiMode } from '#/state/preferences/kawaii'
+import { useSession } from '#/state/session'
+import { DesktopFeeds } from '#/view/shell/desktop/Feeds'
+import { DesktopSearch } from '#/view/shell/desktop/Search'
+import { atoms as a, useGutters, useTheme, web } from '#/alf'
+import { InlineLinkText } from '#/components/Link'
+import { ProgressGuideList } from '#/components/ProgressGuide/List'
+import { Text } from '#/components/Typography'
 
-export function DesktopRightNav({routeName}: {routeName: string}) {
+export function DesktopRightNav({ routeName }: { routeName: string }) {
   const t = useTheme()
-  const {_} = useLingui()
-  const {hasSession, currentAccount} = useSession()
+  const { _ } = useLingui()
+  const { hasSession, currentAccount } = useSession()
   const kawaii = useKawaiiMode()
   const gutters = useGutters(['base', 0, 'base', 'wide'])
 
-  const {isTablet} = useWebMediaQueries()
+  const { isTablet } = useWebMediaQueries()
   if (isTablet) {
     return null
   }
@@ -73,13 +73,13 @@ export function DesktopRightNav({routeName}: {routeName: string}) {
           </>
         )}
         <InlineLinkText
-          to="https://bsky.social/about/support/privacy-policy"
+          to="https://oxy.so/company/transparency/policies/policy"
           label={_(msg`Privacy`)}>
           {_(msg`Privacy`)}
         </InlineLinkText>
         {' • '}
         <InlineLinkText
-          to="https://bsky.social/about/support/tos"
+          to="https://oxy.so/company/transparency/policies/terms-of-service"
           label={_(msg`Terms`)}>
           {_(msg`Terms`)}
         </InlineLinkText>
@@ -90,7 +90,7 @@ export function DesktopRightNav({routeName}: {routeName: string}) {
       </Text>
 
       {kawaii && (
-        <Text style={[t.atoms.text_contrast_medium, {marginTop: 12}]}>
+        <Text style={[t.atoms.text_contrast_medium, { marginTop: 12 }]}>
           <Trans>
             Logo by{' '}
             <InlineLinkText

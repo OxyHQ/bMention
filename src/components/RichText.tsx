@@ -1,26 +1,26 @@
 import React from 'react'
-import {TextStyle} from 'react-native'
-import {AppBskyRichtextFacet, RichText as RichTextAPI} from '@atproto/api'
-import {msg} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
-import {useNavigation} from '@react-navigation/native'
+import { TextStyle } from 'react-native'
+import { AppBskyRichtextFacet, RichText as RichTextAPI } from '@atproto/api'
+import { msg } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { useNavigation } from '@react-navigation/native'
 
-import {NavigationProp} from '#/lib/routes/types'
-import {toShortUrl} from '#/lib/strings/url-helpers'
-import {isNative} from '#/platform/detection'
-import {atoms as a, flatten, native, TextStyleProp, useTheme, web} from '#/alf'
-import {isOnlyEmoji} from '#/alf/typography'
-import {useInteractionState} from '#/components/hooks/useInteractionState'
-import {InlineLinkText, LinkProps} from '#/components/Link'
-import {ProfileHoverCard} from '#/components/ProfileHoverCard'
-import {TagMenu, useTagMenuControl} from '#/components/TagMenu'
-import {Text, TextProps} from '#/components/Typography'
+import { NavigationProp } from '#/lib/routes/types'
+import { toShortUrl } from '#/lib/strings/url-helpers'
+import { isNative } from '#/platform/detection'
+import { atoms as a, flatten, native, TextStyleProp, useTheme, web } from '#/alf'
+import { isOnlyEmoji } from '#/alf/typography'
+import { useInteractionState } from '#/components/hooks/useInteractionState'
+import { InlineLinkText, LinkProps } from '#/components/Link'
+import { ProfileHoverCard } from '#/components/ProfileHoverCard'
+import { TagMenu, useTagMenuControl } from '#/components/TagMenu'
+import { Text, TextProps } from '#/components/Typography'
 
-const WORD_WRAP = {wordWrap: 1}
+const WORD_WRAP = { wordWrap: 1 }
 
 export type RichTextProps = TextStyleProp &
   Pick<TextProps, 'selectable'> & {
-    value: RichTextAPI | string
+    value: String | string
     testID?: string
     numberOfLines?: number
     disableLinks?: boolean
@@ -46,7 +46,7 @@ export function RichText({
 }: RichTextProps) {
   const richText = React.useMemo(
     () =>
-      value instanceof RichTextAPI ? value : new RichTextAPI({text: value}),
+      value instanceof RichTextAPI ? value : new RichTextAPI({ text: value }),
     [value],
   )
 
@@ -58,7 +58,7 @@ export function RichText({
     flattenedStyle,
   ]
 
-  const {text, facets} = richText
+  const { text, facets } = richText
 
   if (!facets?.length) {
     if (isOnlyEmoji(text)) {
@@ -69,7 +69,7 @@ export function RichText({
           emoji
           selectable={selectable}
           testID={testID}
-          style={[plainStyles, {fontSize}]}
+          style={[plainStyles, { fontSize }]}
           // @ts-ignore web only -prf
           dataSet={WORD_WRAP}>
           {text}
@@ -183,14 +183,14 @@ function RichTextTag({
   authorHandle?: string
 } & TextStyleProp) {
   const t = useTheme()
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const control = useTagMenuControl()
   const {
     state: hovered,
     onIn: onHoverIn,
     onOut: onHoverOut,
   } = useInteractionState()
-  const {state: focused, onIn: onFocus, onOut: onBlur} = useInteractionState()
+  const { state: focused, onIn: onFocus, onOut: onBlur } = useInteractionState()
   const navigation = useNavigation<NavigationProp>()
 
   const navigateToPage = React.useCallback(() => {
@@ -232,7 +232,7 @@ function RichTextTag({
             web({
               cursor: 'pointer',
             }),
-            {color: t.palette.primary_500},
+            { color: t.palette.primary_500 },
             (hovered || focused) && {
               ...web({
                 outline: 0,

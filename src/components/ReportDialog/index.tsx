@@ -1,24 +1,24 @@
 import React from 'react'
-import {Pressable, View} from 'react-native'
-import {ScrollView} from 'react-native-gesture-handler'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { Pressable, View } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {ReportOption} from '#/lib/moderation/useReportOptions'
-import {useMyLabelersQuery} from '#/state/queries/preferences'
-export {useDialogControl as useReportDialogControl} from '#/components/Dialog'
+import { ReportOption } from '#/lib/moderation/useReportOptions'
+import { useMyLabelersQuery } from '#/state/queries/preferences'
+export { useDialogControl as useReportDialogControl } from '#/components/Dialog'
 
-import {AppBskyLabelerDefs} from 'src/fakeData'
+import { AppBskyLabelerDefs } from '#/fakeData'
 
-import {atoms as a} from '#/alf'
+import { atoms as a } from '#/alf'
 import * as Dialog from '#/components/Dialog'
-import {useDelayedLoading} from '#/components/hooks/useDelayedLoading'
-import {Loader} from '#/components/Loader'
-import {Text} from '#/components/Typography'
-import {SelectLabelerView} from './SelectLabelerView'
-import {SelectReportOptionView} from './SelectReportOptionView'
-import {SubmitView} from './SubmitView'
-import {ReportDialogProps} from './types'
+import { useDelayedLoading } from '#/components/hooks/useDelayedLoading'
+import { Loader } from '#/components/Loader'
+import { Text } from '#/components/Typography'
+import { SelectLabelerView } from './SelectLabelerView'
+import { SelectReportOptionView } from './SelectReportOptionView'
+import { SubmitView } from './SubmitView'
+import { ReportDialogProps } from './types'
 
 export function ReportDialog(props: ReportDialogProps) {
   return (
@@ -30,12 +30,12 @@ export function ReportDialog(props: ReportDialogProps) {
 }
 
 function ReportDialogInner(props: ReportDialogProps) {
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const {
     isLoading: isLabelerLoading,
     data: labelers,
     error,
-  } = useMyLabelersQuery({excludeNonConfigurableLabelers: true})
+  } = useMyLabelersQuery({ excludeNonConfigurableLabelers: true })
   const isLoading = useDelayedLoading(500, isLabelerLoading)
 
   const ref = React.useRef<ScrollView>(null)
@@ -43,7 +43,7 @@ function ReportDialogInner(props: ReportDialogProps) {
   return (
     <Dialog.ScrollableInner label={_(msg`Report dialog`)} ref={ref}>
       {isLoading ? (
-        <View style={[a.align_center, {height: 100}]}>
+        <View style={[a.align_center, { height: 100 }]}>
           <Loader size="xl" />
           {/* Here to capture focus for a hot sec to prevent flash */}
           <Pressable accessible={false} />

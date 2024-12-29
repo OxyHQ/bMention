@@ -1,37 +1,36 @@
-import React, {memo, useState} from 'react'
-import {LayoutChangeEvent, StyleSheet, View} from 'react-native'
+import React, { memo, useState } from 'react'
+import { LayoutChangeEvent, StyleSheet, View } from 'react-native'
 import Animated, {
   runOnJS,
   useAnimatedReaction,
   useAnimatedStyle,
   withTiming,
 } from 'react-native-reanimated'
-import {useSafeAreaInsets} from 'react-native-safe-area-context'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import {
   AppBskyActorDefs,
   AppBskyLabelerDefs,
   ModerationOpts,
-  RichText as RichTextAPI,
 } from '@atproto/api'
-import {useIsFocused} from '@react-navigation/native'
+import { useIsFocused } from '@react-navigation/native'
 
-import {isNative} from '#/platform/detection'
-import {useSetLightStatusBar} from '#/state/shell/light-status-bar'
-import {usePagerHeaderContext} from '#/view/com/pager/PagerHeaderContext'
-import {LoadingPlaceholder} from '#/view/com/util/LoadingPlaceholder'
-import {atoms as a, useTheme} from '#/alf'
-import {ProfileHeaderLabeler} from './ProfileHeaderLabeler'
-import {ProfileHeaderStandard} from './ProfileHeaderStandard'
+import { isNative } from '#/platform/detection'
+import { useSetLightStatusBar } from '#/state/shell/light-status-bar'
+import { usePagerHeaderContext } from '#/view/com/pager/PagerHeaderContext'
+import { LoadingPlaceholder } from '#/view/com/util/LoadingPlaceholder'
+import { atoms as a, useTheme } from '#/alf'
+import { ProfileHeaderLabeler } from './ProfileHeaderLabeler'
+import { ProfileHeaderStandard } from './ProfileHeaderStandard'
 
 let ProfileHeaderLoading = (_props: {}): React.ReactNode => {
   const t = useTheme()
   return (
     <View style={t.atoms.bg}>
-      <LoadingPlaceholder width="100%" height={150} style={{borderRadius: 0}} />
+      <LoadingPlaceholder width="100%" height={150} style={{ borderRadius: 0 }} />
       <View
         style={[
           t.atoms.bg,
-          {borderColor: t.atoms.bg.backgroundColor},
+          { borderColor: t.atoms.bg.backgroundColor },
           styles.avi,
         ]}>
         <LoadingPlaceholder width={90} height={90} style={styles.br45} />
@@ -45,19 +44,20 @@ let ProfileHeaderLoading = (_props: {}): React.ReactNode => {
   )
 }
 ProfileHeaderLoading = memo(ProfileHeaderLoading)
-export {ProfileHeaderLoading}
+export { ProfileHeaderLoading }
 
 interface Props {
   profile: AppBskyActorDefs.ProfileViewDetailed
   labeler: AppBskyLabelerDefs.LabelerViewDetailed | undefined
-  descriptionRT: RichTextAPI | null
+  descriptionRT: string | null
   moderationOpts: ModerationOpts
   hideBackButton?: boolean
   isPlaceholderProfile?: boolean
   setMinimumHeight: (height: number) => void
 }
 
-let ProfileHeader = ({setMinimumHeight, ...props}: Props): React.ReactNode => {
+
+let ProfileHeader = ({ setMinimumHeight, ...props }: Props): React.ReactNode => {
   let content
   if (props.profile.associated?.labeler) {
     if (!props.labeler) {
@@ -83,7 +83,7 @@ let ProfileHeader = ({setMinimumHeight, ...props}: Props): React.ReactNode => {
   )
 }
 ProfileHeader = memo(ProfileHeader)
-export {ProfileHeader}
+export { ProfileHeader }
 
 const MinimalHeader = React.memo(function MinimalHeader({
   onLayout,
@@ -99,7 +99,7 @@ const MinimalHeader = React.memo(function MinimalHeader({
   const [minimalHeaderHeight, setMinimalHeaderHeight] = React.useState(0)
   const isScreenFocused = useIsFocused()
   if (!ctx) throw new Error('MinimalHeader cannot be used on web')
-  const {scrollY, headerHeight} = ctx
+  const { scrollY, headerHeight } = ctx
 
   const animatedStyle = useAnimatedStyle(() => {
     // if we don't yet have the min header height in JS, hide
@@ -111,8 +111,8 @@ const MinimalHeader = React.memo(function MinimalHeader({
     const pastThreshold = scrollY.get() > 100
     return {
       opacity: pastThreshold
-        ? withTiming(1, {duration: 75})
-        : withTiming(0, {duration: 75}),
+        ? withTiming(1, { duration: 75 })
+        : withTiming(0, { duration: 75 }),
       transform: [
         {
           translateY: Math.min(
@@ -181,6 +181,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginLeft: 'auto',
   },
-  br45: {borderRadius: 45},
-  br50: {borderRadius: 50},
+  br45: { borderRadius: 45 },
+  br50: { borderRadius: 50 },
 })

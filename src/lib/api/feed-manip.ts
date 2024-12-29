@@ -4,7 +4,7 @@ import {
   AppBskyEmbedRecordWithMedia,
   AppBskyFeedDefs,
   AppBskyFeedPost,
-} from 'src/fakeData'
+} from '#/fakeData'
 
 import {isPostInLanguage} from '../../locale/helpers'
 import {FALLBACK_MARKER_POST} from './feed/home'

@@ -1,19 +1,19 @@
 import React from 'react'
-import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native'
-import {Image} from 'expo-image'
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
+import { Image } from 'expo-image'
+import { Trans } from '@lingui/macro'
+
+import { parseTenorGif } from '#/lib/strings/embed-player'
+import { atoms as a, useTheme } from '#/alf'
+import { MediaInsetBorder } from '#/components/MediaInsetBorder'
+import { Text } from '#/components/Typography'
+import { PlayButtonIcon } from '#/components/video/PlayButtonIcon'
 import {
   AppBskyEmbedExternal,
   AppBskyEmbedImages,
   AppBskyEmbedRecordWithMedia,
   AppBskyEmbedVideo,
-} from 'src/fakeData'
-import {Trans} from '@lingui/macro'
-
-import {parseTenorGif} from '#/lib/strings/embed-player'
-import {atoms as a, useTheme} from '#/alf'
-import {MediaInsetBorder} from '#/components/MediaInsetBorder'
-import {Text} from '#/components/Typography'
-import {PlayButtonIcon} from '#/components/video/PlayButtonIcon'
+} from '#/fakeData'
 
 /**
  * Streamlined MediaPreview component which just handles images, gifs, and videos
@@ -23,11 +23,11 @@ export function Embed({
   style,
 }: {
   embed?:
-    | AppBskyEmbedImages.View
-    | AppBskyEmbedRecordWithMedia.View
-    | AppBskyEmbedExternal.View
-    | AppBskyEmbedVideo.View
-    | {[k: string]: unknown}
+  | AppBskyEmbedImages.View
+  | AppBskyEmbedRecordWithMedia.View
+  | AppBskyEmbedExternal.View
+  | AppBskyEmbedVideo.View
+  | { [k: string]: unknown }
   style?: StyleProp<ViewStyle>
 }) {
   let media = AppBskyEmbedRecordWithMedia.isView(embed) ? embed.media : embed
@@ -48,9 +48,9 @@ export function Embed({
     let url: URL | undefined
     try {
       url = new URL(media.external.uri)
-    } catch {}
+    } catch { }
     if (url) {
-      const {success} = parseTenorGif(url)
+      const { success } = parseTenorGif(url)
       if (success) {
         return (
           <Outer style={style}>
@@ -94,10 +94,10 @@ export function ImageItem({
 }) {
   const t = useTheme()
   return (
-    <View style={[a.relative, a.flex_1, {aspectRatio: 1, maxWidth: 100}]}>
+    <View style={[a.relative, a.flex_1, { aspectRatio: 1, maxWidth: 100 }]}>
       <Image
         key={thumbnail}
-        source={{uri: thumbnail}}
+        source={{ uri: thumbnail }}
         style={[a.flex_1, a.rounded_xs, t.atoms.bg_contrast_25]}
         contentFit="cover"
         accessible={true}
@@ -111,7 +111,7 @@ export function ImageItem({
   )
 }
 
-export function GifItem({thumbnail, alt}: {thumbnail: string; alt?: string}) {
+export function GifItem({ thumbnail, alt }: { thumbnail: string; alt?: string }) {
   return (
     <ImageItem thumbnail={thumbnail} alt={alt}>
       <View style={[a.absolute, a.inset_0, a.justify_center, a.align_center]}>
@@ -137,9 +137,9 @@ export function VideoItem({
     return (
       <View
         style={[
-          {backgroundColor: 'black'},
+          { backgroundColor: 'black' },
           a.flex_1,
-          {aspectRatio: 1, maxWidth: 100},
+          { aspectRatio: 1, maxWidth: 100 },
           a.justify_center,
           a.align_center,
         ]}>

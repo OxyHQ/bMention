@@ -8,7 +8,7 @@ import {
   AtUri,
   BlobRef,
   RichText,
-} from 'src/fakeData'
+} from '#/fakeData'
 import {TID} from '@atproto/common-web'
 import * as dcbor from '@ipld/dag-cbor'
 import {t} from '@lingui/macro'

@@ -1,20 +1,20 @@
 import React from 'react'
-import {View} from 'react-native'
-import {Image} from 'expo-image'
-import {AppBskyGraphDefs, AppBskyGraphStarterpack, AtUri} from 'src/fakeData'
-import {msg} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
-import {useQueryClient} from '@tanstack/react-query'
+import { View } from 'react-native'
+import { Image } from 'expo-image'
+import { AppBskyGraphDefs, AppBskyGraphStarterpack, AtUri } from '#/fakeData'
+import { msg } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { useQueryClient } from '@tanstack/react-query'
 
-import {sanitizeHandle} from '#/lib/strings/handles'
-import {getStarterPackOgCard} from '#/lib/strings/starter-pack'
-import {precacheResolvedUri} from '#/state/queries/resolve-uri'
-import {precacheStarterPack} from '#/state/queries/starter-packs'
-import {useSession} from '#/state/session'
-import {atoms as a, useTheme} from '#/alf'
-import {StarterPack} from '#/components/icons/StarterPack'
-import {Link as BaseLink, LinkProps as BaseLinkProps} from '#/components/Link'
-import {Text} from '#/components/Typography'
+import { sanitizeHandle } from '#/lib/strings/handles'
+import { getStarterPackOgCard } from '#/lib/strings/starter-pack'
+import { precacheResolvedUri } from '#/state/queries/resolve-uri'
+import { precacheStarterPack } from '#/state/queries/starter-packs'
+import { useSession } from '#/state/session'
+import { atoms as a, useTheme } from '#/alf'
+import { StarterPack } from '#/components/icons/StarterPack'
+import { Link as BaseLink, LinkProps as BaseLinkProps } from '#/components/Link'
+import { Text } from '#/components/Typography'
 
 export function Default({
   starterPack,
@@ -51,11 +51,11 @@ export function Card({
   noIcon?: boolean
   noDescription?: boolean
 }) {
-  const {record, creator, joinedAllTimeCount} = starterPack
+  const { record, creator, joinedAllTimeCount } = starterPack
 
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const t = useTheme()
-  const {currentAccount} = useSession()
+  const { currentAccount } = useSession()
 
   if (!AppBskyGraphStarterpack.isRecord(record)) {
     return null
@@ -104,13 +104,13 @@ export function Link({
   onPress?: () => void
   children: BaseLinkProps['children']
 }) {
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const queryClient = useQueryClient()
-  const {record} = starterPack
-  const {rkey, handleOrDid} = React.useMemo(() => {
+  const { record } = starterPack
+  const { rkey, handleOrDid } = React.useMemo(() => {
     const rkey = new AtUri(starterPack.uri).rkey
-    const {creator} = starterPack
-    return {rkey, handleOrDid: creator.handle || creator.did}
+    const { creator } = starterPack
+    return { rkey, handleOrDid: creator.handle || creator.did }
   }, [starterPack])
 
   if (!AppBskyGraphStarterpack.isRecord(record)) {
@@ -155,7 +155,7 @@ export function Embed({
       <Link starterPack={starterPack}>
         <Image
           source={imageUri}
-          style={[a.w_full, {aspectRatio: 1.91}]}
+          style={[a.w_full, { aspectRatio: 1.91 }]}
           accessibilityIgnoresInvertColors={true}
         />
         <View style={[a.px_sm, a.py_md]}>

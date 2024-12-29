@@ -1,19 +1,19 @@
 import React from 'react'
-import {View} from 'react-native'
-import {AppBskyActorDefs, ModerationCause} from 'src/fakeData'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { View } from 'react-native'
+import { AppBskyActorDefs, ModerationCause } from '#/fakeData'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {useProfileShadow} from '#/state/cache/profile-shadow'
-import {useProfileBlockMutationQueue} from '#/state/queries/profile'
-import {atoms as a, useBreakpoints, useTheme} from '#/alf'
-import {Button, ButtonText} from '#/components/Button'
-import {useDialogControl} from '#/components/Dialog'
-import {Divider} from '#/components/Divider'
-import {BlockedByListDialog} from '#/components/dms/BlockedByListDialog'
-import {LeaveConvoPrompt} from '#/components/dms/LeaveConvoPrompt'
-import {ReportConversationPrompt} from '#/components/dms/ReportConversationPrompt'
-import {Text} from '#/components/Typography'
+import { useProfileShadow } from '#/state/cache/profile-shadow'
+import { useProfileBlockMutationQueue } from '#/state/queries/profile'
+import { atoms as a, useBreakpoints, useTheme } from '#/alf'
+import { Button, ButtonText } from '#/components/Button'
+import { useDialogControl } from '#/components/Dialog'
+import { Divider } from '#/components/Divider'
+import { BlockedByListDialog } from '#/components/dms/BlockedByListDialog'
+import { LeaveConvoPrompt } from '#/components/dms/LeaveConvoPrompt'
+import { ReportConversationPrompt } from '#/components/dms/ReportConversationPrompt'
+import { Text } from '#/components/Typography'
 
 export function MessagesListBlockedFooter({
   recipient: initialRecipient,
@@ -30,8 +30,8 @@ export function MessagesListBlockedFooter({
   }
 }) {
   const t = useTheme()
-  const {gtMobile} = useBreakpoints()
-  const {_} = useLingui()
+  const { gtMobile } = useBreakpoints()
+  const { _ } = useLingui()
   const recipient = useProfileShadow(initialRecipient)
   const [__, queueUnblock] = useProfileBlockMutationQueue(recipient)
 
@@ -39,7 +39,7 @@ export function MessagesListBlockedFooter({
   const reportControl = useDialogControl()
   const blockedByListControl = useDialogControl()
 
-  const {listBlocks, userBlock} = blockInfo
+  const { listBlocks, userBlock } = blockInfo
   const isBlocking = !!userBlock || !!listBlocks.length
 
   const onUnblockPress = React.useCallback(() => {
@@ -69,7 +69,7 @@ export function MessagesListBlockedFooter({
           size="small"
           style={[a.flex_1]}
           onPress={leaveConvoControl.open}>
-          <ButtonText style={{color: t.palette.negative_500}}>
+          <ButtonText style={{ color: t.palette.negative_500 }}>
             <Trans>Leave chat</Trans>
           </ButtonText>
         </Button>
@@ -80,7 +80,7 @@ export function MessagesListBlockedFooter({
           size="small"
           style={[a.flex_1]}
           onPress={reportControl.open}>
-          <ButtonText style={{color: t.palette.negative_500}}>
+          <ButtonText style={{ color: t.palette.negative_500 }}>
             <Trans>Report</Trans>
           </ButtonText>
         </Button>
@@ -92,7 +92,7 @@ export function MessagesListBlockedFooter({
             size="small"
             style={[a.flex_1]}
             onPress={onUnblockPress}>
-            <ButtonText style={{color: t.palette.primary_500}}>
+            <ButtonText style={{ color: t.palette.primary_500 }}>
               <Trans>Unblock</Trans>
             </ButtonText>
           </Button>
@@ -107,7 +107,7 @@ export function MessagesListBlockedFooter({
             size="small"
             style={[a.flex_1]}
             onPress={onUnblockPress}>
-            <ButtonText style={{color: t.palette.primary_500}}>
+            <ButtonText style={{ color: t.palette.primary_500 }}>
               <Trans>Unblock</Trans>
             </ButtonText>
           </Button>

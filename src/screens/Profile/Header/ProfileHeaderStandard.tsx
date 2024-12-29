@@ -1,48 +1,47 @@
-import React, {memo, useMemo} from 'react'
-import {View} from 'react-native'
+import React, { memo, useMemo } from 'react'
+import { View } from 'react-native'
 import {
   AppBskyActorDefs,
   moderateProfile,
   ModerationOpts,
-  RichText as RichTextAPI,
 } from '@atproto/api'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {sanitizeDisplayName} from '#/lib/strings/display-names'
-import {logger} from '#/logger'
-import {isIOS, isWeb} from '#/platform/detection'
-import {useProfileShadow} from '#/state/cache/profile-shadow'
-import {Shadow} from '#/state/cache/types'
-import {useModalControls} from '#/state/modals'
+import { sanitizeDisplayName } from '#/lib/strings/display-names'
+import { logger } from '#/logger'
+import { isIOS, isWeb } from '#/platform/detection'
+import { useProfileShadow } from '#/state/cache/profile-shadow'
+import { Shadow } from '#/state/cache/types'
+import { useModalControls } from '#/state/modals'
 import {
   useProfileBlockMutationQueue,
   useProfileFollowMutationQueue,
 } from '#/state/queries/profile'
-import {useRequireAuth, useSession} from '#/state/session'
-import {ProfileMenu} from '#/view/com/profile/ProfileMenu'
+import { useRequireAuth, useSession } from '#/state/session'
+import { ProfileMenu } from '#/view/com/profile/ProfileMenu'
 import * as Toast from '#/view/com/util/Toast'
-import {atoms as a} from '#/alf'
-import {Button, ButtonIcon, ButtonText} from '#/components/Button'
-import {useDialogControl} from '#/components/Dialog'
-import {MessageProfileButton} from '#/components/dms/MessageProfileButton'
-import {Check_Stroke2_Corner0_Rounded as Check} from '#/components/icons/Check'
-import {PlusLarge_Stroke2_Corner0_Rounded as Plus} from '#/components/icons/Plus'
+import { atoms as a } from '#/alf'
+import { Button, ButtonIcon, ButtonText } from '#/components/Button'
+import { useDialogControl } from '#/components/Dialog'
+import { MessageProfileButton } from '#/components/dms/MessageProfileButton'
+import { Check_Stroke2_Corner0_Rounded as Check } from '#/components/icons/Check'
+import { PlusLarge_Stroke2_Corner0_Rounded as Plus } from '#/components/icons/Plus'
 import {
   KnownFollowers,
   shouldShowKnownFollowers,
 } from '#/components/KnownFollowers'
 import * as Prompt from '#/components/Prompt'
-import {RichText} from '#/components/RichText'
-import {ProfileHeaderDisplayName} from './DisplayName'
-import {EditProfileDialog} from './EditProfileDialog'
-import {ProfileHeaderHandle} from './Handle'
-import {ProfileHeaderMetrics} from './Metrics'
-import {ProfileHeaderShell} from './Shell'
+import { RichText } from '#/components/RichText'
+import { ProfileHeaderDisplayName } from './DisplayName'
+import { EditProfileDialog } from './EditProfileDialog'
+import { ProfileHeaderHandle } from './Handle'
+import { ProfileHeaderMetrics } from './Metrics'
+import { ProfileHeaderShell } from './Shell'
 
 interface Props {
   profile: AppBskyActorDefs.ProfileViewDetailed
-  descriptionRT: RichTextAPI | null
+  descriptionRT: String | null
   moderationOpts: ModerationOpts
   hideBackButton?: boolean
   isPlaceholderProfile?: boolean
@@ -57,8 +56,8 @@ let ProfileHeaderStandard = ({
 }: Props): React.ReactNode => {
   const profile: Shadow<AppBskyActorDefs.ProfileViewDetailed> =
     useProfileShadow(profileUnshadowed)
-  const {currentAccount, hasSession} = useSession()
-  const {_} = useLingui()
+  const { currentAccount, hasSession } = useSession()
+  const { _ } = useLingui()
   const moderation = useMemo(
     () => moderateProfile(profile, moderationOpts),
     [profile, moderationOpts],
@@ -75,7 +74,7 @@ let ProfileHeaderStandard = ({
     profile.viewer?.blockedBy ||
     profile.viewer?.blockingByList
 
-  const {openModal} = useModalControls()
+  const { openModal } = useModalControls()
   const editProfileControl = useDialogControl()
   const onPressEditProfile = React.useCallback(() => {
     if (isWeb) {
@@ -103,7 +102,7 @@ let ProfileHeaderStandard = ({
         )
       } catch (e: any) {
         if (e?.name !== 'AbortError') {
-          logger.error('Failed to follow', {message: String(e)})
+          logger.error('Failed to follow', { message: String(e) })
           Toast.show(_(msg`There was an issue! ${e.toString()}`), 'xmark')
         }
       }
@@ -124,7 +123,7 @@ let ProfileHeaderStandard = ({
         )
       } catch (e: any) {
         if (e?.name !== 'AbortError') {
-          logger.error('Failed to unfollow', {message: String(e)})
+          logger.error('Failed to unfollow', { message: String(e) })
           Toast.show(_(msg`There was an issue! ${e.toString()}`), 'xmark')
         }
       }
@@ -137,7 +136,7 @@ let ProfileHeaderStandard = ({
       Toast.show(_(msg`Account unblocked`))
     } catch (e: any) {
       if (e?.name !== 'AbortError') {
-        logger.error('Failed to unblock account', {message: e})
+        logger.error('Failed to unblock account', { message: e })
         Toast.show(_(msg`There was an issue! ${e.toString()}`), 'xmark')
       }
     }
@@ -159,7 +158,7 @@ let ProfileHeaderStandard = ({
         pointerEvents={isIOS ? 'auto' : 'box-none'}>
         <View
           style={[
-            {paddingLeft: 90},
+            { paddingLeft: 90 },
             a.flex_row,
             a.align_center,
             a.justify_end,
@@ -288,4 +287,4 @@ let ProfileHeaderStandard = ({
   )
 }
 ProfileHeaderStandard = memo(ProfileHeaderStandard)
-export {ProfileHeaderStandard}
+export { ProfileHeaderStandard }

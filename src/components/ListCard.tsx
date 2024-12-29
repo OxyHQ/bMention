@@ -1,21 +1,14 @@
 import React from 'react'
-import {View} from 'react-native'
-import {
-  AppBskyActorDefs,
-  AppBskyGraphDefs,
-  AtUri,
-  moderateUserList,
-  ModerationUI,
-} from 'src/fakeData'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
-import {useQueryClient} from '@tanstack/react-query'
+import { View } from 'react-native'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { useQueryClient } from '@tanstack/react-query'
 
-import {sanitizeHandle} from '#/lib/strings/handles'
-import {useModerationOpts} from '#/state/preferences/moderation-opts'
-import {precacheList} from '#/state/queries/feed'
-import {useSession} from '#/state/session'
-import {atoms as a, useTheme} from '#/alf'
+import { sanitizeHandle } from '#/lib/strings/handles'
+import { useModerationOpts } from '#/state/preferences/moderation-opts'
+import { precacheList } from '#/state/queries/feed'
+import { useSession } from '#/state/session'
+import { atoms as a, useTheme } from '#/alf'
 import {
   Avatar,
   Description,
@@ -23,9 +16,16 @@ import {
   Outer,
   SaveButton,
 } from '#/components/FeedCard'
-import {Link as InternalLink, LinkProps} from '#/components/Link'
+import { Link as InternalLink, LinkProps } from '#/components/Link'
 import * as Hider from '#/components/moderation/Hider'
-import {Text} from '#/components/Typography'
+import { Text } from '#/components/Typography'
+import {
+  AppBskyActorDefs,
+  AppBskyGraphDefs,
+  AtUri,
+  moderateUserList,
+  ModerationUI,
+} from '../fakeData'
 
 /*
  * This component is based on `FeedCard` and is tightly coupled with that
@@ -46,12 +46,12 @@ const CURATELIST = 'app.bsky.graph.defs#curatelist'
 const MODLIST = 'app.bsky.graph.defs#modlist'
 
 type Props = {
-  view: AppBskyGraphDefs.ListView
+  view: typeof AppBskyGraphDefs['ListView']
   showPinButton?: boolean
 }
 
 export function Default(props: Props) {
-  const {view, showPinButton} = props
+  const { view, showPinButton } = props
   const moderationOpts = useModerationOpts()
   const moderation = moderationOpts
     ? moderateUserList(view, moderationOpts)
@@ -86,7 +86,7 @@ export function Link({
   const queryClient = useQueryClient()
 
   const href = React.useMemo(() => {
-    return createProfileListHref({list: view})
+    return createProfileListHref({ list: view })
   }, [view])
 
   React.useEffect(() => {
@@ -107,13 +107,13 @@ export function TitleAndByline({
   modUi,
 }: {
   title: string
-  creator?: AppBskyActorDefs.ProfileViewBasic
-  purpose?: AppBskyGraphDefs.ListView['purpose']
+  creator?: typeof AppBskyActorDefs['ProfileViewBasic']
+  purpose?: typeof AppBskyGraphDefs['ListView']['purpose']
   modUi?: ModerationUI
 }) {
   const t = useTheme()
-  const {_} = useLingui()
-  const {currentAccount} = useSession()
+  const { _ } = useLingui()
+  const { currentAccount } = useSession()
 
   return (
     <View style={[a.flex_1]}>
@@ -157,7 +157,7 @@ export function TitleAndByline({
 export function createProfileListHref({
   list,
 }: {
-  list: AppBskyGraphDefs.ListView
+  list: typeof AppBskyGraphDefs['ListView']
 }) {
   const urip = new AtUri(list.uri)
   const handleOrDid = list.creator.handle || list.creator.did

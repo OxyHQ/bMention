@@ -3,7 +3,7 @@
 
 <https://oembed.com/>
 
-* URL scheme: `https://bsky.app/profile/*/post/*`
+* URL scheme: `https://mention.earth/profile/*/post/*`
 * API endpoint: `https://embed.bsky.app/oembed`
 
 Request params:
@@ -19,8 +19,8 @@ Response format:
 - `version` (required): "1.0"
 - `author_name` (optional): display name
 - `author_url` (optional): profile URL
-- `provider_name` (optional): "Bluesky Social"
-- `provider_url` (optional): "https://bsky.app"
+- `provider_name` (optional): "Mention"
+* `provider_url` (optional): "<https://mention.earth>"
 - `cache_age` (optional, integer seconds): 86400 (24 hours) (?)
 - `width` (required): ?
 - `height` (required): ?
@@ -35,14 +35,14 @@ Not used:
 Only `json` is supported; `xml` is a 501.
 
 ```
-<link rel="alternate" type="application/json+oembed" href="https://embed.bsky.app/oembed?format=json&url=https://bsky.app/profile/bnewbold.net/post/abc123" />
+<link rel="alternate" type="application/json+oembed" href="https://embed.mention.earth/oembed?format=json&url=https://mention.earth/profile/bnewbold.net/post/abc123" />
 ```
 
 
 ## iframe URL
 
-`https://embed.bsky.app/embed/<did>/app.bsky.feed.post/<rkey>`
-`https://embed.bsky.app/static/embed.js`
+`https://embed.mention.earth/embed/<did>/app.bsky.feed.post/<rkey>`
+`https://embed.mention.earth/static/embed.js`
 
 ```
 <blockquote class="bluesky-post" data-lang="en" data-align="center">

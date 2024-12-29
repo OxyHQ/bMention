@@ -1,5 +1,5 @@
 import React from 'react'
-import {AppBskyActorDefs} from 'src/fakeData'
+import {AppBskyActorDefs} from '#/fakeData'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

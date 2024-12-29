@@ -1,30 +1,30 @@
 import React from 'react'
-import {GestureResponderEvent, View} from 'react-native'
+import { GestureResponderEvent, View } from 'react-native'
+import { msg } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+
+import { LogEvents } from '#/lib/statsig/statsig'
+import { sanitizeDisplayName } from '#/lib/strings/display-names'
+import { sanitizeHandle } from '#/lib/strings/handles'
+import { useProfileShadow } from '#/state/cache/profile-shadow'
+import { useProfileFollowMutationQueue } from '#/state/queries/profile'
+import { useSession } from '#/state/session'
+import { ProfileCardPills } from '#/view/com/profile/ProfileCard'
+import * as Toast from '#/view/com/util/Toast'
+import { UserAvatar } from '#/view/com/util/UserAvatar'
+import { atoms as a, useTheme } from '#/alf'
+import { Button, ButtonIcon, ButtonProps, ButtonText } from '#/components/Button'
+import { Check_Stroke2_Corner0_Rounded as Check } from '#/components/icons/Check'
+import { PlusLarge_Stroke2_Corner0_Rounded as Plus } from '#/components/icons/Plus'
+import { Link as InternalLink, LinkProps } from '#/components/Link'
+import { RichText } from '#/components/RichText'
+import { Text } from '#/components/Typography'
 import {
   AppBskyActorDefs,
   moderateProfile,
   ModerationOpts,
   RichText as RichTextApi,
-} from 'src/fakeData'
-import {msg} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
-
-import {LogEvents} from '#/lib/statsig/statsig'
-import {sanitizeDisplayName} from '#/lib/strings/display-names'
-import {sanitizeHandle} from '#/lib/strings/handles'
-import {useProfileShadow} from '#/state/cache/profile-shadow'
-import {useProfileFollowMutationQueue} from '#/state/queries/profile'
-import {useSession} from '#/state/session'
-import {ProfileCardPills} from '#/view/com/profile/ProfileCard'
-import * as Toast from '#/view/com/util/Toast'
-import {UserAvatar} from '#/view/com/util/UserAvatar'
-import {atoms as a, useTheme} from '#/alf'
-import {Button, ButtonIcon, ButtonProps, ButtonText} from '#/components/Button'
-import {Check_Stroke2_Corner0_Rounded as Check} from '#/components/icons/Check'
-import {PlusLarge_Stroke2_Corner0_Rounded as Plus} from '#/components/icons/Plus'
-import {Link as InternalLink, LinkProps} from '#/components/Link'
-import {RichText} from '#/components/RichText'
-import {Text} from '#/components/Typography'
+} from '#/fakeData'
 
 export function Default({
   profile,
@@ -103,17 +103,16 @@ export function Link({
 }: {
   profile: AppBskyActorDefs.ProfileViewDetailed
 } & Omit<LinkProps, 'to' | 'label'>) {
-  const {_} = useLingui()
+  const { _ } = useLingui()
   return (
     <InternalLink
       label={_(
-        msg`View ${
-          profile.displayName || sanitizeHandle(profile.handle)
-        }'s profile`,
+        msg`View ${profile.displayName || sanitizeHandle(profile.handle)
+          }'s profile`,
       )}
       to={{
         screen: 'Profile',
-        params: {name: profile.did},
+        params: { name: profile.did },
       }}
       style={[a.flex_col, style]}
       {...rest}>
@@ -228,10 +227,10 @@ export function Description({
   numberOfLines?: number
 }) {
   const profile = useProfileShadow(profileUnshadowed)
-  const {description} = profile
+  const { description } = profile
   const rt = React.useMemo(() => {
     if (!description) return
-    const rt = new RichTextApi({text: description || ''})
+    const rt = new RichTextApi({ text: description || '' })
     rt.detectFacetsWithoutResolution()
     return rt
   }, [description])
@@ -262,7 +261,7 @@ export function DescriptionPlaceholder({
 }) {
   const t = useTheme()
   return (
-    <View style={[{gap: 8}]}>
+    <View style={[{ gap: 8 }]}>
       {Array(numberOfLines)
         .fill(0)
         .map((_, i) => (
@@ -272,7 +271,7 @@ export function DescriptionPlaceholder({
               a.rounded_xs,
               a.w_full,
               t.atoms.bg_contrast_50,
-              {height: 12, width: i + 1 === numberOfLines ? '60%' : '100%'},
+              { height: 12, width: i + 1 === numberOfLines ? '60%' : '100%' },
             ]}
           />
         ))}
@@ -284,11 +283,11 @@ export type FollowButtonProps = {
   profile: AppBskyActorDefs.ProfileViewBasic
   moderationOpts: ModerationOpts
   logContext: LogEvents['profile:follow']['logContext'] &
-    LogEvents['profile:unfollow']['logContext']
+  LogEvents['profile:unfollow']['logContext']
 } & Partial<ButtonProps>
 
 export function FollowButton(props: FollowButtonProps) {
-  const {currentAccount, hasSession} = useSession()
+  const { currentAccount, hasSession } = useSession()
   const isMe = props.profile.did === currentAccount?.did
   return hasSession && !isMe ? <FollowButtonInner {...props} /> : null
 }
@@ -299,7 +298,7 @@ export function FollowButtonInner({
   logContext,
   ...rest
 }: FollowButtonProps) {
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const profile = useProfileShadow(profileUnshadowed)
   const moderation = moderateProfile(profile, moderationOpts)
   const [queueFollow, queueUnfollow] = useProfileFollowMutationQueue(

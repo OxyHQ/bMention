@@ -1,19 +1,19 @@
-import {useCallback, useMemo} from 'react'
-import {ActivityIndicator, FlatList, View} from 'react-native'
-import {AppBskyFeedGetLikes as GetLikes} from 'src/fakeData'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { useCallback, useMemo } from 'react'
+import { ActivityIndicator, FlatList, View } from 'react-native'
+import { AppBskyFeedGetLikes as GetLikes } from '#/fakeData'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {cleanError} from '#/lib/strings/errors'
-import {logger} from '#/logger'
-import {useLikedByQuery} from '#/state/queries/post-liked-by'
-import {useResolveUriQuery} from '#/state/queries/resolve-uri'
-import {ProfileCardWithFollowBtn} from '#/view/com/profile/ProfileCard'
-import {ErrorMessage} from '#/view/com/util/error/ErrorMessage'
-import {atoms as a, useTheme} from '#/alf'
+import { cleanError } from '#/lib/strings/errors'
+import { logger } from '#/logger'
+import { useLikedByQuery } from '#/state/queries/post-liked-by'
+import { useResolveUriQuery } from '#/state/queries/resolve-uri'
+import { ProfileCardWithFollowBtn } from '#/view/com/profile/ProfileCard'
+import { ErrorMessage } from '#/view/com/util/error/ErrorMessage'
+import { atoms as a, useTheme } from '#/alf'
 import * as Dialog from '#/components/Dialog'
-import {Loader} from '#/components/Loader'
-import {Text} from '#/components/Typography'
+import { Loader } from '#/components/Loader'
+import { Text } from '#/components/Typography'
 
 interface LikesDialogProps {
   control: Dialog.DialogOuterProps['control']
@@ -29,8 +29,8 @@ export function LikesDialog(props: LikesDialogProps) {
   )
 }
 
-export function LikesDialogInner({control, uri}: LikesDialogProps) {
-  const {_} = useLingui()
+export function LikesDialogInner({ control, uri }: LikesDialogProps) {
+  const { _ } = useLingui()
   const t = useTheme()
 
   const {
@@ -62,12 +62,12 @@ export function LikesDialogInner({control, uri}: LikesDialogProps) {
     try {
       await fetchNextPage()
     } catch (err) {
-      logger.error('Failed to load more likes', {message: err})
+      logger.error('Failed to load more likes', { message: err })
     }
   }, [isFetchingLikedBy, hasNextPage, isError, fetchNextPage])
 
   const renderItem = useCallback(
-    ({item}: {item: GetLikes.Like}) => {
+    ({ item }: { item: GetLikes.Like }) => {
       return (
         <ProfileCardWithFollowBtn
           key={item.actor.did}
@@ -86,7 +86,7 @@ export function LikesDialogInner({control, uri}: LikesDialogProps) {
       </Text>
 
       {isLoading ? (
-        <View style={{minHeight: 300}}>
+        <View style={{ minHeight: 300 }}>
           <Loader size="xl" />
         </View>
       ) : resolveError || likedByError || !data ? (
@@ -117,7 +117,7 @@ export function LikesDialogInner({control, uri}: LikesDialogProps) {
   )
 }
 
-function ListFooterComponent({isFetching}: {isFetching: boolean}) {
+function ListFooterComponent({ isFetching }: { isFetching: boolean }) {
   if (isFetching) {
     return (
       <View style={a.pt_lg}>

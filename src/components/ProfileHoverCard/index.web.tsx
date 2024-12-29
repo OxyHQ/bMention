@@ -1,47 +1,47 @@
 import React from 'react'
-import {View} from 'react-native'
-import {AppBskyActorDefs, moderateProfile, ModerationOpts} from 'src/fakeData'
-import {flip, offset, shift, size, useFloating} from '@floating-ui/react-dom'
-import {msg, plural} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { View } from 'react-native'
+import { AppBskyActorDefs, moderateProfile, ModerationOpts } from '#/fakeData'
+import { flip, offset, shift, size, useFloating } from '@floating-ui/react-dom'
+import { msg, plural } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {isTouchDevice} from '#/lib/browser'
-import {getModerationCauseKey} from '#/lib/moderation'
-import {makeProfileLink} from '#/lib/routes/links'
-import {sanitizeDisplayName} from '#/lib/strings/display-names'
-import {sanitizeHandle} from '#/lib/strings/handles'
-import {useProfileShadow} from '#/state/cache/profile-shadow'
-import {useModerationOpts} from '#/state/preferences/moderation-opts'
-import {usePrefetchProfileQuery, useProfileQuery} from '#/state/queries/profile'
-import {useSession} from '#/state/session'
-import {formatCount} from '#/view/com/util/numeric/format'
-import {UserAvatar} from '#/view/com/util/UserAvatar'
-import {ProfileHeaderHandle} from '#/screens/Profile/Header/Handle'
-import {atoms as a, useTheme} from '#/alf'
-import {Button, ButtonIcon, ButtonText} from '#/components/Button'
-import {useFollowMethods} from '#/components/hooks/useFollowMethods'
-import {useRichText} from '#/components/hooks/useRichText'
-import {Check_Stroke2_Corner0_Rounded as Check} from '#/components/icons/Check'
-import {PlusLarge_Stroke2_Corner0_Rounded as Plus} from '#/components/icons/Plus'
+import { isTouchDevice } from '#/lib/browser'
+import { getModerationCauseKey } from '#/lib/moderation'
+import { makeProfileLink } from '#/lib/routes/links'
+import { sanitizeDisplayName } from '#/lib/strings/display-names'
+import { sanitizeHandle } from '#/lib/strings/handles'
+import { useProfileShadow } from '#/state/cache/profile-shadow'
+import { useModerationOpts } from '#/state/preferences/moderation-opts'
+import { usePrefetchProfileQuery, useProfileQuery } from '#/state/queries/profile'
+import { useSession } from '#/state/session'
+import { formatCount } from '#/view/com/util/numeric/format'
+import { UserAvatar } from '#/view/com/util/UserAvatar'
+import { ProfileHeaderHandle } from '#/screens/Profile/Header/Handle'
+import { atoms as a, useTheme } from '#/alf'
+import { Button, ButtonIcon, ButtonText } from '#/components/Button'
+import { useFollowMethods } from '#/components/hooks/useFollowMethods'
+import { useRichText } from '#/components/hooks/useRichText'
+import { Check_Stroke2_Corner0_Rounded as Check } from '#/components/icons/Check'
+import { PlusLarge_Stroke2_Corner0_Rounded as Plus } from '#/components/icons/Plus'
 import {
   KnownFollowers,
   shouldShowKnownFollowers,
 } from '#/components/KnownFollowers'
-import {InlineLinkText, Link} from '#/components/Link'
-import {Loader} from '#/components/Loader'
+import { InlineLinkText, Link } from '#/components/Link'
+import { Loader } from '#/components/Loader'
 import * as Pills from '#/components/Pills'
-import {Portal} from '#/components/Portal'
-import {RichText} from '#/components/RichText'
-import {Text} from '#/components/Typography'
-import {ProfileHoverCardProps} from './types'
+import { Portal } from '#/components/Portal'
+import { RichText } from '#/components/RichText'
+import { Text } from '#/components/Typography'
+import { ProfileHoverCardProps } from './types'
 
 const floatingMiddlewares = [
   offset(4),
-  flip({padding: 16}),
-  shift({padding: 16}),
+  flip({ padding: 16 }),
+  shift({ padding: 16 }),
   size({
     padding: 16,
-    apply({availableWidth, availableHeight, elements}) {
+    apply({ availableWidth, availableHeight, elements }) {
       Object.assign(elements.floating.style, {
         maxWidth: `${availableWidth}px`,
         maxHeight: `${availableHeight}px`,
@@ -73,14 +73,14 @@ export function ProfileHoverCard(props: ProfileHoverCardProps) {
 
 type State =
   | {
-      stage: 'hidden' | 'might-hide' | 'hiding'
-      effect?: () => () => any
-    }
+    stage: 'hidden' | 'might-hide' | 'hiding'
+    effect?: () => () => any
+  }
   | {
-      stage: 'might-show' | 'showing'
-      effect?: () => () => any
-      reason: 'hovered-target' | 'hovered-card'
-    }
+    stage: 'might-show' | 'showing'
+    effect?: () => () => any
+    reason: 'hovered-target' | 'hovered-card'
+  }
 
 type Action =
   | 'pressed'
@@ -99,7 +99,7 @@ const HIDE_DELAY = 150
 const HIDE_DURATION = 200
 
 export function ProfileHoverCardInner(props: ProfileHoverCardProps) {
-  const {refs, floatingStyles} = useFloating({
+  const { refs, floatingStyles } = useFloating({
     middleware: floatingMiddlewares,
   })
 
@@ -115,7 +115,7 @@ export function ProfileHoverCardInner(props: ProfileHoverCardProps) {
       // --- Hidden ---
       // In the beginning, the card is not displayed.
       function hidden(): State {
-        return {stage: 'hidden'}
+        return { stage: 'hidden' }
       }
       if (state.stage === 'hidden') {
         // The user can kick things off by hovering a target.
@@ -194,7 +194,7 @@ export function ProfileHoverCardInner(props: ProfileHoverCardProps) {
 
       // --- Might Hide ---
       // The user has moved hover away from a visible card.
-      function mightHide({waitMs = HIDE_DELAY}: {waitMs?: number} = {}): State {
+      function mightHide({ waitMs = HIDE_DELAY }: { waitMs?: number } = {}): State {
         return {
           stage: 'might-hide',
           effect() {
@@ -246,7 +246,7 @@ export function ProfileHoverCardInner(props: ProfileHoverCardProps) {
 
       return state
     },
-    {stage: 'hidden'},
+    { stage: 'hidden' },
   )
 
   React.useEffect(() => {
@@ -314,7 +314,7 @@ export function ProfileHoverCardInner(props: ProfileHoverCardProps) {
       onPointerLeave={onPointerLeaveTarget}
       // @ts-ignore web only prop
       onMouseUp={onPress}
-      style={{flexShrink: 1}}>
+      style={{ flexShrink: 1 }}>
       {props.children}
       {isVisible && (
         <Portal>
@@ -323,7 +323,7 @@ export function ProfileHoverCardInner(props: ProfileHoverCardProps) {
             style={floatingStyles}
             onPointerEnter={onPointerEnterCard}
             onPointerLeave={onPointerLeaveCard}>
-            <div style={{willChange: 'transform', ...animationStyle}}>
+            <div style={{ willChange: 'transform', ...animationStyle }}>
               <Card did={props.did} hide={onPress} />
             </div>
           </div>
@@ -333,10 +333,10 @@ export function ProfileHoverCardInner(props: ProfileHoverCardProps) {
   )
 }
 
-let Card = ({did, hide}: {did: string; hide: () => void}): React.ReactNode => {
+let Card = ({ did, hide }: { did: string; hide: () => void }): React.ReactNode => {
   const t = useTheme()
 
-  const profile = useProfileQuery({did})
+  const profile = useProfileQuery({ did })
   const moderationOpts = useModerationOpts()
 
   const data = profile.data
@@ -377,15 +377,15 @@ function Inner({
   hide: () => void
 }) {
   const t = useTheme()
-  const {_, i18n} = useLingui()
-  const {currentAccount} = useSession()
+  const { _, i18n } = useLingui()
+  const { currentAccount } = useSession()
   const moderation = React.useMemo(
     () => moderateProfile(profile, moderationOpts),
     [profile, moderationOpts],
   )
   const [descriptionRT] = useRichText(profile.description ?? '')
   const profileShadow = useProfileShadow(profile)
-  const {follow, unfollow} = useFollowMethods({
+  const { follow, unfollow } = useFollowMethods({
     profile: profileShadow,
     logContext: 'ProfileHoverCard',
   })

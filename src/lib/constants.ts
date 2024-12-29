@@ -1,5 +1,5 @@
 import {Insets, Platform} from 'react-native'
-import {AppBskyActorDefs} from 'src/fakeData'
+import {AppBskyActorDefs} from '#/fakeData'
 
 export const LOCAL_DEV_SERVICE =
   Platform.OS === 'android' ? 'http://10.0.2.2:2583' : 'http://localhost:2583'

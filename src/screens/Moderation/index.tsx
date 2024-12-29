@@ -1,45 +1,45 @@
-import {Fragment, useCallback} from 'react'
-import {Linking, View} from 'react-native'
-import {LABELS} from '@atproto/api'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
-import {useFocusEffect} from '@react-navigation/native'
+import { Fragment, useCallback } from 'react'
+import { Linking, View } from 'react-native'
+import { LABELS } from '@atproto/api'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { useFocusEffect } from '@react-navigation/native'
 
-import {getLabelingServiceTitle} from '#/lib/moderation'
-import {CommonNavigatorParams, NativeStackScreenProps} from '#/lib/routes/types'
-import {logger} from '#/logger'
-import {isIOS} from '#/platform/detection'
+import { getLabelingServiceTitle } from '#/lib/moderation'
+import { CommonNavigatorParams, NativeStackScreenProps } from '#/lib/routes/types'
+import { logger } from '#/logger'
+import { isIOS } from '#/platform/detection'
 import {
   useMyLabelersQuery,
   usePreferencesQuery,
   UsePreferencesQueryResponse,
   usePreferencesSetAdultContentMutation,
 } from '#/state/queries/preferences'
-import {isNonConfigurableModerationAuthority} from '#/state/session/additional-moderation-authorities'
-import {useSetMinimalShellMode} from '#/state/shell'
-import {ViewHeader} from '#/view/com/util/ViewHeader'
-import {atoms as a, useBreakpoints, useTheme, ViewStyleProp} from '#/alf'
-import {Button, ButtonText} from '#/components/Button'
+import { isNonConfigurableModerationAuthority } from '#/state/session/additional-moderation-authorities'
+import { useSetMinimalShellMode } from '#/state/shell'
+import { ViewHeader } from '#/view/com/util/ViewHeader'
+import { atoms as a, useBreakpoints, useTheme, ViewStyleProp } from '#/alf'
+import { Button, ButtonText } from '#/components/Button'
 import * as Dialog from '#/components/Dialog'
-import {BirthDateSettingsDialog} from '#/components/dialogs/BirthDateSettings'
-import {useGlobalDialogsControlContext} from '#/components/dialogs/Context'
-import {Divider} from '#/components/Divider'
+import { BirthDateSettingsDialog } from '#/components/dialogs/BirthDateSettings'
+import { useGlobalDialogsControlContext } from '#/components/dialogs/Context'
+import { Divider } from '#/components/Divider'
 import * as Toggle from '#/components/forms/Toggle'
-import {ChevronRight_Stroke2_Corner0_Rounded as ChevronRight} from '#/components/icons/Chevron'
-import {CircleBanSign_Stroke2_Corner0_Rounded as CircleBanSign} from '#/components/icons/CircleBanSign'
-import {Props as SVGIconProps} from '#/components/icons/common'
-import {Filter_Stroke2_Corner0_Rounded as Filter} from '#/components/icons/Filter'
-import {Group3_Stroke2_Corner0_Rounded as Group} from '#/components/icons/Group'
-import {Person_Stroke2_Corner0_Rounded as Person} from '#/components/icons/Person'
+import { ChevronRight_Stroke2_Corner0_Rounded as ChevronRight } from '#/components/icons/Chevron'
+import { CircleBanSign_Stroke2_Corner0_Rounded as CircleBanSign } from '#/components/icons/CircleBanSign'
+import { Props as SVGIconProps } from '#/components/icons/common'
+import { Filter_Stroke2_Corner0_Rounded as Filter } from '#/components/icons/Filter'
+import { Group3_Stroke2_Corner0_Rounded as Group } from '#/components/icons/Group'
+import { Person_Stroke2_Corner0_Rounded as Person } from '#/components/icons/Person'
 import * as LabelingService from '#/components/LabelingServiceCard'
 import * as Layout from '#/components/Layout'
-import {InlineLinkText, Link} from '#/components/Link'
-import {ListMaybePlaceholder} from '#/components/Lists'
-import {Loader} from '#/components/Loader'
-import {GlobalLabelPreference} from '#/components/moderation/LabelPreference'
-import {Text} from '#/components/Typography'
+import { InlineLinkText, Link } from '#/components/Link'
+import { ListMaybePlaceholder } from '#/components/Lists'
+import { Loader } from '#/components/Loader'
+import { GlobalLabelPreference } from '#/components/moderation/LabelPreference'
+import { Text } from '#/components/Typography'
 
-function ErrorState({error}: {error: string}) {
+function ErrorState({ error }: { error: string }) {
   const t = useTheme()
   return (
     <View style={[a.p_xl]}>
@@ -73,7 +73,7 @@ function ErrorState({error}: {error: string}) {
 export function ModerationScreen(
   _props: NativeStackScreenProps<CommonNavigatorParams, 'Moderation'>,
 ) {
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const {
     isLoading: isPreferencesLoading,
     error: preferencesError,
@@ -130,7 +130,7 @@ function SubItem({
       </View>
       <ChevronRight
         size="sm"
-        style={[t.atoms.text_contrast_low, a.self_end, {paddingBottom: 2}]}
+        style={[t.atoms.text_contrast_low, a.self_end, { paddingBottom: 2 }]}
       />
     </View>
   )
@@ -141,11 +141,11 @@ export function ModerationScreenInner({
 }: {
   preferences: UsePreferencesQueryResponse
 }) {
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const t = useTheme()
   const setMinimalShellMode = useSetMinimalShellMode()
-  const {gtMobile} = useBreakpoints()
-  const {mutedWordsDialogControl} = useGlobalDialogsControlContext()
+  const { gtMobile } = useBreakpoints()
+  const { mutedWordsDialogControl } = useGlobalDialogsControlContext()
   const birthdateDialogControl = Dialog.useDialogControl()
   const {
     isLoading: isLabelersLoading,
@@ -159,7 +159,7 @@ export function ModerationScreenInner({
     }, [setMinimalShellMode]),
   )
 
-  const {mutateAsync: setAdultContentPref, variables: optimisticAdultContent} =
+  const { mutateAsync: setAdultContentPref, variables: optimisticAdultContent } =
     usePreferencesSetAdultContentMutation()
   const adultContentEnabled = !!(
     (optimisticAdultContent && optimisticAdultContent.enabled) ||
@@ -310,7 +310,7 @@ export function ModerationScreenInner({
                   a.flex_row,
                   a.align_center,
                   a.justify_between,
-                  disabledOnIOS && {opacity: 0.5},
+                  disabledOnIOS && { opacity: 0.5 },
                 ]}>
                 <Text style={[a.font_bold, t.atoms.text_contrast_high]}>
                   <Trans>Enable adult content</Trans>
@@ -441,7 +441,7 @@ export function ModerationScreenInner({
           })}
         </View>
       )}
-      <View style={{height: 150}} />
+      <View style={{ height: 150 }} />
     </View>
   )
 }

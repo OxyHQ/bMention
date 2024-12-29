@@ -22,7 +22,10 @@ export const ModerationCause = {
 }
 
 export const RichText = class {
-  constructor({ text }) {
+  text: string
+  facets: any[]
+
+  constructor({text}: {text: string}) {
     this.text = text
     this.facets = []
   }
@@ -56,7 +59,7 @@ export const AppBskyEmbedVideo = {}
 
 export const moderateProfile = (profile, opts) => {
   return {
-    ui: (type) => ({
+    ui: type => ({
       alerts: [],
       blur: false,
     }),
@@ -72,7 +75,7 @@ export const AppBskyLabelerDefs = {
 }
 
 export const AppBskyGraphStarterpack = {
-  isRecord: (record) => true,
+  isRecord: record => true,
 }
 
 export const AppBskyFeedDefs = {
@@ -94,8 +97,8 @@ export const AppBskyFeedDefs = {
 }
 
 export const AppBskyFeedPost = {
-  isRecord: (record) => true,
-  validateRecord: (record) => ({ success: true }),
+  isRecord: record => true,
+  validateRecord: record => ({success: true}),
 }
 
 export const BskyAgent = class {
@@ -108,4 +111,37 @@ export const ComAtprotoRepoUploadBlob = {
       blob: 'exampleBlob',
     },
   },
+}
+
+export const AtUri = class {
+  constructor(uri) {
+    this.uri = uri
+    this.rkey = uri.split('/').pop()
+  }
+}
+
+export const moderateUserList = (view, opts) => {
+  return {
+    ui: type => ({
+      alerts: [],
+      blur: false,
+    }),
+  }
+}
+
+export const ModerationUI = class {
+  alerts: any[]
+  blur: boolean
+
+  constructor() {
+    this.alerts = []
+    this.blur = false
+  }
+
+  ui(type) {
+    return {
+      alerts: this.alerts,
+      blur: this.blur,
+    }
+  }
 }
