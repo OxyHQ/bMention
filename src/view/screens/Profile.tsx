@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useCallback } from 'react'
 import { StyleSheet } from 'react-native'
 import { msg } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
@@ -155,7 +155,7 @@ function ProfileScreenLoaded({
   moderationOpts,
   hideBackButton,
 }: {
-  profile: typeof fakeProfiles[0]
+  profile: any
   hideBackButton: boolean
   isPlaceholderProfile: boolean
   moderationOpts: ReturnType<typeof fakeModeration.ui>
