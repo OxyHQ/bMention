@@ -94,6 +94,15 @@ export const AppBskyFeedDefs = {
       },
     },
   },
+  isPostView: (obj: any): obj is {post: {uri: string}} => {
+    return obj && obj.post && typeof obj.post.uri === 'string'
+  },
+  isBlockedPost: (obj: any): obj is {post: {blocked: boolean}} => {
+    return obj && obj.post && typeof obj.post.blocked === 'boolean'
+  },
+  isNotFoundPost: (obj: any): obj is {post: {notFound: boolean}} => {
+    return obj && obj.post && typeof obj.post.notFound === 'boolean'
+  },
 }
 
 export const AppBskyFeedPost = {

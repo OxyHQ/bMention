@@ -1,6 +1,7 @@
 // Remove import of @atproto/api
 // import {AppBskyFeedDefs, BskyAgent} from '@atproto/api'
 
+import {useProfileQuery} from '#/state/queries/profile'
 import {FeedAPI} from './types'
 
 // Define fake data types and constants
@@ -43,6 +44,9 @@ export const FALLBACK_MARKER_POST: FeedViewPost = {
 class FollowingFeedAPI {
   // ...existing code...
   async peekLatest(): Promise<FeedViewPost> {
+    // ...existing code...
+    const {data: profile} = useProfileQuery({did: 'did:fake'})
+    // ...existing code...
     return {
       post: {
         uri: 'latest-following-post',

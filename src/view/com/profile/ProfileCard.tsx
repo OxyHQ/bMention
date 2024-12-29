@@ -1,33 +1,34 @@
 import React from 'react'
-import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native'
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native'
 import {
   AppBskyActorDefs,
   moderateProfile,
   ModerationDecision,
 } from '@atproto/api'
-import {useQueryClient} from '@tanstack/react-query'
+import { useQueryClient } from '@tanstack/react-query'
 
-import {usePalette} from '#/lib/hooks/usePalette'
-import {getModerationCauseKey, isJustAMute} from '#/lib/moderation'
-import {makeProfileLink} from '#/lib/routes/links'
-import {sanitizeDisplayName} from '#/lib/strings/display-names'
-import {sanitizeHandle} from '#/lib/strings/handles'
-import {s} from '#/lib/styles'
-import {useProfileShadow} from '#/state/cache/profile-shadow'
-import {Shadow} from '#/state/cache/types'
-import {useModerationOpts} from '#/state/preferences/moderation-opts'
-import {precacheProfile} from '#/state/queries/profile'
-import {useSession} from '#/state/session'
-import {atoms as a} from '#/alf'
+import { usePalette } from '#/lib/hooks/usePalette'
+import { getModerationCauseKey, isJustAMute } from '#/lib/moderation'
+import { makeProfileLink } from '#/lib/routes/links'
+import { sanitizeDisplayName } from '#/lib/strings/display-names'
+import { sanitizeHandle } from '#/lib/strings/handles'
+import { s } from '#/lib/styles'
+import { useProfileShadow } from '#/state/cache/profile-shadow'
+import { Shadow } from '#/state/cache/types'
+import { useModerationOpts } from '#/state/preferences/moderation-opts'
+import { precacheProfile } from '#/state/queries/profile'
+import { useProfileQuery } from '#/state/queries/profile'
+import { useSession } from '#/state/session'
+import { atoms as a } from '#/alf'
 import {
   KnownFollowers,
   shouldShowKnownFollowers,
 } from '#/components/KnownFollowers'
 import * as Pills from '#/components/Pills'
-import {Link} from '../util/Link'
-import {Text} from '../util/text/Text'
-import {PreviewableUserAvatar} from '../util/UserAvatar'
-import {FollowButton} from './FollowButton'
+import { Link } from '../util/Link'
+import { Text } from '../util/text/Text'
+import { PreviewableUserAvatar } from '../util/UserAvatar'
+import { FollowButton } from './FollowButton'
 
 export function ProfileCard({
   testID,
@@ -54,7 +55,7 @@ export function ProfileCard({
 }) {
   const queryClient = useQueryClient()
   const pal = usePalette('default')
-  const profile = useProfileShadow(profileUnshadowed)
+  const { data: profile } = useProfileQuery({ did: profileUnshadowed.did })
   const moderationOpts = useModerationOpts()
   const isLabeler = profile?.associated?.labeler
 
@@ -194,7 +195,7 @@ export function ProfileCardWithFollowBtn({
   logContext?: 'ProfileCard' | 'StarterPackProfilesList'
   showKnownFollowers?: boolean
 }) {
-  const {currentAccount} = useSession()
+  const { currentAccount } = useSession()
   const isMe = profile.did === currentAccount?.did
 
   return (
@@ -206,8 +207,8 @@ export function ProfileCardWithFollowBtn({
         isMe
           ? undefined
           : profileShadow => (
-              <FollowButton profile={profileShadow} logContext={logContext} />
-            )
+            <FollowButton profile={profileShadow} logContext={logContext} />
+          )
       }
       onPress={onPress}
       showKnownFollowers={!isMe && showKnownFollowers}

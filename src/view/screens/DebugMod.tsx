@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-imports */
 import React from 'react'
-import {View} from 'react-native'
+import { View } from 'react-native'
 import {
   AppBskyActorDefs,
   AppBskyFeedDefs,
@@ -15,45 +15,45 @@ import {
   ModerationBehavior,
   ModerationDecision,
   ModerationOpts,
-  RichText,
 } from '@atproto/api'
-import {msg} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { msg } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {useGlobalLabelStrings} from '#/lib/moderation/useGlobalLabelStrings'
-import {CommonNavigatorParams, NativeStackScreenProps} from '#/lib/routes/types'
-import {moderationOptsOverrideContext} from '#/state/preferences/moderation-opts'
-import {FeedNotification} from '#/state/queries/notifications/types'
+import { useGlobalLabelStrings } from '#/lib/moderation/useGlobalLabelStrings'
+import { CommonNavigatorParams, NativeStackScreenProps } from '#/lib/routes/types'
+import { moderationOptsOverrideContext } from '#/state/preferences/moderation-opts'
+import { FeedNotification } from '#/state/queries/notifications/types'
 import {
   groupNotifications,
   shouldFilterNotif,
 } from '#/state/queries/notifications/util'
-import {useSession} from '#/state/session'
-import {CenteredView, ScrollView} from '#/view/com/util/Views'
-import {ProfileHeaderStandard} from '#/screens/Profile/Header/ProfileHeaderStandard'
-import {atoms as a, useTheme} from '#/alf'
-import {Button, ButtonIcon, ButtonText} from '#/components/Button'
-import {Divider} from '#/components/Divider'
+import { useProfileQuery } from '#/state/queries/profile'
+import { useSession } from '#/state/session'
+import { CenteredView, ScrollView } from '#/view/com/util/Views'
+import { ProfileHeaderStandard } from '#/screens/Profile/Header/ProfileHeaderStandard'
+import { atoms as a, useTheme } from '#/alf'
+import { Button, ButtonIcon, ButtonText } from '#/components/Button'
+import { Divider } from '#/components/Divider'
 import * as Toggle from '#/components/forms/Toggle'
 import * as ToggleButton from '#/components/forms/ToggleButton'
-import {Check_Stroke2_Corner0_Rounded as Check} from '#/components/icons/Check'
+import { Check_Stroke2_Corner0_Rounded as Check } from '#/components/icons/Check'
 import {
   ChevronBottom_Stroke2_Corner0_Rounded as ChevronBottom,
   ChevronTop_Stroke2_Corner0_Rounded as ChevronTop,
 } from '#/components/icons/Chevron'
 import * as Layout from '#/components/Layout'
-import {H1, H3, P, Text} from '#/components/Typography'
-import {ScreenHider} from '../../components/moderation/ScreenHider'
-import {NotificationFeedItem} from '../com/notifications/NotificationFeedItem'
-import {PostThreadItem} from '../com/post-thread/PostThreadItem'
-import {PostFeedItem} from '../com/posts/PostFeedItem'
-import {ProfileCard} from '../com/profile/ProfileCard'
+import { H1, H3, P, Text } from '#/components/Typography'
+import { ScreenHider } from '../../components/moderation/ScreenHider'
+import { NotificationFeedItem } from '../com/notifications/NotificationFeedItem'
+import { PostThreadItem } from '../com/post-thread/PostThreadItem'
+import { PostFeedItem } from '../com/posts/PostFeedItem'
+import { ProfileCard } from '../com/profile/ProfileCard'
 
 const LABEL_VALUES: (keyof typeof LABELS)[] = Object.keys(
   LABELS,
 ) as (keyof typeof LABELS)[]
 
-export const DebugModScreen = ({}: NativeStackScreenProps<
+export const DebugModScreen = ({ }: NativeStackScreenProps<
   CommonNavigatorParams,
   'DebugMod'
 >) => {
@@ -79,7 +79,8 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
     })
   const [view, setView] = React.useState<string[]>(['post'])
   const labelStrings = useGlobalLabelStrings()
-  const {currentAccount} = useSession()
+  const { currentAccount } = useSession()
+  const { data: profile } = useProfileQuery({ did: 'did:web:bob.test' })
 
   const isTargetMe =
     scenario[0] === 'label' && scenarioSwitches.includes('targetMe')
@@ -94,98 +95,95 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
   const did =
     isTargetMe && currentAccount ? currentAccount.did : 'did:web:bob.test'
 
-  const profile = React.useMemo(() => {
-    const mockedProfile = mock.profileViewBasic({
-      handle: `bob.test`,
-      displayName: 'Bob Robertson',
-      description: 'User with this as their bio',
-      labels:
-        scenario[0] === 'label' && target[0] === 'account'
+  const mockedProfile = profile || mock.profileViewBasic({
+    handle: `bob.test`,
+    displayName: 'Bob Robertson',
+    description: 'User with this as their bio',
+    labels:
+      scenario[0] === 'label' && target[0] === 'account'
+        ? [
+          mock.label({
+            src: isSelfLabel ? did : undefined,
+            val: label[0],
+            uri: `at://${did}/`,
+          }),
+        ]
+        : scenario[0] === 'label' && target[0] === 'profile'
           ? [
-              mock.label({
-                src: isSelfLabel ? did : undefined,
-                val: label[0],
-                uri: `at://${did}/`,
-              }),
-            ]
-          : scenario[0] === 'label' && target[0] === 'profile'
-          ? [
-              mock.label({
-                src: isSelfLabel ? did : undefined,
-                val: label[0],
-                uri: `at://${did}/app.bsky.actor.profile/self`,
-              }),
-            ]
+            mock.label({
+              src: isSelfLabel ? did : undefined,
+              val: label[0],
+              uri: `at://${did}/app.bsky.actor.profile/self`,
+            }),
+          ]
           : undefined,
-      viewer: mock.actorViewerState({
-        following: isFollowing
-          ? `at://${currentAccount?.did || ''}/app.bsky.graph.follow/1234`
+    viewer: mock.actorViewerState({
+      following: isFollowing
+        ? `at://${currentAccount?.did || ''}/app.bsky.graph.follow/1234`
+        : undefined,
+      muted: scenario[0] === 'mute',
+      mutedByList: undefined,
+      blockedBy: undefined,
+      blocking:
+        scenario[0] === 'block'
+          ? `at://did:web:alice.test/app.bsky.actor.block/fake`
           : undefined,
-        muted: scenario[0] === 'mute',
-        mutedByList: undefined,
-        blockedBy: undefined,
-        blocking:
-          scenario[0] === 'block'
-            ? `at://did:web:alice.test/app.bsky.actor.block/fake`
-            : undefined,
-        blockingByList: undefined,
-      }),
-    })
-    mockedProfile.did = did
-    mockedProfile.avatar = 'https://bsky.social/about/images/favicon-32x32.png'
-    mockedProfile.banner =
-      'https://bsky.social/about/images/social-card-default-gradient.png'
-    return mockedProfile
-  }, [scenario, target, label, isSelfLabel, did, isFollowing, currentAccount])
+      blockingByList: undefined,
+    }),
+  })
+  mockedProfile.did = did
+  mockedProfile.avatar = 'https://bsky.social/about/images/favicon-32x32.png'
+  mockedProfile.banner =
+    'https://bsky.social/about/images/social-card-default-gradient.png'
 
   const post = React.useMemo(() => {
     return mock.postView({
       record: mock.post({
         text: "This is the body of the post. It's where the text goes. You get the idea.",
       }),
-      author: profile,
+      author: mockedProfile,
       labels:
         scenario[0] === 'label' && target[0] === 'post'
           ? [
-              mock.label({
-                src: isSelfLabel ? did : undefined,
-                val: label[0],
-                uri: `at://${did}/app.bsky.feed.post/fake`,
-              }),
-            ]
+            mock.label({
+              src: isSelfLabel ? did : undefined,
+              val: label[0],
+              uri: `at://${did}/app.bsky.feed.post/fake`,
+            }),
+          ]
           : undefined,
       embed:
         target[0] === 'embed'
           ? mock.embedRecordView({
-              record: mock.post({
-                text: 'Embed',
-              }),
-              labels:
-                scenario[0] === 'label' && target[0] === 'embed'
-                  ? [
-                      mock.label({
-                        src: isSelfLabel ? did : undefined,
-                        val: label[0],
-                        uri: `at://${did}/app.bsky.feed.post/fake`,
-                      }),
-                    ]
-                  : undefined,
-              author: profile,
-            })
+            record: mock.post({
+              text: 'Embed',
+            }),
+            labels:
+              scenario[0] === 'label' && target[0] === 'embed'
+                ? [
+                  mock.label({
+                    src: isSelfLabel ? did : undefined,
+                    val: label[0],
+                    uri: `at://${did}/app.bsky.feed.post/fake`,
+                  }),
+                ]
+                : undefined,
+            author: mockedProfile,
+          })
           : {
-              $type: 'app.bsky.embed.images#view',
-              images: [
-                {
-                  thumb:
-                    'https://bsky.social/about/images/social-card-default-gradient.png',
-                  fullsize:
-                    'https://bsky.social/about/images/social-card-default-gradient.png',
-                  alt: '',
-                },
-              ],
-            },
+            $type: 'app.bsky.embed.images#view',
+            images: [
+              {
+                thumb:
+                  'https://bsky.social/about/images/social-card-default-gradient.png',
+                fullsize:
+                  'https://bsky.social/about/images/social-card-default-gradient.png',
+                alt: '',
+              },
+            ],
+          },
     })
-  }, [scenario, label, target, profile, isSelfLabel, did])
+  }, [scenario, label, target, mockedProfile, isSelfLabel, did])
 
   const replyNotif = React.useMemo(() => {
     const notif = mock.replyNotification({
@@ -202,35 +200,35 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
           },
         },
       }),
-      author: profile,
+      author: mockedProfile,
       labels:
         scenario[0] === 'label' && target[0] === 'post'
           ? [
-              mock.label({
-                src: isSelfLabel ? did : undefined,
-                val: label[0],
-                uri: `at://${did}/app.bsky.feed.post/fake`,
-              }),
-            ]
+            mock.label({
+              src: isSelfLabel ? did : undefined,
+              val: label[0],
+              uri: `at://${did}/app.bsky.feed.post/fake`,
+            }),
+          ]
           : undefined,
     })
     const [item] = groupNotifications([notif])
     item.subject = mock.postView({
       record: notif.record as AppBskyFeedPost.Record,
-      author: profile,
+      author: mockedProfile,
       labels: notif.labels,
     })
     return item
-  }, [scenario, label, target, profile, isSelfLabel, did])
+  }, [scenario, label, target, mockedProfile, isSelfLabel, did])
 
   const followNotif = React.useMemo(() => {
     const notif = mock.followNotification({
-      author: profile,
+      author: mockedProfile,
       subjectDid: currentAccount?.did || '',
     })
     const [item] = groupNotifications([notif])
     return item
-  }, [profile, currentAccount])
+  }, [mockedProfile, currentAccount])
 
   const modOpts = React.useMemo(() => {
     return {
@@ -243,7 +241,7 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
         labelers: [
           {
             did: 'did:plc:fake-labeler',
-            labels: {[label[0]]: visibility[0] as LabelPreference},
+            labels: { [label[0]]: visibility[0] as LabelPreference },
           },
         ],
         mutedWords: [],
@@ -258,8 +256,8 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
   }, [label, visibility, noAdult, isLoggedOut, isTargetMe, did, customLabelDef])
 
   const profileModeration = React.useMemo(() => {
-    return moderateProfile(profile, modOpts)
-  }, [profile, modOpts])
+    return moderateProfile(mockedProfile, modOpts)
+  }, [mockedProfile, modOpts])
   const postModeration = React.useMemo(() => {
     return moderatePost(post, modOpts)
   }, [post, modOpts])
@@ -323,7 +321,7 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
                             name={labelValue}
                             label={labelStrings[labelValue].name}
                             disabled={disabled}
-                            style={disabled ? {opacity: 0.5} : undefined}>
+                            style={disabled ? { opacity: 0.5 } : undefined}>
                             <Toggle.Radio />
                             <Toggle.LabelText>{labelValue}</Toggle.LabelText>
                           </Toggle.Item>
@@ -333,7 +331,7 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
                         name="custom"
                         label="Custom label"
                         disabled={isSelfLabel}
-                        style={isSelfLabel ? {opacity: 0.5} : undefined}>
+                        style={isSelfLabel ? { opacity: 0.5 } : undefined}>
                         <Toggle.Radio />
                         <Toggle.LabelText>Custom label</Toggle.LabelText>
                       </Toggle.Item>
@@ -347,12 +345,12 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
                     />
                   ) : (
                     <>
-                      <View style={{height: 10}} />
+                      <View style={{ height: 10 }} />
                       <Divider />
                     </>
                   )}
 
-                  <View style={{height: 10}} />
+                  <View style={{ height: 10 }} />
 
                   <SmallToggler label="Advanced">
                     <Toggle.Group
@@ -387,44 +385,44 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
 
                     {LABELS[label[0] as keyof typeof LABELS]?.configurable !==
                       false && (
-                      <View style={[a.mt_md]}>
-                        <Text
-                          style={[
-                            a.font_bold,
-                            a.text_xs,
-                            t.atoms.text,
-                            a.pb_sm,
-                          ]}>
-                          Preference
-                        </Text>
-                        <Toggle.Group
-                          label="Preference"
-                          type="radio"
-                          values={visibility}
-                          onChange={setVisiblity}>
-                          <View
+                        <View style={[a.mt_md]}>
+                          <Text
                             style={[
-                              a.flex_row,
-                              a.gap_md,
-                              a.flex_wrap,
-                              a.align_center,
+                              a.font_bold,
+                              a.text_xs,
+                              t.atoms.text,
+                              a.pb_sm,
                             ]}>
-                            <Toggle.Item name="hide" label="Hide">
-                              <Toggle.Radio />
-                              <Toggle.LabelText>Hide</Toggle.LabelText>
-                            </Toggle.Item>
-                            <Toggle.Item name="warn" label="Warn">
-                              <Toggle.Radio />
-                              <Toggle.LabelText>Warn</Toggle.LabelText>
-                            </Toggle.Item>
-                            <Toggle.Item name="ignore" label="Ignore">
-                              <Toggle.Radio />
-                              <Toggle.LabelText>Ignore</Toggle.LabelText>
-                            </Toggle.Item>
-                          </View>
-                        </Toggle.Group>
-                      </View>
-                    )}
+                            Preference
+                          </Text>
+                          <Toggle.Group
+                            label="Preference"
+                            type="radio"
+                            values={visibility}
+                            onChange={setVisiblity}>
+                            <View
+                              style={[
+                                a.flex_row,
+                                a.gap_md,
+                                a.flex_wrap,
+                                a.align_center,
+                              ]}>
+                              <Toggle.Item name="hide" label="Hide">
+                                <Toggle.Radio />
+                                <Toggle.LabelText>Hide</Toggle.LabelText>
+                              </Toggle.Item>
+                              <Toggle.Item name="warn" label="Warn">
+                                <Toggle.Radio />
+                                <Toggle.LabelText>Warn</Toggle.LabelText>
+                              </Toggle.Item>
+                              <Toggle.Item name="ignore" label="Ignore">
+                                <Toggle.Radio />
+                                <Toggle.LabelText>Ignore</Toggle.LabelText>
+                              </Toggle.Item>
+                            </View>
+                          </Toggle.Group>
+                        </View>
+                      )}
                   </SmallToggler>
                 </View>
 
@@ -530,7 +528,7 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
                 <>
                   <Heading title="Notification" subtitle="quote or reply" />
                   <MockNotifItem notif={replyNotif} moderationOpts={modOpts} />
-                  <View style={{height: 20}} />
+                  <View style={{ height: 20 }} />
                   <Heading title="Notification" subtitle="follow or like" />
                   <MockNotifItem notif={followNotif} moderationOpts={modOpts} />
                 </>
@@ -540,13 +538,13 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
                 <>
                   <Heading title="Account" subtitle="in listing" />
                   <MockAccountCard
-                    profile={profile}
+                    profile={mockedProfile}
                     moderation={profileModeration}
                   />
 
                   <Heading title="Account" subtitle="viewing directly" />
                   <MockAccountScreen
-                    profile={profile}
+                    profile={mockedProfile}
                     moderation={profileModeration}
                     moderationOpts={modOpts}
                   />
@@ -579,7 +577,7 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
               )}
             </View>
 
-            <View style={{height: 400}} />
+            <View style={{ height: 400 }} />
           </CenteredView>
         </ScrollView>
       </moderationOptsOverrideContext.Provider>
@@ -587,7 +585,7 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
   )
 }
 
-function Heading({title, subtitle}: {title: string; subtitle?: string}) {
+function Heading({ title, subtitle }: { title: string; subtitle?: string }) {
   const t = useTheme()
   return (
     <H3 style={[a.text_3xl, a.font_bold, a.pb_md]}>
@@ -637,7 +635,7 @@ function CustomLabelForm({
             label="Blurs"
             type="radio"
             values={[def.blurs]}
-            onChange={values => setDef(v => ({...v, blurs: values[0]}))}>
+            onChange={values => setDef(v => ({ ...v, blurs: values[0] }))}>
             <View style={[a.flex_row, a.gap_md, a.flex_wrap]}>
               <Toggle.Item name="content" label="Content">
                 <Toggle.Radio />
@@ -672,7 +670,7 @@ function CustomLabelForm({
             label="Severity"
             type="radio"
             values={[def.severity]}
-            onChange={values => setDef(v => ({...v, severity: values[0]}))}>
+            onChange={values => setDef(v => ({ ...v, severity: values[0] }))}>
             <View style={[a.flex_row, a.gap_md, a.flex_wrap, a.align_center]}>
               <Toggle.Item name="alert" label="Alert">
                 <Toggle.Radio />
@@ -694,7 +692,7 @@ function CustomLabelForm({
   )
 }
 
-function Toggler({label, children}: React.PropsWithChildren<{label: string}>) {
+function Toggler({ label, children }: React.PropsWithChildren<{ label: string }>) {
   const t = useTheme()
   const [show, setShow] = React.useState(false)
   return (
@@ -727,7 +725,7 @@ function Toggler({label, children}: React.PropsWithChildren<{label: string}>) {
 function SmallToggler({
   label,
   children,
-}: React.PropsWithChildren<{label: string}>) {
+}: React.PropsWithChildren<{ label: string }>) {
   const [show, setShow] = React.useState(false)
   return (
     <View>
@@ -750,10 +748,10 @@ function SmallToggler({
   )
 }
 
-function DataView({label, data}: {label: string; data: any}) {
+function DataView({ label, data }: { label: string; data: any }) {
   return (
     <Toggler label={label}>
-      <Text style={[{fontFamily: 'monospace'}, a.p_md]}>
+      <Text style={[{ fontFamily: 'monospace' }, a.p_md]}>
         {JSON.stringify(data, null, 2)}
       </Text>
     </Toggler>
@@ -783,7 +781,7 @@ function ModerationUIView({
           const ui = mod.ui(key as keyof ModerationBehavior)
           return (
             <View key={key} style={[a.flex_row, a.gap_md]}>
-              <Text style={[a.font_bold, {width: 100}]}>{key}</Text>
+              <Text style={[a.font_bold, { width: 100 }]}>{key}</Text>
               <Flag v={ui.filter} label="Filter" />
               <Flag v={ui.blur} label="Blur" />
               <Flag v={ui.alert} label="Alert" />
@@ -798,7 +796,7 @@ function ModerationUIView({
 }
 
 function Spacer() {
-  return <View style={{height: 30}} />
+  return <View style={{ height: 30 }} />
 }
 
 function MockPostFeedItem({
@@ -852,7 +850,7 @@ function MockPostThreadItem({
       nextPost={undefined}
       hasPrecedingItem={false}
       overrideBlur={false}
-      onPostReply={() => {}}
+      onPostReply={() => { }}
     />
   )
 }
@@ -911,7 +909,7 @@ function MockAccountScreen({
   moderationOpts: ModerationOpts
 }) {
   const t = useTheme()
-  const {_} = useLingui()
+  const { _ } = useLingui()
   return (
     <View style={[t.atoms.border_contrast_medium, a.border, a.mb_md]}>
       <ScreenHider
@@ -922,14 +920,14 @@ function MockAccountScreen({
           // @ts-ignore ProfileViewBasic is close enough -prf
           profile={profile}
           moderationOpts={moderationOpts}
-          descriptionRT={new RichText({text: profile.description as string})}
+          descriptionRT={profile.description as string}
         />
       </ScreenHider>
     </View>
   )
 }
 
-function Flag({v, label}: {v: boolean | undefined; label: string}) {
+function Flag({ v, label }: { v: boolean | undefined; label: string }) {
   const t = useTheme()
   return (
     <View style={[a.flex_row, a.align_center, a.gap_xs]}>

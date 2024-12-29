@@ -4,6 +4,7 @@ import {
   BskyAgent,
 } from '@atproto/api'
 
+import {useProfileQuery} from '#/state/queries/profile'
 import {FeedAPI, FeedAPIResponse} from './types'
 
 export class ListFeedAPI implements FeedAPI {
@@ -26,6 +27,7 @@ export class ListFeedAPI implements FeedAPI {
       ...this.params,
       limit: 1,
     })
+    const {data: profile} = useProfileQuery({did: this.params.actor})
     return res.data.feed[0]
   }
 

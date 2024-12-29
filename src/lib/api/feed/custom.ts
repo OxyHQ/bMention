@@ -9,6 +9,7 @@ import {
   getAppLanguageAsContentLanguage,
   getContentLanguages,
 } from '#/state/preferences/languages'
+import {useProfileQuery} from '#/state/queries/profile'
 import {FeedAPI, FeedAPIResponse} from './types'
 import {createBskyTopicsHeader, isBlueskyOwnedFeed} from './utils'
 
@@ -33,6 +34,7 @@ export class CustomFeedAPI implements FeedAPI {
 
   async peekLatest(): Promise<AppBskyFeedDefs.FeedViewPost> {
     const contentLangs = getContentLanguages().join(',')
+    const {data: profile} = useProfileQuery({did: this.params.actor})
     const res = await this.agent.app.bsky.feed.getFeed(
       {
         ...this.params,

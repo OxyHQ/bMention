@@ -30,41 +30,13 @@ import { ProfileLabelsSection } from '#/screens/Profile/Sections/Labels'
 import { atoms as a } from '#/alf'
 import * as Layout from '#/components/Layout'
 import { ScreenHider } from '#/components/moderation/ScreenHider'
+import { useFetchProfile } from '#/hooks/useFetchProfile'
 import { navigate } from '#/Navigation'
 import { ExpoScrollForwarderView } from '../../../modules/expo-scroll-forwarder'
 
-const fakeProfiles = [
-  {
-    did: 'did:example:123',
-    handle: 'john.doe',
-    displayName: 'John Doe',
-    description: 'This is a fake profile for John Doe.',
-    avatar: 'https://example.com/avatar/john.jpg',
-    associated: {
-      labeler: false,
-      feedgens: 0,
-      lists: 0,
-    },
-    viewer: {
-      blockedBy: false,
-    },
-  },
-  {
-    did: 'did:example:456',
-    handle: 'nate',
-    displayName: 'Nate Isern',
-    description: 'This is a fake profile for Jane Doe.',
-    avatar: 'https://example.com/avatar/jane.jpg',
-    associated: {
-      labeler: false,
-      feedgens: 0,
-      lists: 0,
-    },
-    viewer: {
-      blockedBy: false,
-    },
-  },
-]
+interface SectionRef {
+  scrollToTop: () => void
+}
 
 const fakeSession = {
   currentAccount: {
@@ -96,10 +68,6 @@ const fakeModeration = {
   }),
 }
 
-interface SectionRef {
-  scrollToTop: () => void
-}
-
 type Props = NativeStackScreenProps<CommonNavigatorParams, 'Profile'>
 export function ProfileScreen(props: Props) {
   return (
@@ -117,9 +85,7 @@ function ProfileScreenInner({ route }: Props) {
     route.params.name === 'me' ? currentAccount?.did : route.params.name
   const moderationOpts = useModerationOpts() || fakeModeration.ui()
 
-  const profile = fakeProfiles.find(p => p.handle === name || p.did === name)
-  const isLoadingProfile = !profile
-  const profileError = useMemo(() => (!profile ? new Error('Profile not found') : null), [profile])
+  const { data: profile, isLoading: isLoadingProfile, error: profileError } = useFetchProfile(name)
 
   const onPressTryAgain = React.useCallback(() => {
     // No-op for fake data

@@ -6,16 +6,16 @@ import {
   ViewStyle,
 } from 'react-native'
 
-import {usePalette} from '#/lib/hooks/usePalette'
-import {s} from '#/lib/styles'
-import {useTheme} from '#/lib/ThemeContext'
-import {atoms as a, useTheme as useTheme_NEW} from '#/alf'
-import {Bubble_Stroke2_Corner2_Rounded as Bubble} from '#/components/icons/Bubble'
+import { usePalette } from '#/lib/hooks/usePalette'
+import { s } from '#/lib/styles'
+import { useTheme } from '#/lib/ThemeContext'
+import { atoms as a, useTheme as useTheme_NEW } from '#/alf'
+import { Bubble_Stroke2_Corner2_Rounded as Bubble } from '#/components/icons/Bubble'
 import {
   Heart2_Filled_Stroke2_Corner0_Rounded as HeartIconFilled,
   Heart2_Stroke2_Corner0_Rounded as HeartIconOutline,
 } from '#/components/icons/Heart2'
-import {Repost_Stroke2_Corner2_Rounded as Repost} from '#/components/icons/Repost'
+import { Repost_Stroke2_Corner2_Rounded as Repost } from '#/components/icons/Repost'
 
 export function LoadingPlaceholder({
   width,
@@ -63,19 +63,19 @@ export function PostLoadingPlaceholder({
         ]}
       />
       <View style={[s.flex1]}>
-        <LoadingPlaceholder width={100} height={6} style={{marginBottom: 10}} />
-        <LoadingPlaceholder width="95%" height={6} style={{marginBottom: 8}} />
-        <LoadingPlaceholder width="95%" height={6} style={{marginBottom: 8}} />
-        <LoadingPlaceholder width="80%" height={6} style={{marginBottom: 11}} />
+        <LoadingPlaceholder width={100} height={6} style={{ marginBottom: 10 }} />
+        <LoadingPlaceholder width="95%" height={6} style={{ marginBottom: 8 }} />
+        <LoadingPlaceholder width="95%" height={6} style={{ marginBottom: 8 }} />
+        <LoadingPlaceholder width="80%" height={6} style={{ marginBottom: 11 }} />
         <View style={styles.postCtrls}>
-          <View style={[styles.postCtrl, {marginLeft: -6}]}>
+          <View style={[styles.postCtrl, { marginLeft: -6 }]}>
             <View style={styles.postBtn}>
               <Bubble
                 style={[
                   {
                     color: t.palette.contrast_500,
                   },
-                  {pointerEvents: 'none'},
+                  { pointerEvents: 'none' },
                 ]}
                 width={18}
               />
@@ -88,7 +88,7 @@ export function PostLoadingPlaceholder({
                   {
                     color: t.palette.contrast_500,
                   },
-                  {pointerEvents: 'none'},
+                  { pointerEvents: 'none' },
                 ]}
                 width={18}
               />
@@ -101,14 +101,14 @@ export function PostLoadingPlaceholder({
                   {
                     color: t.palette.contrast_500,
                   },
-                  {pointerEvents: 'none'},
+                  { pointerEvents: 'none' },
                 ]}
                 width={18}
               />
             </View>
           </View>
           <View style={styles.postCtrl}>
-            <View style={[styles.postBtn, {minHeight: 30}]} />
+            <View style={[styles.postBtn, { minHeight: 30 }]} />
           </View>
         </View>
       </View>
@@ -139,13 +139,13 @@ export function NotificationLoadingPlaceholder({
   const pal = usePalette('default')
   return (
     <View style={[styles.notification, pal.view, style]}>
-      <View style={[{width: 60}, a.align_end, a.pr_sm, a.pt_2xs]}>
+      <View style={[{ width: 60 }, a.align_end, a.pr_sm, a.pt_2xs]}>
         <HeartIconFilled
           size="xl"
-          style={{color: pal.colors.backgroundLight}}
+          style={{ color: pal.colors.backgroundLight }}
         />
       </View>
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
         <View style={[a.flex_row, s.mb10]}>
           <LoadingPlaceholder
             width={35}
@@ -239,11 +239,11 @@ export function FeedLoadingPlaceholder({
         pal.border,
         style,
       ]}>
-      <View style={[pal.view, {flexDirection: 'row'}]}>
+      <View style={[pal.view, { flexDirection: 'row' }]}>
         <LoadingPlaceholder
           width={36}
           height={36}
-          style={[styles.avatar, {borderRadius: 6}]}
+          style={[styles.avatar, { borderRadius: 6 }]}
         />
         <View style={[s.flex1]}>
           <LoadingPlaceholder width={100} height={8} style={[s.mt5, s.mb10]} />
@@ -251,11 +251,11 @@ export function FeedLoadingPlaceholder({
         </View>
       </View>
       {showLowerPlaceholder && (
-        <View style={{paddingHorizontal: 5, marginTop: 10}}>
+        <View style={{ paddingHorizontal: 5, marginTop: 10 }}>
           <LoadingPlaceholder
             width={260}
             height={8}
-            style={{marginVertical: 12}}
+            style={{ marginVertical: 12 }}
           />
           <LoadingPlaceholder width={120} height={8} />
         </View>

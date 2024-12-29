@@ -17,6 +17,7 @@ import { useModalControls } from '#/state/modals'
 import {
   useProfileBlockMutationQueue,
   useProfileFollowMutationQueue,
+  useProfileQuery,
 } from '#/state/queries/profile'
 import { useRequireAuth, useSession } from '#/state/session'
 import { ProfileMenu } from '#/view/com/profile/ProfileMenu'
@@ -54,8 +55,9 @@ let ProfileHeaderStandard = ({
   hideBackButton = false,
   isPlaceholderProfile,
 }: Props): React.ReactNode => {
+  const { data: profileData } = useProfileQuery({ did: profileUnshadowed.did })
   const profile: Shadow<AppBskyActorDefs.ProfileViewDetailed> =
-    useProfileShadow(profileUnshadowed)
+    useProfileShadow(profileData || profileUnshadowed)
   const { currentAccount, hasSession } = useSession()
   const { _ } = useLingui()
   const moderation = useMemo(
